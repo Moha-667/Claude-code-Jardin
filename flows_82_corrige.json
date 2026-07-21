@@ -44,7 +44,10 @@
             "0b689549720e1f35",
             "491ee3fafbde63e7",
             "f0e1d2c3b4a59687",
-            "94c8049abc0ab7ea"
+            "94c8049abc0ab7ea",
+            "a2b3c4d5e6f70819",
+            "f1a2b3c4d5e6f708",
+            "c4d5e6f708192a3b"
         ],
         "x": 134,
         "y": 33,
@@ -281,7 +284,7 @@
         "page": "8abbe775179bc870",
         "width": 4,
         "height": 1,
-        "order": 3,
+        "order": 4,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -295,7 +298,7 @@
         "page": "8abbe775179bc870",
         "width": 4,
         "height": 1,
-        "order": 2,
+        "order": 3,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -309,7 +312,7 @@
         "page": "8abbe775179bc870",
         "width": 4,
         "height": 1,
-        "order": 4,
+        "order": 5,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -549,7 +552,8 @@
                 "dfb0a8bef5f075a5",
                 "5f8a6037675cfdef",
                 "04be12cda83d011f",
-                "0b689549720e1f35"
+                "0b689549720e1f35",
+                "a2b3c4d5e6f70819"
             ]
         ]
     },
@@ -678,7 +682,8 @@
                 "18f1cad38497b197",
                 "4fa5b1d59768fddc",
                 "9007f752d39b3e16",
-                "0b689549720e1f35"
+                "0b689549720e1f35",
+                "a2b3c4d5e6f70819"
             ]
         ]
     },
@@ -1182,7 +1187,8 @@
         "wires": [
             [
                 "5f8a6037675cfdef",
-                "dfb0a8bef5f075a5"
+                "dfb0a8bef5f075a5",
+                "a2b3c4d5e6f70819"
             ]
         ]
     },
@@ -1720,7 +1726,8 @@
                 "59a294c761067192",
                 "dfb0a8bef5f075a5",
                 "5f8a6037675cfdef",
-                "0b689549720e1f35"
+                "0b689549720e1f35",
+                "a2b3c4d5e6f70819"
             ]
         ]
     },
@@ -1851,7 +1858,8 @@
                 "61d263418b28e944"
             ],
             [
-                "0b689549720e1f35"
+                "0b689549720e1f35",
+                "a2b3c4d5e6f70819"
             ],
             [
                 "8117543e09d96a9b"
@@ -1941,7 +1949,8 @@
                 "937a5c3b22f72e3a",
                 "f493e32aabc03eba",
                 "3b67964916210ba7",
-                "b02dcce347e37bbb"
+                "b02dcce347e37bbb",
+                "a2b3c4d5e6f70819"
             ]
         ]
     },
@@ -2583,6 +2592,92 @@
         "className": "",
         "x": 1360,
         "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3c4d5e6f7081920",
+        "type": "ui-group",
+        "name": "État système",
+        "page": "8abbe775179bc870",
+        "width": "12",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a2b3c4d5e6f70819",
+        "type": "function",
+        "z": "3c71c7465f773491",
+        "g": "40273a48dc758cf0",
+        "name": "🧭 État système (agrégateur)",
+        "func": "// ÉTAT SYSTÈME — agrège l'état réel pour la carte de synthèse (page Jardin).\n// Déclenché par : tick 30 s, ouverture de page, et événements clés (vanne,\n// coupure énergie, débitmètre, AUTO, maintenance). Le contenu du msg entrant\n// est ignoré : tout est relu depuis le contexte.\nconst vs = flow.get('valve_state') || {};\nconst quota = flow.get('water_quota_state') || {};\nconst soc = Number(global.get('ecoflow_soc'));\nconst cutoff = global.get('energy_cutoff') === true || global.get('energie_ok') === false;\nconst ecoLast = global.get('ecoflow_last_seen') || global.get('ecoflow_last_update');\nconst lastIA = (global.get('ia_command_log') || [])[0] || null;\n\nmsg.payload = {\n    valve_state: vs.confirmed_state || 'Inconnu',\n    valve_pending: vs.pending_state || null,\n    valve_battery: vs.battery ?? null,\n    arrosage_state: flow.get('arrosage_state') || 'IDLE',\n    auto: flow.get('auto_active') === true,\n    maintenance: flow.get('maintenance_active') === true,\n    soc: Number.isFinite(soc) ? Math.round(soc) : null,\n    energy_cutoff: cutoff,\n    energy_reason: global.get('energy_cutoff_reason') || null,\n    eco_age_min: ecoLast ? Math.round((Date.now() - Number(ecoLast)) / 60000) : null,\n    water_remaining: quota.remaining ?? null,\n    water_quota: quota.quota ?? null,\n    water_consumed: quota.consumed ?? null,\n    ia_type: lastIA ? lastIA.type : null,\n    ia_heure: lastIA ? lastIA.heure : null,\n    ia_raison: lastIA ? lastIA.raison : null,\n    ts: Date.now()\n};\nmsg.topic = 'etat_systeme';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 80,
+        "wires": [
+            [
+                "c4d5e6f708192a3b"
+            ]
+        ]
+    },
+    {
+        "id": "f1a2b3c4d5e6f708",
+        "type": "inject",
+        "z": "3c71c7465f773491",
+        "g": "40273a48dc758cf0",
+        "name": "Rafraîchir état (30 s)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 480,
+        "y": 80,
+        "wires": [
+            [
+                "a2b3c4d5e6f70819"
+            ]
+        ]
+    },
+    {
+        "id": "c4d5e6f708192a3b",
+        "type": "ui-template",
+        "z": "3c71c7465f773491",
+        "g": "40273a48dc758cf0",
+        "group": "b3c4d5e6f7081920",
+        "page": "",
+        "ui": "",
+        "name": "État système",
+        "order": 1,
+        "width": 12,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div class=\"sys-card\">\n        <div v-if=\"banner\" class=\"sys-banner\" :class=\"banner.kind\">\n            <i :class=\"'mdi ' + banner.icon\"></i><span>{{ banner.text }}</span>\n        </div>\n        <div class=\"sys-chips\">\n            <div class=\"sys-chip\">\n                <div class=\"chip-label\"><i class=\"mdi mdi-pipe-valve\"></i> Vanne</div>\n                <div class=\"chip-value\" :class=\"valveClass\">{{ valveText }}</div>\n                <div class=\"chip-sub\">{{ valveSub }}</div>\n            </div>\n            <div class=\"sys-chip\">\n                <div class=\"chip-label\"><i class=\"mdi mdi-cog-outline\"></i> Mode</div>\n                <div class=\"chip-value\" :class=\"modeClass\">{{ modeText }}</div>\n                <div class=\"chip-sub\">{{ s.arrosage_state === 'IDLE' ? 'au repos' : (s.arrosage_state || ' ') }}</div>\n            </div>\n            <div class=\"sys-chip\">\n                <div class=\"chip-label\"><i class=\"mdi mdi-battery-charging\"></i> EcoFlow</div>\n                <div class=\"chip-value\" :class=\"socClass\">{{ socText }}</div>\n                <div class=\"chip-sub\">{{ socSub }}</div>\n            </div>\n            <div class=\"sys-chip\">\n                <div class=\"chip-label\"><i class=\"mdi mdi-water\"></i> Eau restante</div>\n                <div class=\"chip-value water\">{{ waterText }}</div>\n                <div class=\"chip-sub\">{{ waterSub }}</div>\n            </div>\n            <div class=\"sys-chip wide\" :title=\"s.ia_raison || ''\">\n                <div class=\"chip-label\"><i class=\"mdi mdi-robot-outline\"></i> Dernière décision IA</div>\n                <div class=\"chip-value\" :class=\"iaClass\">{{ iaText }}</div>\n                <div class=\"chip-sub sys-ellipsis\">{{ s.ia_raison || 'aucune décision enregistrée' }}</div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\n    export default {\n        data() { return { s: {} } },\n        computed: {\n            banner() {\n                if (this.s.energy_cutoff) return { kind: 'b-error', icon: 'mdi-flash-off', text: 'Coupure énergie EcoFlow — ' + (this.s.energy_reason || 'arrosage bloqué, attente recharge') };\n                if (this.s.maintenance) return { kind: 'b-warn', icon: 'mdi-wrench', text: 'Maintenance active — IA et automatisme bloqués, commandes manuelles possibles' };\n                if (this.s.ts && (this.s.eco_age_min === null || this.s.eco_age_min > 15)) return { kind: 'b-warn', icon: 'mdi-battery-unknown', text: 'EcoFlow sans données récentes — ouvertures de vanne bloquées par sécurité' };\n                return null;\n            },\n            valveText() {\n                if (this.s.arrosage_state === 'ARROSAGE') return 'ARROSAGE';\n                return this.s.valve_state || '--';\n            },\n            valveClass() {\n                if (this.s.arrosage_state === 'ARROSAGE') return 'ok';\n                if (this.s.valve_pending) return 'warn';\n                return String(this.s.valve_state || '').toLowerCase().includes('ouvert') ? 'ok' : '';\n            },\n            valveSub() {\n                if (this.s.valve_pending) return '→ ' + this.s.valve_pending + ' en attente';\n                return (this.s.valve_battery !== null && this.s.valve_battery !== undefined) ? 'batterie ' + this.s.valve_battery + '%' : ' ';\n            },\n            modeText() { return this.s.maintenance ? 'MAINTENANCE' : (this.s.auto ? 'AUTO' : 'MANUEL'); },\n            modeClass() { return this.s.maintenance ? 'warn' : (this.s.auto ? 'ok' : ''); },\n            socText() { return (this.s.soc !== null && this.s.soc !== undefined) ? this.s.soc + '%' : '--'; },\n            socClass() {\n                if (this.s.energy_cutoff || this.s.soc === null || this.s.soc === undefined) return 'err';\n                if (this.s.soc <= 25) return 'warn';\n                return 'ok';\n            },\n            socSub() {\n                if (this.s.energy_cutoff) return 'coupure énergie';\n                if (this.s.eco_age_min !== null && this.s.eco_age_min !== undefined && this.s.eco_age_min <= 15) return 'données à jour';\n                return (this.s.eco_age_min === null || this.s.eco_age_min === undefined) ? 'aucune donnée' : 'il y a ' + this.s.eco_age_min + ' min';\n            },\n            waterText() { return (this.s.water_remaining !== null && this.s.water_remaining !== undefined) ? this.s.water_remaining + ' L' : '--'; },\n            waterSub() {\n                const c = (this.s.water_consumed === null || this.s.water_consumed === undefined) ? '--' : this.s.water_consumed;\n                const q = (this.s.water_quota === null || this.s.water_quota === undefined) ? '--' : this.s.water_quota;\n                return c + ' / ' + q + ' L utilisés';\n            },\n            iaText() { return this.s.ia_type ? this.s.ia_type + (this.s.ia_heure ? ' · ' + this.s.ia_heure : '') : '--'; },\n            iaClass() { return this.s.ia_type === 'ARROSAGE' ? 'ok' : ''; }\n        },\n        watch: {\n            msg: function(m) { if (m && m.payload) this.s = m.payload; }\n        }\n    }\n</script>\n\n<style scoped>\n    .sys-card {\n        background: rgba(50, 50, 50, 0.30);\n        backdrop-filter: blur(12px);\n        -webkit-backdrop-filter: blur(12px);\n        border: 1px solid rgba(255, 255, 255, 0.10);\n        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.10);\n        border-radius: 16px;\n        padding: 10px 12px;\n        box-sizing: border-box;\n        width: 100%;\n        color: #f5f5f5;\n        display: flex;\n        flex-direction: column;\n        gap: 10px;\n    }\n    .sys-banner {\n        display: flex;\n        align-items: center;\n        gap: 10px;\n        padding: 8px 14px;\n        border-radius: 12px;\n        font-weight: 800;\n        font-size: 13px;\n        line-height: 1.3;\n    }\n    .sys-banner i { font-size: 18px; }\n    .b-error {\n        background: rgba(255, 82, 82, 0.14);\n        border: 1px solid rgba(255, 82, 82, 0.65);\n        color: #ff8a8a;\n        animation: sys-pulse 2.4s ease-in-out infinite;\n    }\n    .b-warn {\n        background: rgba(255, 152, 0, 0.12);\n        border: 1px solid rgba(255, 152, 0, 0.55);\n        color: #ffc46b;\n    }\n    @keyframes sys-pulse {\n        0%, 100% { box-shadow: 0 0 0 rgba(255, 82, 82, 0); }\n        50% { box-shadow: 0 0 14px rgba(255, 82, 82, 0.35); }\n    }\n    .sys-chips { display: flex; gap: 8px; flex-wrap: wrap; }\n    .sys-chip {\n        flex: 1 1 120px;\n        min-width: 120px;\n        background: rgba(0, 0, 0, 0.25);\n        border: 1px solid rgba(255, 255, 255, 0.06);\n        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);\n        border-radius: 12px;\n        padding: 8px 12px;\n    }\n    .sys-chip.wide { flex: 2 1 220px; min-width: 200px; }\n    .chip-label {\n        font-size: 11px;\n        color: #aab2b9;\n        text-transform: uppercase;\n        letter-spacing: 0.4px;\n        display: flex;\n        align-items: center;\n        gap: 5px;\n        white-space: nowrap;\n    }\n    .chip-label i { color: #22ec70; font-size: 14px; }\n    .chip-value { font-size: 18px; font-weight: 800; margin-top: 2px; color: #f5f5f5; }\n    .chip-value.ok { color: #22ec70; }\n    .chip-value.warn { color: #ff9800; }\n    .chip-value.err { color: #ff5252; }\n    .chip-value.water { color: #4fc3f7; }\n    .chip-sub { font-size: 11px; color: #aab2b9; margin-top: 2px; min-height: 14px; }\n    .sys-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }\n</style>\n",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 80,
         "wires": [
             []
         ]
