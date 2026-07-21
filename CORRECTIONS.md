@@ -13,10 +13,7 @@ relecture adversariale indépendante (10 vérifications, 0 réfutation).
    d'environnement : `OPENAI_API_KEY=sk-…` (fichier systemd, `.bashrc`,
    `docker -e`, etc.), puis redémarrer Node-RED. Le flow la lit désormais
    depuis l'environnement — elle n'apparaîtra plus jamais dans un export.
-3. **Configurer les identifiants SMTP** du nœud e-mail (compte Gmail :
-   utiliser un « mot de passe d'application »). Le destinataire est réglé sur
-   `gougui.mohamed02@gmail.com` — modifiez-le si besoin.
-4. **Vérifier la connexion MQTT TTN** après import : le broker passe en
+3. **Vérifier la connexion MQTT TTN** après import : le broker passe en
    TLS (port 8883). Les identifiants TTN (username/API key) sont dans le
    fichier credentials, pas dans cet export — ils sont conservés si vous
    importez sur la même instance.
@@ -34,7 +31,7 @@ relecture adversariale indépendante (10 vérifications, 0 réfutation).
 | # | Problème | Correction |
 |---|----------|------------|
 | 4 | Historique des commandes IA jamais mis à jour en direct (les messages `new-entry` mouraient dans le bouton de navigation « Voir EcoFlow ») | Sortie 3 de « Parse & Decide » recâblée directement sur « 📊 Logger ». Le Pré-check a maintenant une 3ᵉ sortie qui journalise aussi ses mises en veille en direct |
-| 5 | E-mail inutilisable : le champ destinataire (propriété `name` du nœud) contenait un libellé au lieu d'une adresse | `name` = `gougui.mohamed02@gmail.com` (destinataire), `dname` = libellé d'affichage |
+| 5 | E-mail inutilisable : le champ destinataire contenait un libellé au lieu d'une adresse | **Nœud e-mail supprimé à la demande de l'utilisateur** (alertes e-mail non souhaitées pour l'instant). Les alertes restent visibles en toast sur le dashboard. Pour réactiver plus tard : ajouter un nœud `e-mail` (palette node-red-node-email) sur la **sortie 2** de « 📢 Formatter alerte EcoFlow », avec l'adresse destinataire dans son champ To/name et des identifiants SMTP |
 | 6 | Incohérence de fraîcheur EcoFlow : 3 fonctions testaient `ecoflow_last_update` (ne bouge que si les données *changent*) avec un seuil 15 min, alors que le watchdog tolère 60 min de données figées (batterie au repos = normal) → blocages AUTO injustifiés | « Parse & Decide », « Config fréquence vanne » et « Sécurité énergie avant ouverture » utilisent désormais `ecoflow_last_seen \|\| ecoflow_last_update`, comme « choix vanne », « Sauver AUTO » et le Pré-check |
 | 7 | Toast Dashboard 2.0 cassé : `ui-notification` recevait un objet → « [object Object] » | Le formatter envoie une chaîne (`sujet — texte`) |
 | 8 | MQTT TTN en clair (port 1883) : la clé API TTN transitait non chiffrée | Broker en port 8883 + TLS, avec un nœud `tls-config` dédié en **vérification stricte du certificat serveur** (sans lui, Node-RED se connecte en TLS mais sans vérifier le certificat) |

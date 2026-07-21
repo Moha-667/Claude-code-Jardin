@@ -2448,7 +2448,6 @@
                 "5ccf8af1b35f2f63"
             ],
             [
-                "821ca3febeaf2d1d",
                 "877a1e0bea4719dd"
             ]
         ]
@@ -2467,20 +2466,6 @@
         "name": "🔔 Alerte EcoFlow (Dashboard)",
         "x": 1330,
         "y": 300,
-        "wires": []
-    },
-    {
-        "id": "821ca3febeaf2d1d",
-        "type": "e-mail",
-        "z": "50d6eec1c0d623c6",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "tls": true,
-        "name": "gougui.mohamed02@gmail.com",
-        "dname": "📧 Mail alerte EcoFlow",
-        "x": 1350,
-        "y": 360,
         "wires": []
     },
     {
