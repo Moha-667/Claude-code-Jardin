@@ -93,3 +93,14 @@ de sécurité) : centralisation de la vérification EcoFlow répétée dans plus
 fonctions, fusion des états `valve_state` / `vanne_lyva_state` (l'ancien format
 sert encore de repli), suppression du banc de test « Sécurité énergie avant
 ouverture ».
+
+## 🎨 Refonte UI (3ᵉ passe)
+
+| # | Changement | Détail |
+|---|------------|--------|
+| U1 | **Navigation unifiée** | La même barre (Jardin / Météo / IA / EcoFlow, page active surlignée) est présente en haut des 4 pages. Elle remplace les boutons épars (bouton EcoFlow, bouton Météo caché dans le Journal, bouton Retour) ; la page IA devient enfin accessible |
+| U2 | **Thème unique** | Les deux thèmes étaient des doublons identiques : fusionnés en « Thème Jardin », appliqué aux 4 pages. Icônes de pages corrigées (mdi-sprout, mdi-weather-partly-cloudy, mdi-robot-outline, mdi-battery-charging) |
+| U3 | **Page IA restylée** | « Profil Plante », « Mode Maintenance » et « Feedback Widget » passent au style verre sombre + accent vert du reste du dashboard (ils étaient en style brut/violet). La logique Vue (bindings, send) est inchangée |
+| U4 | **Liens cassés corrigés** | Deux boutons pointaient vers `/dashboard/permaculture` qui n'existe pas (la page s'appelle `/page1`) : bouton retour du Feedback Widget (supprimé, remplacé par la nav) et bouton retour du widget Météo (corrigé) |
+| U5 | **Feuille de style globale** | Un template `site:style` définit la police unifiée, des variables CSS partagées et des barres de défilement discrètes |
+| U6 | **Divers** | Groupe « Capteur sol  » renommé « Capteur & Débit » (il contient aussi le débitmètre), table Historique IA harmonisée (coins 16 px), listes de membres des groupes d'éditeur resynchronisées |
