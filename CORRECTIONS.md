@@ -64,3 +64,32 @@ relecture adversariale indépendante (10 vérifications, 0 réfutation).
   un payload qui *change* le remet en ligne. C'est un choix prudent du flow d'origine
   (commenté comme intentionnel), conservé tel quel.
 - **Numéro de série EcoFlow** : nécessaire aux appels API, conservé.
+
+## 🔧 Optimisations (2ᵉ passe)
+
+| # | Optimisation | Détail |
+|---|--------------|--------|
+| O1 | **Routage MQTT central** | Un switch « Routage TTN par équipement » aiguille chaque uplink vers les seules fonctions concernées (vanne → 2 fonctions, débitmètre → 1, capteur sol → 1) au lieu d'exécuter les 4 fonctions pour chaque message. Les gardes internes des fonctions sont conservées (défense en profondeur) |
+| O2 | **Constantes mortes retirées** | « Vanne » et « Capteur (Dragino) » ne déclarent plus de valeurs par défaut qu'elles n'utilisent pas |
+| O3 | **Groupe nommé** | Le groupe anonyme de l'onglet Arrosage s'appelle désormais « Pilotage IA & Journal » |
+| O4 | **Persistance du contexte** (à activer côté serveur, voir ci-dessous) | Sans elle, un redémarrage de Node-RED efface quota d'eau du jour, historique d'arrosages, état vanne et mode AUTO |
+
+### Activer la persistance (Windows)
+
+Dans `C:\Users\<VOTRE_NOM>\.node-red\settings.js`, ajouter (ou décommenter) dans
+`module.exports` :
+
+```js
+contextStorage: {
+    default: { module: "localfilesystem" },
+},
+```
+
+puis redémarrer Node-RED. L'état est alors sauvegardé dans
+`C:\Users\<VOTRE_NOM>\.node-red\context\` (écriture toutes les 30 s).
+
+Refactorings volontairement **non** faits (bénéfice faible / risque sur la logique
+de sécurité) : centralisation de la vérification EcoFlow répétée dans plusieurs
+fonctions, fusion des états `valve_state` / `vanne_lyva_state` (l'ancien format
+sert encore de repli), suppression du banc de test « Sécurité énergie avant
+ouverture ».

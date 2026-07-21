@@ -107,7 +107,8 @@
         "x": 14,
         "y": 791.5,
         "w": 1522,
-        "h": 329.5
+        "h": 329.5,
+        "name": "Pilotage IA & Journal"
     },
     {
         "id": "4d34aebe0615c5f3",
@@ -550,7 +551,7 @@
         "z": "3c71c7465f773491",
         "g": "40273a48dc758cf0",
         "name": "Vanne",
-        "func": "// VANNE LYVA — état confirmé LoRaWAN + état officiel Node-RED\n// Objectif : distinguer commande envoyée, commande en attente, état confirmé.\n\nconst cfg = Object.assign({ valveDevice: \"lyva-tre\", openHex: \"01\", closeHex: \"02\" }, flow.get(\"config_jardin\") || {});\nconst deviceId = msg.payload?.end_device_ids?.device_id;\nif (deviceId !== cfg.valveDevice) return null;\n\nconst now = Date.now();\nconst uplink = msg.payload.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nlet storedData = flow.get('vanne_lyva_state') || {\n    state: \"Fermé\",\n    battery: 100,\n    last_seen_ts: null,\n    state_confirmed_ts: null,\n    timestamp: null\n};\n\nlet valveState = flow.get('valve_state') || {\n    device_id: deviceId,\n    confirmed_state: storedData.state || \"Fermé\",\n    status: \"CLOSED_CONFIRMED\",\n    pending_command: null,\n    pending_state: null,\n    pending_since_ts: null,\n    last_command_ts: null,\n    last_confirmed_ts: storedData.state_confirmed_ts || null,\n    last_seen_ts: storedData.last_seen_ts || null,\n    battery: storedData.battery || 100,\n    error: null\n};\n\nfunction normalizeState(s) {\n    const x = String(s || \"\").toLowerCase();\n    if (x.includes(\"ouvert\") || x.includes(\"open\")) return \"Ouvert\";\n    if (x.includes(\"ferm\") || x.includes(\"closed\") || x.includes(\"close\")) return \"Fermé\";\n    return s || \"Inconnu\";\n}\nfunction statusFromState(s) {\n    const n = normalizeState(s);\n    if (n === \"Ouvert\") return \"OPEN_CONFIRMED\";\n    if (n === \"Fermé\") return \"CLOSED_CONFIRMED\";\n    return \"UNKNOWN_CONFIRMED\";\n}\nfunction pendingMatchesConfirmed(pendingState, confirmedState) {\n    return normalizeState(pendingState) === normalizeState(confirmedState);\n}\n\n// Batterie\nif (uplink.last_battery_percentage && uplink.last_battery_percentage.value !== undefined) {\n    storedData.battery = Math.round(uplink.last_battery_percentage.value);\n    valveState.battery = storedData.battery;\n}\n\nstoredData.last_seen_ts = now;\nstoredData.timestamp = now;\nvalveState.last_seen_ts = now;\nvalveState.device_id = deviceId;\n\n// État confirmé par l'uplink courant\nif (decoded.result) {\n    const confirmed = normalizeState(decoded.result);\n    storedData.state = confirmed;\n    storedData.state_confirmed_ts = now;\n\n    valveState.confirmed_state = confirmed;\n    valveState.last_confirmed_ts = now;\n    valveState.status = statusFromState(confirmed);\n    valveState.error = null;\n\n    // Compatibilité avec l'ancien flow\n    flow.set(`etat_${deviceId}`, confirmed);\n\n    // Si une commande était en attente et que l'état confirmé correspond, on valide.\n    if (valveState.pending_command && pendingMatchesConfirmed(valveState.pending_state, confirmed)) {\n        node.warn(`[VANNE] Confirmation reçue : ${confirmed} — commande ${valveState.pending_command} validée`);\n        valveState.pending_command = null;\n        valveState.pending_state = null;\n        valveState.pending_since_ts = null;\n        flow.set(`commande_en_attente_${deviceId}`, null);\n    }\n}\n\nflow.set('vanne_lyva_state', storedData);\nflow.set('valve_state', valveState);\n\n// Si la vanne est fermée pendant un arrosage, on remet l'orchestration au repos.\nconst arrosageState = flow.get('arrosage_state') || 'IDLE';\nif (normalizeState(storedData.state) === \"Fermé\" && arrosageState === 'ARROSAGE') {\n    flow.set('arrosage_state', 'IDLE');\n    flow.set('arrosage_debut', null);\n    flow.set('arrosage_duree_ms', 0);\n    node.warn('[VANNE] Fermeture détectée pendant ARROSAGE — retour IDLE');\n}\n\nmsg.payload = Object.assign({}, storedData, {\n    valve_state: valveState,\n    state: storedData.state,\n    battery: storedData.battery\n});\nmsg.topic = \"vanne_state\";\nmsg.auto_active = flow.get('auto_active') || false;\nmsg.maintenance_active = flow.get('maintenance_active') || false;\nreturn msg;\n",
+        "func": "// VANNE LYVA — état confirmé LoRaWAN + état officiel Node-RED\n// Objectif : distinguer commande envoyée, commande en attente, état confirmé.\n\nconst cfg = Object.assign({ valveDevice: \"lyva-tre\" }, flow.get(\"config_jardin\") || {});\nconst deviceId = msg.payload?.end_device_ids?.device_id;\nif (deviceId !== cfg.valveDevice) return null;\n\nconst now = Date.now();\nconst uplink = msg.payload.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nlet storedData = flow.get('vanne_lyva_state') || {\n    state: \"Fermé\",\n    battery: 100,\n    last_seen_ts: null,\n    state_confirmed_ts: null,\n    timestamp: null\n};\n\nlet valveState = flow.get('valve_state') || {\n    device_id: deviceId,\n    confirmed_state: storedData.state || \"Fermé\",\n    status: \"CLOSED_CONFIRMED\",\n    pending_command: null,\n    pending_state: null,\n    pending_since_ts: null,\n    last_command_ts: null,\n    last_confirmed_ts: storedData.state_confirmed_ts || null,\n    last_seen_ts: storedData.last_seen_ts || null,\n    battery: storedData.battery || 100,\n    error: null\n};\n\nfunction normalizeState(s) {\n    const x = String(s || \"\").toLowerCase();\n    if (x.includes(\"ouvert\") || x.includes(\"open\")) return \"Ouvert\";\n    if (x.includes(\"ferm\") || x.includes(\"closed\") || x.includes(\"close\")) return \"Fermé\";\n    return s || \"Inconnu\";\n}\nfunction statusFromState(s) {\n    const n = normalizeState(s);\n    if (n === \"Ouvert\") return \"OPEN_CONFIRMED\";\n    if (n === \"Fermé\") return \"CLOSED_CONFIRMED\";\n    return \"UNKNOWN_CONFIRMED\";\n}\nfunction pendingMatchesConfirmed(pendingState, confirmedState) {\n    return normalizeState(pendingState) === normalizeState(confirmedState);\n}\n\n// Batterie\nif (uplink.last_battery_percentage && uplink.last_battery_percentage.value !== undefined) {\n    storedData.battery = Math.round(uplink.last_battery_percentage.value);\n    valveState.battery = storedData.battery;\n}\n\nstoredData.last_seen_ts = now;\nstoredData.timestamp = now;\nvalveState.last_seen_ts = now;\nvalveState.device_id = deviceId;\n\n// État confirmé par l'uplink courant\nif (decoded.result) {\n    const confirmed = normalizeState(decoded.result);\n    storedData.state = confirmed;\n    storedData.state_confirmed_ts = now;\n\n    valveState.confirmed_state = confirmed;\n    valveState.last_confirmed_ts = now;\n    valveState.status = statusFromState(confirmed);\n    valveState.error = null;\n\n    // Compatibilité avec l'ancien flow\n    flow.set(`etat_${deviceId}`, confirmed);\n\n    // Si une commande était en attente et que l'état confirmé correspond, on valide.\n    if (valveState.pending_command && pendingMatchesConfirmed(valveState.pending_state, confirmed)) {\n        node.warn(`[VANNE] Confirmation reçue : ${confirmed} — commande ${valveState.pending_command} validée`);\n        valveState.pending_command = null;\n        valveState.pending_state = null;\n        valveState.pending_since_ts = null;\n        flow.set(`commande_en_attente_${deviceId}`, null);\n    }\n}\n\nflow.set('vanne_lyva_state', storedData);\nflow.set('valve_state', valveState);\n\n// Si la vanne est fermée pendant un arrosage, on remet l'orchestration au repos.\nconst arrosageState = flow.get('arrosage_state') || 'IDLE';\nif (normalizeState(storedData.state) === \"Fermé\" && arrosageState === 'ARROSAGE') {\n    flow.set('arrosage_state', 'IDLE');\n    flow.set('arrosage_debut', null);\n    flow.set('arrosage_duree_ms', 0);\n    node.warn('[VANNE] Fermeture détectée pendant ARROSAGE — retour IDLE');\n}\n\nmsg.payload = Object.assign({}, storedData, {\n    valve_state: valveState,\n    state: storedData.state,\n    battery: storedData.battery\n});\nmsg.topic = \"vanne_state\";\nmsg.auto_active = flow.get('auto_active') || false;\nmsg.maintenance_active = flow.get('maintenance_active') || false;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1116,6 +1117,49 @@
         ]
     },
     {
+        "id": "f0e1d2c3b4a59687",
+        "type": "switch",
+        "z": "3c71c7465f773491",
+        "g": "40273a48dc758cf0",
+        "name": "Routage TTN par équipement",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "/devices/lyva-tre/",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "/devices/debitmetre/",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "/devices/dragino-moisture/",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 290,
+        "y": 410,
+        "wires": [
+            [
+                "c93868adc6ab5556",
+                "4703ab1b77f8b3ac"
+            ],
+            [
+                "46a32c2b95a06e15"
+            ],
+            [
+                "82c32265688470c5"
+            ]
+        ]
+    },
+    {
         "id": "23d6c553e71c5cc3",
         "type": "mqtt in",
         "z": "3c71c7465f773491",
@@ -1133,10 +1177,7 @@
         "y": 320,
         "wires": [
             [
-                "c93868adc6ab5556",
-                "4703ab1b77f8b3ac",
-                "46a32c2b95a06e15",
-                "82c32265688470c5"
+                "f0e1d2c3b4a59687"
             ]
         ]
     },
@@ -1146,7 +1187,7 @@
         "z": "3c71c7465f773491",
         "g": "40273a48dc758cf0",
         "name": "Capteur (Dragino)",
-        "func": "// CAPTEUR SOL DRAGINO — lecture + suivi de fiabilité\n// Objectif : ne pas considérer une humidité douteuse comme vérité absolue.\n\nconst cfg = Object.assign({\n    sensorDevice: \"dragino-moisture\",\n    sensorSuspiciousLowPct: 25,\n    sensorMinRiseAfterWateringPct: 3\n}, flow.get(\"config_jardin\") || {});\n\nfunction num(v) {\n    const n = parseFloat(v);\n    return Number.isFinite(n) ? n : null;\n}\n\n// 1. Gestion structure TTN\nlet root = msg.payload;\nif (root.data && root.data.uplink_message) {\n    root = root.data;\n}\n\n// 2. Vérification device_id\nconst deviceId = root.end_device_ids?.device_id || msg.payload?.end_device_ids?.device_id || \"inconnu\";\nif (deviceId !== cfg.sensorDevice) return null;\n\nconst now = Date.now();\n\n// 3. Mémoire\nlet storedData = flow.get('capteur_sol_data') || {\n    temperature: null,\n    humidity: null,\n    conductivity: null,\n    battery: null,\n    timestamp: null,\n    previous_humidity: null,\n    delta_from_previous: null\n};\n\nlet health = flow.get('capteur_health') || {\n    status: \"OK\",\n    suspicious_active: false,\n    reason: null,\n    consecutive_no_response: 0,\n    last_value: null,\n    last_delta: null,\n    last_update_ts: null,\n    last_movement_ts: null,\n    suspicious_since_ts: null,\n    cleared_ts: null\n};\n\nconst previousHumidity = num(storedData.humidity);\n\n// 4. Extraction données Dragino\nconst uplink = root.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nif (decoded.temp_SOIL !== undefined) {\n    storedData.temperature = num(decoded.temp_SOIL);\n}\n\nlet newHumidity = previousHumidity;\nif (decoded.water_SOIL !== undefined) {\n    newHumidity = num(decoded.water_SOIL);\n    if (newHumidity !== null) {\n        storedData.previous_humidity = previousHumidity;\n        storedData.humidity = newHumidity;\n        storedData.delta_from_previous = previousHumidity !== null\n            ? Math.round((newHumidity - previousHumidity) * 10) / 10\n            : null;\n\n        health.last_value = newHumidity;\n        health.last_update_ts = now;\n        health.last_delta = storedData.delta_from_previous;\n\n        if (previousHumidity === null || Math.abs(newHumidity - previousHumidity) >= 1) {\n            health.last_movement_ts = now;\n        }\n\n        // Sécurité capteur suspect désactivée : toute valeur basse reste utilisable pour piloter l'arrosage.\n        health.suspicious_active = false;\n        health.status = \"OK\";\n        health.reason = `Lecture capteur acceptée : humidité ${newHumidity}%`;\n        health.consecutive_no_response = 0;\n        health.cleared_ts = now;\n        health.suspect_security_disabled = true;\n    }\n}\n\nif (decoded.conduct_SOIL !== undefined) {\n    storedData.conductivity = decoded.conduct_SOIL;\n}\n\n// Batterie Dragino en volts → % estimé\nif (decoded.BatV !== undefined) {\n    let volts = parseFloat(decoded.BatV);\n    let pct = ((volts - 2.5) / (3.6 - 2.5)) * 100;\n    if (pct > 100) pct = 100;\n    if (pct < 0) pct = 0;\n    storedData.battery = Math.round(pct);\n}\n\nstoredData.timestamp = now;\nstoredData.device_id = deviceId;\nstoredData.health = {\n    status: health.status,\n    suspicious_active: health.suspicious_active,\n    reason: health.reason,\n    consecutive_no_response: health.consecutive_no_response\n};\n\nflow.set('capteur_sol_data', storedData);\nflow.set('capteur_health', health);\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `Sol: ${storedData.humidity ?? '--'}% | OK`\n});\n\nmsg.payload = storedData;\nreturn msg;\n",
+        "func": "// CAPTEUR SOL DRAGINO — lecture + suivi de fiabilité\n// Objectif : ne pas considérer une humidité douteuse comme vérité absolue.\n\nconst cfg = Object.assign({ sensorDevice: \"dragino-moisture\" }, flow.get(\"config_jardin\") || {});\n\nfunction num(v) {\n    const n = parseFloat(v);\n    return Number.isFinite(n) ? n : null;\n}\n\n// 1. Gestion structure TTN\nlet root = msg.payload;\nif (root.data && root.data.uplink_message) {\n    root = root.data;\n}\n\n// 2. Vérification device_id\nconst deviceId = root.end_device_ids?.device_id || msg.payload?.end_device_ids?.device_id || \"inconnu\";\nif (deviceId !== cfg.sensorDevice) return null;\n\nconst now = Date.now();\n\n// 3. Mémoire\nlet storedData = flow.get('capteur_sol_data') || {\n    temperature: null,\n    humidity: null,\n    conductivity: null,\n    battery: null,\n    timestamp: null,\n    previous_humidity: null,\n    delta_from_previous: null\n};\n\nlet health = flow.get('capteur_health') || {\n    status: \"OK\",\n    suspicious_active: false,\n    reason: null,\n    consecutive_no_response: 0,\n    last_value: null,\n    last_delta: null,\n    last_update_ts: null,\n    last_movement_ts: null,\n    suspicious_since_ts: null,\n    cleared_ts: null\n};\n\nconst previousHumidity = num(storedData.humidity);\n\n// 4. Extraction données Dragino\nconst uplink = root.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nif (decoded.temp_SOIL !== undefined) {\n    storedData.temperature = num(decoded.temp_SOIL);\n}\n\nlet newHumidity = previousHumidity;\nif (decoded.water_SOIL !== undefined) {\n    newHumidity = num(decoded.water_SOIL);\n    if (newHumidity !== null) {\n        storedData.previous_humidity = previousHumidity;\n        storedData.humidity = newHumidity;\n        storedData.delta_from_previous = previousHumidity !== null\n            ? Math.round((newHumidity - previousHumidity) * 10) / 10\n            : null;\n\n        health.last_value = newHumidity;\n        health.last_update_ts = now;\n        health.last_delta = storedData.delta_from_previous;\n\n        if (previousHumidity === null || Math.abs(newHumidity - previousHumidity) >= 1) {\n            health.last_movement_ts = now;\n        }\n\n        // Sécurité capteur suspect désactivée : toute valeur basse reste utilisable pour piloter l'arrosage.\n        health.suspicious_active = false;\n        health.status = \"OK\";\n        health.reason = `Lecture capteur acceptée : humidité ${newHumidity}%`;\n        health.consecutive_no_response = 0;\n        health.cleared_ts = now;\n        health.suspect_security_disabled = true;\n    }\n}\n\nif (decoded.conduct_SOIL !== undefined) {\n    storedData.conductivity = decoded.conduct_SOIL;\n}\n\n// Batterie Dragino en volts → % estimé\nif (decoded.BatV !== undefined) {\n    let volts = parseFloat(decoded.BatV);\n    let pct = ((volts - 2.5) / (3.6 - 2.5)) * 100;\n    if (pct > 100) pct = 100;\n    if (pct < 0) pct = 0;\n    storedData.battery = Math.round(pct);\n}\n\nstoredData.timestamp = now;\nstoredData.device_id = deviceId;\nstoredData.health = {\n    status: health.status,\n    suspicious_active: health.suspicious_active,\n    reason: health.reason,\n    consecutive_no_response: health.consecutive_no_response\n};\n\nflow.set('capteur_sol_data', storedData);\nflow.set('capteur_health', health);\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `Sol: ${storedData.humidity ?? '--'}% | OK`\n});\n\nmsg.payload = storedData;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
