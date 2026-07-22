@@ -164,3 +164,17 @@ Constat utilisateur : « le journal ne retient pas l'historique ». Deux causes 
 |---|-------|------------|
 | P1 | **Contexte en mémoire vive** : sans `contextStorage: { default: { module: "localfilesystem" } }` dans `settings.js`, journal, historique IA, quota, calibration et états sont perdus à chaque redémarrage de Node-RED | Réglage côté serveur documenté pas à pas dans NOTICE.md §12 (aucun changement de flow possible pour ça — c'est la config du serveur) |
 | P2 | **Rien n'était rejoué à l'ouverture d'une page** : le dashboard ne conserve que le *dernier* message reçu par page — l'état système (30 s) écrasait le journal et la mesure capteur, qui restaient vides jusqu'au prochain événement | À chaque ouverture de page (`$pageview`) : le Logger Central renvoie l'historique complet, et l'agrégateur État système embarque désormais la dernière mesure capteur (humidité, température, batterie) et le mode de réveil vanne — les pages Jardin et IA se remplissent immédiatement |
+
+## ⚙️ Page Réglages complète du design (8ᵉ passe)
+
+La page Réglages reprend désormais tout l'onglet Réglages du design
+« Dashboard Ocean » — et chaque popup pilote la **vraie** configuration :
+
+| # | Élément | Branchement réel |
+|---|---------|------------------|
+| S1 | Puces de profils avec emojis (🌿🍅🥬🥒🌱🌾) | Les 6 profils réels de `config_jardin`, libellés raccourcis |
+| S2 | Popup 💧 Arrosage | `dailyWaterQuotaL` (20–400 L), `maxIrrigationMin` (1–15 min), fenêtre `minHour`–`maxHour`, blocage pluie `rainDailyBlockMm` (interrupteur = seuil 999 → désactivé) — écrits dans `config_jardin` par la nouvelle fonction « ⚙️ Réglages jardin (UI) » |
+| S3 | Popup 🔩 Matériel | Fréquence de réveil vanne (réelle), **offset de calibration** appliqué désormais à l'humidité mesurée dans « Capteur (Dragino) », **seuil batterie EcoFlow** rendu réglable (« EcoFlow → energie_ok » lit `ecoflow_cutoff_soc`, reprise = seuil + 15), bouton « Tester la communication vanne » (ping 0x80 réel) |
+| S4 | Popup 🔔 Notifications | 3 préférences persistées (gel, quota, batterie) ; « batterie » coupe réellement les alertes EcoFlow (📢 Formatter) |
+| S5 | Popup 🌍 Système | Unités (litres/°C, gallons/°F affichés « bientôt »), ville météo, état LoRaWAN et appareils |
+| S6 | Amorçage | `$pageview` déclenche aussi Set Profil Plante, Set Maintenance et la nouvelle fonction réglages : la page se remplit dès l'ouverture |
