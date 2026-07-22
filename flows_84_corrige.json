@@ -2,183 +2,31 @@
     {
         "id": "b573ff303eba5d8f",
         "type": "tab",
-        "label": "Arrosage jardin",
+        "label": "🌱 Arrosage jardin",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
+        "id": "0cea4d00000000a1",
+        "type": "tab",
+        "label": "🌊 Dashboard Ocean",
+        "disabled": false,
+        "info": "Les 5 pages du design Dashboard Ocean.\\nLes données arrivent par nœuds link depuis les onglets Arrosage, Météo et EcoFlow ;\\nles commandes repartent de la même façon (la logique reste sur « Arrosage jardin »\\ncar elle utilise le contexte de flux)."
+    },
+    {
         "id": "2ef387781c27c113",
         "type": "tab",
-        "label": "Météo (actuel + 8j)",
+        "label": "🌤 Météo",
         "disabled": false,
         "info": ""
     },
     {
         "id": "ca2ef5c6111a3b41",
         "type": "tab",
-        "label": "EcoFlow réel - test batterie",
+        "label": "⚡ EcoFlow",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "ff3ef9bd5a0d1fc2",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "name": "Supervision",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "7c5b5284c10fef2c",
-            "f300b7bb23d6cedb",
-            "58e756b1d4eebd60",
-            "4b61a820b625294c",
-            "607713f2440dbfb3",
-            "40e1b24e497622fd",
-            "d1faaff7fc85bd62",
-            "eab755fccd22dd4b",
-            "4a17195e96107102",
-            "20ee331cf07e3574",
-            "9c6f7de96310d061",
-            "faec0b241e5e1612",
-            "3c94660df2ea08c3",
-            "cbcefb7df3e36014",
-            "405d46c399d22291",
-            "2423d0b705a7fc53",
-            "d9b7de748c685086",
-            "4c90a88ae64466e4"
-        ],
-        "x": -26,
-        "y": -1,
-        "w": 1532,
-        "h": 562
-    },
-    {
-        "id": "a2cc82f4a65994b5",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "name": "Envoie",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "c71905d5a96053e7",
-            "fc2137f9c1521659",
-            "ccead23c1930b0b4",
-            "16d6da0d2161dab6",
-            "17a02b5e494de06c",
-            "e4e1df73358e94f1",
-            "81792f6d82498331",
-            "51e421fe3dc86011",
-            "ce1dc0ef337ae4e2"
-        ],
-        "x": 134,
-        "y": 579,
-        "w": 1412,
-        "h": 197
-    },
-    {
-        "id": "2e85a76d6012e7a1",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "name": "Pilotage IA & Journal",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "31df24da0918d94b",
-            "4424d0e8e9574c50",
-            "d80e6926d824fe4e",
-            "eaf29464cbfd2c80",
-            "ad8a5f67a6f691b1",
-            "3a85620bbcc9ca35",
-            "8649ba83dc0787d9",
-            "cb73c5fce83c18e9",
-            "339f982a468d6732",
-            "18912cd060c802ea",
-            "213bd379bc05c99a",
-            "0e94fbf30d81c56d",
-            "31b8a15b7deeadd2",
-            "765d01e43b54e20b",
-            "8b847e1044a6f5ae",
-            "10e9fada207446cf",
-            "047186d9f32f58e8"
-        ],
-        "x": 14,
-        "y": 791.5,
-        "w": 1522,
-        "h": 329.5
-    },
-    {
-        "id": "607713f2440dbfb3",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
-        "name": "Debitmètre ",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "e2ea64fae177e20d",
-            "3c08b924939e59c6",
-            "2e24d5e908509e5f"
-        ],
-        "x": 1274,
-        "y": 359,
-        "w": 192,
-        "h": 162
-    },
-    {
-        "id": "40e1b24e497622fd",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
-        "name": "Capteur",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "e5421e90dc30aa65",
-            "aa8a3dbec267818f",
-            "8c648dac3a67319b"
-        ],
-        "x": 734,
-        "y": 359,
-        "w": 212,
-        "h": 162
-    },
-    {
-        "id": "d1faaff7fc85bd62",
-        "type": "group",
-        "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
-        "name": "Vanne",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "bfa8e65237323d92",
-            "7ed9a40466db3b98",
-            "11a0bbd67e582d3e",
-            "de7aedfce1dfba47",
-            "86317f4590c2bfbc",
-            "958005c036bb72f5",
-            "5efde55060d13ee1",
-            "8d64c55c4241bc9d",
-            "cee2c76b3d49c08b",
-            "57c6978bd4511918"
-        ],
-        "x": 354,
-        "y": 59,
-        "w": 902,
-        "h": 302
     },
     {
         "id": "mqtt_broker_tts",
@@ -626,7 +474,6 @@
         "id": "7c5b5284c10fef2c",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Vanne",
         "func": "// VANNE LYVA — état confirmé LoRaWAN + état officiel Node-RED\n// Objectif : distinguer commande envoyée, commande en attente, état confirmé.\n\nconst cfg = Object.assign({ valveDevice: \"lyva-tre\" }, flow.get(\"config_jardin\") || {});\nconst deviceId = msg.payload?.end_device_ids?.device_id;\nif (deviceId !== cfg.valveDevice) return null;\n\nconst now = Date.now();\nconst uplink = msg.payload.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nlet storedData = flow.get('vanne_lyva_state') || {\n    state: \"Fermé\",\n    battery: 100,\n    last_seen_ts: null,\n    state_confirmed_ts: null,\n    timestamp: null\n};\n\nlet valveState = flow.get('valve_state') || {\n    device_id: deviceId,\n    confirmed_state: storedData.state || \"Fermé\",\n    status: \"CLOSED_CONFIRMED\",\n    pending_command: null,\n    pending_state: null,\n    pending_since_ts: null,\n    last_command_ts: null,\n    last_confirmed_ts: storedData.state_confirmed_ts || null,\n    last_seen_ts: storedData.last_seen_ts || null,\n    battery: storedData.battery || 100,\n    error: null\n};\n\nfunction normalizeState(s) {\n    const x = String(s || \"\").toLowerCase();\n    if (x.includes(\"ouvert\") || x.includes(\"open\")) return \"Ouvert\";\n    if (x.includes(\"ferm\") || x.includes(\"closed\") || x.includes(\"close\")) return \"Fermé\";\n    return s || \"Inconnu\";\n}\nfunction statusFromState(s) {\n    const n = normalizeState(s);\n    if (n === \"Ouvert\") return \"OPEN_CONFIRMED\";\n    if (n === \"Fermé\") return \"CLOSED_CONFIRMED\";\n    return \"UNKNOWN_CONFIRMED\";\n}\nfunction pendingMatchesConfirmed(pendingState, confirmedState) {\n    return normalizeState(pendingState) === normalizeState(confirmedState);\n}\n\n// Batterie\nif (uplink.last_battery_percentage && uplink.last_battery_percentage.value !== undefined) {\n    storedData.battery = Math.round(uplink.last_battery_percentage.value);\n    valveState.battery = storedData.battery;\n}\n\nstoredData.last_seen_ts = now;\nstoredData.timestamp = now;\nvalveState.last_seen_ts = now;\nvalveState.device_id = deviceId;\n\n// État confirmé par l'uplink courant\nif (decoded.result) {\n    const confirmed = normalizeState(decoded.result);\n    storedData.state = confirmed;\n    storedData.state_confirmed_ts = now;\n\n    valveState.confirmed_state = confirmed;\n    valveState.last_confirmed_ts = now;\n    valveState.status = statusFromState(confirmed);\n    valveState.error = null;\n\n    // Compatibilité avec l'ancien flow\n    flow.set(`etat_${deviceId}`, confirmed);\n\n    // Si une commande était en attente et que l'état confirmé correspond, on valide.\n    if (valveState.pending_command && pendingMatchesConfirmed(valveState.pending_state, confirmed)) {\n        node.warn(`[VANNE] Confirmation reçue : ${confirmed} — commande ${valveState.pending_command} validée`);\n        valveState.pending_command = null;\n        valveState.pending_state = null;\n        valveState.pending_since_ts = null;\n        flow.set(`commande_en_attente_${deviceId}`, null);\n    }\n}\n\nflow.set('vanne_lyva_state', storedData);\nflow.set('valve_state', valveState);\n\n// Si la vanne est fermée pendant un arrosage, on remet l'orchestration au repos.\nconst arrosageState = flow.get('arrosage_state') || 'IDLE';\nif (normalizeState(storedData.state) === \"Fermé\" && arrosageState === 'ARROSAGE') {\n    flow.set('arrosage_state', 'IDLE');\n    flow.set('arrosage_debut', null);\n    flow.set('arrosage_duree_ms', 0);\n    node.warn('[VANNE] Fermeture détectée pendant ARROSAGE — retour IDLE');\n}\n\nmsg.payload = Object.assign({}, storedData, {\n    valve_state: valveState,\n    state: storedData.state,\n    battery: storedData.battery\n});\nmsg.topic = \"vanne_state\";\nmsg.auto_active = flow.get('auto_active') || false;\nmsg.maintenance_active = flow.get('maintenance_active') || false;\nreturn msg;\n",
         "outputs": 1,
@@ -635,22 +482,20 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 240,
+        "x": 720,
+        "y": 850,
         "wires": [
             [
-                "0cea4d0000000001",
                 "958005c036bb72f5",
-                "faec0b241e5e1612",
-                "2423d0b705a7fc53"
+                "0cea4dl000000001"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "c71905d5a96053e7",
         "type": "mqtt out",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "TTN MQTT OUT",
         "topic": "",
         "qos": "0",
@@ -661,15 +506,15 @@
         "correl": "",
         "expiry": "",
         "broker": "mqtt_broker_tts",
-        "x": 1430,
-        "y": 660,
-        "wires": []
+        "x": 1560,
+        "y": 1750,
+        "wires": [],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "fc2137f9c1521659",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "choix vanne",
         "func": "// CHOIX VANNE — downlink port 10 + état pending/confirmed\n// Compatible LoRaWAN : l'envoi ne vaut pas confirmation.\n\nconst cfg = Object.assign({\n    appId: \"jardin-version1\",\n    valveDevice: \"lyva-tre\",\n    openHex: \"01\",\n    closeHex: \"02\",\n    commandTimeoutMin: 10\n}, flow.get(\"config_jardin\") || {});\n\nconst deviceId = msg.payload?.device_id || cfg.valveDevice;\nconst command = String(msg.payload?.command || \"\").toUpperCase();\nconst origin = msg.origin || msg.payload?.origin || \"manual\";\n\nif (!/^[0-9A-F]{2}$/i.test(command)) {\n    node.warn(`[CHOIX VANNE] Commande invalide : ${command}`);\n    return null;\n}\n\n// Maintenance : on bloque seulement l'automatisme, pas les commandes manuelles.\nif (flow.get(\"maintenance_active\") === true && origin === \"auto\") {\n    node.warn(`[CHOIX VANNE] Maintenance active — commande AUTO bloquée (${command})`);\n    return null;\n}\n\nconst now = Date.now();\n\n// Sécurité énergie EcoFlow : on bloque toute ouverture quand la batterie est critique\n// ou quand les données EcoFlow sont absentes/trop anciennes.\n// Les commandes FERMER restent autorisées pour sécuriser l'installation.\nconst ecoLast = global.get(\"ecoflow_last_seen\") || global.get(\"ecoflow_last_update\");\nconst ecoAgeMin = ecoLast ? Math.round((now - Number(ecoLast)) / 60000) : null;\nconst ecoStale = ecoAgeMin === null || ecoAgeMin > 15;\nconst ecoCutoff = global.get(\"energy_cutoff\") === true || global.get(\"energie_ok\") === false;\nconst ecoSoc = global.get(\"ecoflow_soc\");\nconst isOpenCommand = command === cfg.openHex;\nconst isCloseCommand = command === cfg.closeHex;\n\nif (ecoCutoff || ecoStale) {\n    if (flow.get(\"auto_active\") === true) flow.set(\"auto_before_cutoff\", true);\n    flow.set(\"auto_active\", false);\n    flow.set(\"pending_config_lent\", false);\n    if ((flow.get(\"arrosage_state\") || \"IDLE\") !== \"IDLE\") {\n        flow.set(\"arrosage_state\", \"IDLE\");\n        flow.set(\"arrosage_debut\", null);\n        flow.set(\"arrosage_duree_ms\", 0);\n        flow.set(\"arrosage_fin_ts\", null);\n    }\n}\n\nif (isOpenCommand && (ecoCutoff || ecoStale)) {\n    node.warn(`[CHOIX VANNE] OUVERTURE BLOQUÉE — EcoFlow ${ecoCutoff ? \"en coupure\" : \"donnée absente/trop ancienne\"} | SOC=${ecoSoc ?? \"--\"}% | âge=${ecoAgeMin ?? \"--\"}min`);\n    return null;\n}\n\n// En coupure, on ne laisse passer que la fermeture.\nif (!isCloseCommand && (ecoCutoff || ecoStale)) {\n    node.warn(`[CHOIX VANNE] Commande bloquée par sécurité EcoFlow (${command})`);\n    return null;\n}\n\nconst desiredState = command === cfg.openHex ? \"Ouvert\" : (command === cfg.closeHex ? \"Fermé\" : null);\nlet valveState = flow.get('valve_state') || {\n    device_id: deviceId,\n    confirmed_state: \"Inconnu\",\n    status: \"UNKNOWN\",\n    pending_command: null,\n    pending_state: null,\n    pending_since_ts: null,\n    last_command_ts: null,\n    last_confirmed_ts: null,\n    last_seen_ts: null,\n    battery: null,\n    error: null\n};\n\nfunction norm(s) {\n    const x = String(s || \"\").toLowerCase();\n    if (x.includes(\"ouvert\") || x.includes(\"open\")) return \"Ouvert\";\n    if (x.includes(\"ferm\") || x.includes(\"closed\") || x.includes(\"close\")) return \"Fermé\";\n    return s || \"Inconnu\";\n}\n\nconst confirmed = norm(valveState.confirmed_state || flow.get(`etat_${deviceId}`));\n\n// Si la commande est déjà confirmée et aucune commande n'est en attente, inutile de renvoyer.\nif (desiredState && !valveState.pending_command && confirmed === desiredState) {\n    node.warn(`[CHOIX VANNE] Commande ignorée pour ${deviceId} : déjà confirmé ${confirmed}`);\n    return null;\n}\n\n// Si même commande déjà en attente, relance autorisée sans remettre à zéro pending_since_ts.\nif (valveState.pending_command === command) {\n    node.warn(`[CHOIX VANNE] Relance autorisée pour ${deviceId} — commande déjà en attente depuis ${Math.round((now - (valveState.pending_since_ts || now))/60000)}min`);\n} else {\n    valveState.pending_command = command;\n    valveState.pending_state = desiredState;\n    valveState.pending_since_ts = now;\n    valveState.status = desiredState === \"Ouvert\" ? \"OPEN_PENDING\" : (desiredState === \"Fermé\" ? \"CLOSE_PENDING\" : \"CONFIG_PENDING\");\n    valveState.error = null;\n    flow.set(`commande_en_attente_${deviceId}`, command);\n    node.warn(`[CHOIX VANNE] Nouvelle commande pour ${deviceId} : ${command} → ${desiredState || 'config'}`);\n}\n\nvalveState.device_id = deviceId;\nvalveState.last_command_ts = now;\nvalveState.pending_origin = origin;\nflow.set('valve_state', valveState);\n\nconst base64 = Buffer.from(command, 'hex').toString('base64');\nmsg.topic = `v3/${cfg.appId}@ttn/devices/${deviceId}/down/push`;\nmsg.payload = {\n  downlinks: [\n    {\n      frm_payload: base64,\n      f_port: 10,\n      priority: \"NORMAL\"\n    }\n  ]\n};\nreturn msg;\n",
         "outputs": 1,
@@ -678,19 +523,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 620,
+        "x": 1000,
+        "y": 1750,
         "wires": [
             [
                 "51e421fe3dc86011"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "ccead23c1930b0b4",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "Config fréquence vanne (port 11)",
         "func": "const cfg = Object.assign({ appId: \"jardin-version1\", valveDevice: \"lyva-tre\" }, flow.get(\"config_jardin\") || {});\nconst deviceId = msg.payload?.device_id || cfg.valveDevice;\nconst hexCmd = String(msg.payload?.command || \"\").toUpperCase();\nconst origin = msg.origin || msg.payload?.origin || \"manual\";\n\nif (flow.get(\"maintenance_active\") === true && origin === \"auto\") {\n    node.warn(`[CONFIG VANNE] Maintenance active — config AUTO bloquée (${hexCmd})`);\n    return null;\n}\n\nif (!/^[0-9A-Fa-f]{2}$/.test(hexCmd)) {\n    node.warn(\"Commande hex invalide : \" + hexCmd);\n    return null;\n}\n\n// Sécurité énergie EcoFlow : aucune configuration de réveil quand la batterie est en coupure.\n// Cela évite de réveiller/envoyer des downlinks inutiles pendant l'attente recharge.\nconst ecoLast = global.get(\"ecoflow_last_seen\") || global.get(\"ecoflow_last_update\");\nconst ecoAgeMin = ecoLast ? Math.round((Date.now() - Number(ecoLast)) / 60000) : null;\nconst ecoStale = ecoAgeMin === null || ecoAgeMin > 15;\nconst ecoCutoff = global.get(\"energy_cutoff\") === true || global.get(\"energie_ok\") === false;\n\nif (ecoCutoff || ecoStale) {\n    node.warn(`[CONFIG VANNE] Config bloquée par sécurité EcoFlow | coupure=${ecoCutoff} | âge=${ecoAgeMin ?? \"--\"}min`);\n    return null;\n}\n\nconst base64 = Buffer.from(hexCmd, \"hex\").toString(\"base64\");\nmsg.topic = `v3/${cfg.appId}@ttn/devices/${deviceId}/down/push`;\nmsg.payload = {\n  downlinks: [{\n    frm_payload: base64,\n    f_port: 11,\n    priority: \"NORMAL\"\n  }]\n};\n\nnode.warn(\"Envoi port 11 : \" + hexCmd + \" pour \" + deviceId);\nreturn msg;\n",
         "outputs": 1,
@@ -699,19 +544,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 700,
+        "x": 1000,
+        "y": 1830,
         "wires": [
             [
                 "51e421fe3dc86011"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "f300b7bb23d6cedb",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Affichage mode réveil (UI)",
         "func": "// Vérifie si le message vient du port 11\nconst uplink = msg.payload?.data?.uplink_message || msg.payload?.uplink_message;\nif (!uplink || uplink.f_port !== 11 || !uplink.frm_payload) return null;\n\n// Décode le byte : 0x02 = 2min, 0x1E = 30min\nconst byte = Buffer.from(uplink.frm_payload, 'base64')[0];\nconst mode = (byte === 0x02) ? 2 : 30;\n\nflow.set('vanne_current_mode', mode);\nnode.warn(`[MODE] f_port 11 → ${mode}min`);\n\nmsg.payload = { mode: mode };\nmsg.auto_active = flow.get('auto_active') === true;\nmsg.maintenance_active = flow.get('maintenance_active') === true;\nreturn msg;\n",
         "outputs": 1,
@@ -720,21 +565,20 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 160,
+        "x": 720,
+        "y": 930,
         "wires": [
             [
-                "0cea4d0000000001",
                 "958005c036bb72f5",
-                "0cea4d0000000005"
+                "0cea4dl000000005"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "58e756b1d4eebd60",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Filtre Debitmetre",
         "func": "// --- 1. RECUPERATION RACINE ---\nlet root = msg.payload;\nif (root.data && root.data.uplink_message) {\n    root = root.data;\n}\n\n// --- 2. VERIF ID ---\nlet deviceId = root.end_device_ids?.device_id || msg.payload.end_device_ids?.device_id;\nif (deviceId !== \"debitmetre\") return null;\n\nconst uplink = root.uplink_message;\nif (!uplink) return null;\n\n// --- 3. EXTRACTION BATTERIE ---\n// On la stocke dans msg.battery pour la passer au noeud suivant\nlet battery = 100; // Valeur par défaut\nif (uplink.last_battery_percentage?.value !== undefined) {\n    battery = uplink.last_battery_percentage.value;\n} else if (uplink.decoded_payload?.battery !== undefined) {\n    battery = uplink.decoded_payload.battery;\n}\n// On attache la batterie au message global\nmsg.battery = Math.round(parseFloat(battery));\n\n// --- 4. DECODAGE VOLUME (LITRES) ---\nlet volumeLitres = null;\n\n// A. Via Décodeur TTN (Facile)\nif (uplink.decoded_payload && uplink.decoded_payload.debit !== undefined) {\n    let val = uplink.decoded_payload.debit;\n    if (uplink.decoded_payload.unit === \"m³\" || uplink.decoded_payload.unit === \"m3\") {\n        volumeLitres = val * 1000;\n    } else {\n        volumeLitres = val;\n    }\n}\n\n// B. Via Décodage Manuel (Secours \"AAAl3w==\")\nif (volumeLitres === null && uplink.frm_payload) {\n    try {\n        let buffer = Buffer.from(uplink.frm_payload, 'base64');\n        // Lecture Big Endian 32 bits (ex: 9695)\n        volumeLitres = buffer.readUInt32BE(0);\n    } catch (e) {\n        node.warn(\"Echec décodage manuel\");\n    }\n}\n\n// --- 5. SORTIE ---\nif (volumeLitres !== null) {\n    // On envoie juste le nombre de litres dans le payload\n    // La batterie est stockée dans msg.battery\n    msg.payload = volumeLitres;\n    return msg;\n}\n\nreturn null;\n",
         "outputs": 1,
@@ -743,19 +587,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 520,
+        "x": 720,
+        "y": 770,
         "wires": [
             [
                 "4b61a820b625294c"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "4b61a820b625294c",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Litres du jour (reset auto)",
         "func": "// DÉBITMÈTRE — litres du jour + quota journalier AUTO\n// Quota par défaut : 200 L.\n// Si quota atteint : blocage de l'arrosage AUTO jusqu'à reset journalier ou reset manuel.\n// Le mode MANUEL reste autorisé car ce blocage est appliqué uniquement dans la logique IA/AUTO.\n\nfunction localDayKey(d = new Date()) {\n  // Jour calendaire dans le fuseau du jardin (indépendant du fuseau du serveur)\n  return d.toLocaleDateString('en-CA', { timeZone: TZJARDIN });\n}\n\nconst cfg = Object.assign({ dailyWaterQuotaL: 200 }, flow.get(\"config_jardin\") || {});\nconst TZJARDIN = cfg.timezone || \"Europe/Paris\";\nconst quotaL = Number(cfg.dailyWaterQuotaL || 200);\n\nconst now = new Date();\nconst dayKeyNow = localDayKey(now);\nconst resetRequestTs = flow.get(\"water_quota_reset_request_ts\") || null;\n\nlet st = context.get('st') || {\n  dayKey: dayKeyNow,\n  dayStartTotalL: null,\n  lastTotalL: null,\n  todayLiters: 0,\n  lastUpdateTS: Date.now(),\n  lastResetRequestTs: null\n};\n\n// --- TRAITEMENT DONNÉES ---\nlet currentTotalL = null;\nlet battery = 100;\n\nif (typeof msg.payload === 'number') {\n  currentTotalL = msg.payload;\n  st.lastUpdateTS = Date.now();\n}\n\nif (msg.battery !== undefined) battery = Math.round(parseFloat(msg.battery));\nif (currentTotalL === null) return null;\n\n// --- RESET QUOTIDIEN OU RESET MANUEL ---\n// Reset journalier : nouveau compteur à partir de l'index total actuel.\n// Reset manuel : utilisé par le bouton Reset d'urgence, appliqué au prochain uplink débitmètre.\nconst manualResetRequested = resetRequestTs && resetRequestTs !== st.lastResetRequestTs;\n\nif (msg.reset === true || st.dayKey !== dayKeyNow || manualResetRequested) {\n  st.dayKey = dayKeyNow;\n  st.dayStartTotalL = currentTotalL;\n  st.todayLiters = 0;\n  st.lastResetRequestTs = resetRequestTs;\n}\n\n// --- INITIALISATION ---\nif (st.dayStartTotalL === null) {\n  st.dayStartTotalL = currentTotalL;\n  st.lastTotalL = currentTotalL;\n}\n\n// --- CALCULS ---\nlet todayL = currentTotalL - st.dayStartTotalL;\nif (todayL < 0) todayL = 0;\n\nconst consumedRounded = Math.round(todayL);\nconst remainingL = Math.max(0, quotaL - consumedRounded);\nconst quotaReached = consumedRounded >= quotaL;\n\n// Sauvegarde locale et flow global\nst.lastTotalL = currentTotalL;\nst.todayLiters = todayL;\ncontext.set('st', st);\n\nconst quotaState = {\n  dayKey: st.dayKey,\n  consumed: consumedRounded,\n  quota: quotaL,\n  remaining: remainingL,\n  reached: quotaReached,\n  percent: quotaL > 0 ? Math.min(100, Math.round((consumedRounded / quotaL) * 100)) : 0,\n  total_index: currentTotalL,\n  battery,\n  timestamp: st.lastUpdateTS,\n  lastResetRequestTs: st.lastResetRequestTs\n};\nflow.set(\"water_quota_state\", quotaState);\n\nnode.status({\n  fill: quotaReached ? \"red\" : \"green\",\n  shape: quotaReached ? \"ring\" : \"dot\",\n  text: `Jour: ${consumedRounded}/${quotaL} L | Restant: ${remainingL} L | Bat: ${battery}%`\n});\n\n// --- SORTIE DASHBOARD ---\nmsg.payload = {\n  consumed: consumedRounded,\n  total_index: currentTotalL,\n  battery,\n  target: quotaL,\n  quota: quotaL,\n  remaining: remainingL,\n  quota_reached: quotaReached,\n  quota_percent: quotaState.percent,\n  timestamp: st.lastUpdateTS\n};\n\nreturn msg;\n",
         "outputs": 1,
@@ -764,21 +608,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 520,
+        "x": 1000,
+        "y": 770,
         "wires": [
             [
-                "0cea4d0000000001",
-                "faec0b241e5e1612",
-                "2423d0b705a7fc53"
+                "0cea4dl000000007"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "16d6da0d2161dab6",
         "type": "switch",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "",
         "property": "topic",
         "propertyType": "msg",
@@ -797,8 +639,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 580,
-        "y": 660,
+        "x": 720,
+        "y": 1750,
         "wires": [
             [
                 "fc2137f9c1521659"
@@ -806,30 +648,30 @@
             [
                 "ccead23c1930b0b4"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "17a02b5e494de06c",
         "type": "link in",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "link in 2",
         "links": [
             "de7aedfce1dfba47"
         ],
-        "x": 445,
-        "y": 620,
+        "x": 160,
+        "y": 1830,
         "wires": [
             [
                 "16d6da0d2161dab6"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "57c6978bd4511918",
         "type": "switch",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "Routage UI vanne",
         "property": "topic",
         "propertyType": "msg",
@@ -853,41 +695,41 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 960,
-        "y": 180,
+        "x": 440,
+        "y": 1380,
         "wires": [
             [
                 "de7aedfce1dfba47",
-                "faec0b241e5e1612"
+                "0cea4dl000000008"
             ],
             [
                 "5efde55060d13ee1"
             ],
             [
                 "de7aedfce1dfba47",
-                "faec0b241e5e1612"
+                "0cea4dl000000009"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000003"
     },
     {
         "id": "de7aedfce1dfba47",
         "type": "link out",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "link out 2",
         "mode": "link",
         "links": [
             "17a02b5e494de06c"
         ],
-        "x": 1105,
-        "y": 280,
-        "wires": []
+        "x": 440,
+        "y": 1750,
+        "wires": [],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "958005c036bb72f5",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "Chef d'Orchestre (Réveils)",
         "func": "// CHEF D'ORCHESTRE — Exécuté à CHAQUE réveil de la vanne LYVA\n\nconst KEY_TARGET    = \"vanne_target_timestamp\";\nconst KEY_MODE      = \"vanne_current_mode\";\nconst KEY_BAT       = \"vanne_battery_level\";\nconst KEY_LAST_CMD  = \"orchestre_last_cmd_ts\";   // Cooldown anti-rafale\nconst cfg = Object.assign({ valveDevice: \"lyva-tre\", openHex: \"01\", closeHex: \"02\", slowModeHex: \"1E\", commandCooldownMs: 10000 }, flow.get(\"config_jardin\") || {});\nconst COOLDOWN_MS   = cfg.commandCooldownMs;     // cooldown anti-rafale\n\nlet currentMode = flow.get(KEY_MODE) || 30;\nlet battery     = flow.get(KEY_BAT)  || 100;\n\nif (msg.payload?.battery != null) battery = msg.payload.battery;\nflow.set(KEY_BAT, battery);\n\nconst now        = Date.now();\nconst targetTime = now + (currentMode * 60 * 1000);\nflow.set(KEY_TARGET, targetTime);\n\nconst state    = flow.get('arrosage_state')   || 'IDLE';\nconst deviceId = flow.get('arrosage_device')  || cfg.valveDevice;\nconst dureeMs  = flow.get('arrosage_duree_ms') || 0;\nlet   debut    = flow.get('arrosage_debut');\nconst etatVanne = msg.payload?.state || msg.payload?.valve_state?.confirmed_state || \"\";\n\nif (flow.get(\"maintenance_active\") === true && state !== 'IDLE') {\n    flow.set('arrosage_state', 'IDLE');\n    flow.set('arrosage_debut', null);\n    flow.set('arrosage_duree_ms', 0);\n    flow.set('pending_config_lent', false);\n    node.warn('[ORCHESTRE] Maintenance active — automatisme arrêté');\n    return [msg, null];\n}\n\n// ── Sécurité : reset si état bloqué > 2h sans commande ──\nif (state !== 'IDLE') {\n    const sinceLastSec = (now - (flow.get(KEY_LAST_CMD) || 0)) / 1000;\n    if (sinceLastSec > 7200) {\n        node.warn(`[ORCHESTRE] ⚠️ État \"${state}\" bloqué ${Math.round(sinceLastSec/60)}min → RESET IDLE`);\n        flow.set('arrosage_state', 'IDLE');\n        flow.set('arrosage_debut', null);\n        flow.set('arrosage_duree_ms', 0);\n        flow.set('pending_config_lent', false);\n    }\n}\n\nnode.warn(`[ORCHESTRE] État: ${state} | Vanne: \"${etatVanne}\" | Mode: ${currentMode}min`);\n\n// GARDE COOLDOWN — empêche les rafales de commandes\nconst lastCmdTs  = flow.get(KEY_LAST_CMD) || 0;\nconst sinceLastCmd = now - lastCmdTs;\n\nfunction sendCmd(cmdMsg) {\n    // Enregistre le timestamp avant d'envoyer\n    flow.set(KEY_LAST_CMD, now);\n    return cmdMsg;\n}\n\nfunction cooldownOk(label) {\n    if (sinceLastCmd < COOLDOWN_MS) {\n        node.warn(`[ORCHESTRE] ⏳ COOLDOWN (${Math.round(sinceLastCmd/1000)}s < ${COOLDOWN_MS/1000}s) → ${label} différé au prochain réveil`);\n        return false;\n    }\n    return true;\n}\n\n// TRANSITIONS D'ÉTAT\n\nif (state === 'PREP_RAPIDE') {\n    flow.set('arrosage_state', 'ATTENTE_OUVERTURE');\n    node.warn('[ORCHESTRE] PREP_RAPIDE → envoi OUVRIR');\n    return [msg, sendCmd({ topic: \"valve\", origin: \"auto\", payload: { device_id: deviceId, command: cfg.openHex, origin: \"auto\" } })];\n}\n\nif (state === 'ATTENTE_OUVERTURE') {\n    if (etatVanne.toLowerCase().includes(\"ouvert\")) {\n        flow.set('arrosage_debut', now);\n        flow.set('arrosage_state', 'ARROSAGE');\n        const solData = flow.get('capteur_sol_data') || {};\n        flow.set('arrosage_humidite_avant', solData.humidity || null);\n        node.warn(`[ORCHESTRE] Vanne OUVERTE → chrono + humidité_avant=${solData.humidity}%`);\n        return [msg, null];\n    } else {\n        // Relance UNIQUEMENT si cooldown écoulé\n        if (!cooldownOk('relance OUVRIR')) return [msg, null];\n        node.warn('[ORCHESTRE] Pas encore ouvert → relance OUVRIR');\n        return [msg, sendCmd({ topic: \"valve\", origin: \"auto\", payload: { device_id: deviceId, command: cfg.openHex, origin: \"auto\" } })];\n    }\n}\n\nif (state === 'ARROSAGE') {\n    const ecoule  = now - (debut || now);\n    const restant = dureeMs - ecoule;\n    node.warn(`[ORCHESTRE] ARROSAGE — écoulé: ${Math.round(ecoule/1000)}s | restant: ${Math.round(restant/1000)}s`);\n\n    if (restant <= 0) {\n        if (!cooldownOk('envoi FERMER')) return [msg, null]; // Attendre le réveil suivant\n        flow.set('arrosage_state', 'ATTENTE_FERMETURE');\n        flow.set('arrosage_fin_ts', now);\n        node.warn('[ORCHESTRE] Durée atteinte → envoi FERMER');\n        return [msg, sendCmd({ topic: \"valve\", origin: \"auto\", payload: { device_id: deviceId, command: cfg.closeHex, origin: \"auto\" } })];\n    }\n    return [msg, null];\n}\n\nif (state === 'ATTENTE_FERMETURE') {\n    if (etatVanne.toLowerCase().includes(\"ferm\")) {\n        const finTs          = flow.get('arrosage_fin_ts') || now;\n        const debutTs        = flow.get('arrosage_debut')  || finTs;\n        const dureeReelleMin = Math.round((finTs - debutTs) / 60000);\n        const humAvant       = flow.get('arrosage_humidite_avant');\n\n        flow.set('arrosage_state',  'IDLE');\n        flow.set('arrosage_debut',  null);\n        flow.set('attente_mesure_post', { ts: now, humAvant: humAvant, dureeMin: dureeReelleMin });\n        node.warn(`[ORCHESTRE] Vanne FERMÉE — durée réelle: ${dureeReelleMin}min → attente avant config mode LENT`);\n\n        // ⏳ DÉLAI : on attend le réveil SUIVANT pour envoyer la config 1E\n        // Cela évite la saturation (02 → réponse → 1E trop rapide)\n        // On stocke l'intention, l'Orchestre l'enverra au prochain réveil depuis IDLE\n        flow.set('pending_config_lent', true);\n        return [msg, null];\n    } else {\n        // Relance UNIQUEMENT si cooldown écoulé\n        if (!cooldownOk('relance FERMER')) return [msg, null];\n        node.warn('[ORCHESTRE] Pas encore fermé → relance FERMER');\n        return [msg, sendCmd({ topic: \"valve\", origin: \"auto\", payload: { device_id: deviceId, command: cfg.closeHex, origin: \"auto\" } })];\n    }\n}\n\n// IDLE — Envoi config mode lent différé (évite saturation après fermeture)\nif (state === 'IDLE') {\n    const pendingConfig = flow.get('pending_config_lent');\n    if (pendingConfig) {\n        if (!cooldownOk('config mode LENT')) return [msg, null];\n        flow.set('pending_config_lent', false);\n        node.warn('[ORCHESTRE] ✅ Envoi config 1E (mode lent) différé → réveil suivant OK');\n        return [msg, sendCmd({ topic: \"config\", origin: \"auto\", payload: { device_id: deviceId, command: cfg.slowModeHex, origin: \"auto\" } })];\n    }\n}\n\n// IDLE — Calibration post-arrosage\nif (state === 'IDLE') {\n    const attente = flow.get('attente_mesure_post');\n    if (attente && attente.ts) {\n        const observationDelayMin = Number(cfg.sensorObservationDelayMin || 120);\n        const ecouleSinceFinMin = (now - attente.ts) / 60000;\n        if (ecouleSinceFinMin >= observationDelayMin) {\n            const solData    = flow.get('capteur_sol_data') || {};\n            const humApres   = solData.humidity || null;\n            const historique = flow.get('historique_arrosages') || [];\n\n            const entree = {\n                timestamp:      attente.ts,\n                date:           new Date(attente.ts).toLocaleDateString('fr-FR', { timeZone: cfg.timezone || \"Europe/Paris\" }),\n                duree_min:      attente.dureeMin,\n                humidite_avant: attente.humAvant,\n                humidite_apres: humApres,\n                delta_hum:      (humApres !== null && attente.humAvant !== null) ? Math.round((humApres - attente.humAvant) * 10) / 10 : null,\n                plant_profile:  (flow.get('plant_profile_state') || {}).profile?.label || (flow.get('active_plant_profile_key') || null),\n                irrigation_type: cfg.irrigationType || 'souterrain',\n                observation_delay_min: observationDelayMin\n            };\n\n            historique.unshift(entree);\n            if (historique.length > 30) historique.pop();\n\n            flow.set('historique_arrosages', historique);\n\n            // Suivi capteur informatif uniquement.\n            // La sécurité \"capteur suspect / hausse insuffisante\" a été retirée :\n            // une humidité très basse doit pouvoir déclencher l'AUTO si les autres sécurités sont OK.\n            let health = flow.get('capteur_health') || {};\n            health.status = \"OK\";\n            health.suspicious_active = false;\n            health.reason = `Suivi informatif post-arrosage : ${attente.humAvant}% → ${humApres}% (delta ${entree.delta_hum}%)`;\n            health.consecutive_no_response = 0;\n            health.last_checked_ts = Date.now();\n            health.last_delta_after_watering = entree.delta_hum;\n            health.suspect_security_disabled = true;\n            flow.set('capteur_health', health);\n\n            flow.set('attente_mesure_post', null);\n            node.warn(`[ORCHESTRE] 📊 Calibration (${observationDelayMin}min après fermeture): ${attente.dureeMin}min → ${attente.humAvant}% → ${humApres}% (delta: ${entree.delta_hum}%)`);\n        }\n    }\n}\n\nreturn [msg, null];\n",
         "outputs": 2,
@@ -896,22 +738,22 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 100,
+        "x": 1000,
+        "y": 930,
         "wires": [
             [
-                "0cea4d0000000001"
+                "0cea4dl00000000a"
             ],
             [
                 "3a85620bbcc9ca35"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "faec0b241e5e1612",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Logger Central",
         "func": "// --- CONFIGURATION ---\nconst MAX_LOGS = 50;\nconst STORAGE_KEY = \"global_event_logs\";\nconst TZJARDIN = (flow.get(\"config_jardin\") || {}).timezone || \"Europe/Paris\";\n\nlet logs = flow.get(STORAGE_KEY) || [];\nconst now = new Date();\nconst timeStr = now.toLocaleTimeString('fr-FR', { timeZone: TZJARDIN, hour: '2-digit', minute: '2-digit', second: '2-digit' });\n\nlet newEntry = null;\n\n// 0. FILTRE ANTI-SPAM MAINTENANCE\n// Les messages maintenance_state servent souvent à rafraîchir l'affichage.\n// On les ignore sauf si Set Maintenance marque explicitement msg.log_event = true.\nif (msg.topic === \"maintenance_state\" && msg.log_event !== true) {\n    return null;\n}\n\n// 1. ERREURS / MAINTENANCE\nif (msg.payload && msg.payload.action === \"ERREUR VANNE\") {\n    newEntry = { time: timeStr, msg: msg.payload.raison, type: \"error\", icon: \"⚠️\" };\n}\nelse if (msg.topic === \"maintenance_state\" && msg.log_event === true) {\n    newEntry = {\n        time: timeStr,\n        msg: msg.payload.maintenance_active ? \"Mode maintenance activé\" : \"Mode maintenance désactivé\",\n        type: \"user-config\",\n        icon: \"🧰\"\n    };\n}\n\n// 2. ACTIONS UTILISATEUR\nelse if (msg.topic === \"valve\") {\n    // Port 10 : commandes d'action vanne\n    const cfgHex = Object.assign({ openHex: \"01\", closeHex: \"02\" }, flow.get(\"config_jardin\") || {});\n    let cmd = msg.payload.command;\n    let txt = \"Action inconnue\";\n    if (cmd === cfgHex.openHex)  txt = \"Ordre : OUVRIR\";\n    if (cmd === cfgHex.closeHex) txt = \"Ordre : FERMER\";\n    if (cmd === \"80\") txt = \"Ping : Demande statut\";\n\n    newEntry = { time: timeStr, msg: txt, type: \"user-action\", icon: \"👆\" };\n}\nelse if (msg.topic === \"energy\") {\n    const p = msg.payload || {};\n    newEntry = {\n        time: timeStr,\n        msg: p.message || \"Évènement énergie EcoFlow\",\n        type: p.type || \"error\",\n        icon: p.event === \"ENERGY_RESUME\" ? \"🔋\" : \"🛑\"\n    };\n}\nelse if (msg.topic === \"config\") {\n    // Port 11 : configuration de la fréquence de réveil (\"02\" = 2 min ici, PAS \"fermer\")\n    const cfgHex = Object.assign({ fastModeHex: \"02\", slowModeHex: \"1E\" }, flow.get(\"config_jardin\") || {});\n    let cmd = msg.payload.command;\n    let txt = \"Config inconnue\";\n    if (cmd === cfgHex.fastModeHex) txt = \"Config : Mode RAPIDE (2m)\";\n    if (cmd === cfgHex.slowModeHex) txt = \"Config : Mode ECO (30m)\";\n\n    newEntry = { time: timeStr, msg: txt, type: \"user-config\", icon: \"⚙️\" };\n}\n\n// 3. DONNÉES CAPTEURS\nelse if (msg.payload && msg.payload.temperature !== undefined && msg.payload.humidity !== undefined) {\n    newEntry = {\n        time: timeStr,\n        msg: `Sol : ${msg.payload.temperature}°C | ${msg.payload.humidity}%`,\n        type: \"sensor\",\n        icon: \"🌱\"\n    };\n}\nelse if (msg.payload && msg.payload.total_index !== undefined) {\n    newEntry = {\n        time: timeStr,\n        msg: `Conso : ${msg.payload.consumed} L (Total: ${msg.payload.total_index})`,\n        type: \"water\",\n        icon: \"💧\"\n    };\n}\nelse if (msg.payload && msg.payload.state) {\n    let etat = msg.payload.state;\n    let icon = etat === \"Ouvert\" ? \"✅\" : \"🔒\";\n    let type = etat === \"Ouvert\" ? \"success\" : \"error\";\n\n    newEntry = {\n        time: timeStr,\n        msg: `Vanne confirmée : ${etat}`,\n        type: type,\n        icon: icon\n    };\n}\n\n// 4. ENREGISTREMENT\nif (!newEntry) return null;\n\nlogs.unshift(newEntry);\nif (logs.length > MAX_LOGS) logs = logs.slice(0, MAX_LOGS);\nflow.set(STORAGE_KEY, logs);\n\nmsg.payload = logs;\nreturn msg;\n",
         "outputs": 1,
@@ -920,19 +762,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1400,
-        "y": 220,
+        "x": 720,
+        "y": 80,
         "wires": [
             [
-                "0cea4d0000000001"
+                "0cea4dl00000000b"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "cbcefb7df3e36014",
         "type": "switch",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Routage TTN par équipement",
         "property": "topic",
         "propertyType": "msg",
@@ -956,8 +798,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 290,
-        "y": 410,
+        "x": 440,
+        "y": 690,
         "wires": [
             [
                 "7c5b5284c10fef2c",
@@ -969,13 +811,13 @@
             [
                 "4a17195e96107102"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "eab755fccd22dd4b",
         "type": "mqtt in",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "TTN MQTT IN",
         "topic": "v3/jardin-version1@ttn/devices/+/up",
         "qos": "0",
@@ -985,19 +827,19 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 320,
+        "x": 160,
+        "y": 690,
         "wires": [
             [
                 "cbcefb7df3e36014"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "4a17195e96107102",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Capteur (Dragino)",
         "func": "// CAPTEUR SOL DRAGINO — lecture + suivi de fiabilité\n// Objectif : ne pas considérer une humidité douteuse comme vérité absolue.\n\nconst cfg = Object.assign({ sensorDevice: \"dragino-moisture\" }, flow.get(\"config_jardin\") || {});\n\nfunction num(v) {\n    const n = parseFloat(v);\n    return Number.isFinite(n) ? n : null;\n}\n\n// 1. Gestion structure TTN\nlet root = msg.payload;\nif (root.data && root.data.uplink_message) {\n    root = root.data;\n}\n\n// 2. Vérification device_id\nconst deviceId = root.end_device_ids?.device_id || msg.payload?.end_device_ids?.device_id || \"inconnu\";\nif (deviceId !== cfg.sensorDevice) return null;\n\nconst now = Date.now();\n\n// 3. Mémoire\nlet storedData = flow.get('capteur_sol_data') || {\n    temperature: null,\n    humidity: null,\n    conductivity: null,\n    battery: null,\n    timestamp: null,\n    previous_humidity: null,\n    delta_from_previous: null\n};\n\nlet health = flow.get('capteur_health') || {\n    status: \"OK\",\n    suspicious_active: false,\n    reason: null,\n    consecutive_no_response: 0,\n    last_value: null,\n    last_delta: null,\n    last_update_ts: null,\n    last_movement_ts: null,\n    suspicious_since_ts: null,\n    cleared_ts: null\n};\n\nconst previousHumidity = num(storedData.humidity);\n\n// 4. Extraction données Dragino\nconst uplink = root.uplink_message || {};\nconst decoded = uplink.decoded_payload || {};\n\nif (decoded.temp_SOIL !== undefined) {\n    storedData.temperature = num(decoded.temp_SOIL);\n}\n\nlet newHumidity = previousHumidity;\nif (decoded.water_SOIL !== undefined) {\n    newHumidity = num(decoded.water_SOIL);\n    if (newHumidity !== null) {\n        storedData.previous_humidity = previousHumidity;\n        storedData.humidity = newHumidity;\n        storedData.delta_from_previous = previousHumidity !== null\n            ? Math.round((newHumidity - previousHumidity) * 10) / 10\n            : null;\n\n        health.last_value = newHumidity;\n        health.last_update_ts = now;\n        health.last_delta = storedData.delta_from_previous;\n\n        if (previousHumidity === null || Math.abs(newHumidity - previousHumidity) >= 1) {\n            health.last_movement_ts = now;\n        }\n\n        // Sécurité capteur suspect désactivée : toute valeur basse reste utilisable pour piloter l'arrosage.\n        health.suspicious_active = false;\n        health.status = \"OK\";\n        health.reason = `Lecture capteur acceptée : humidité ${newHumidity}%`;\n        health.consecutive_no_response = 0;\n        health.cleared_ts = now;\n        health.suspect_security_disabled = true;\n    }\n}\n\nif (decoded.conduct_SOIL !== undefined) {\n    storedData.conductivity = decoded.conduct_SOIL;\n}\n\n// Batterie Dragino en volts → % estimé\nif (decoded.BatV !== undefined) {\n    let volts = parseFloat(decoded.BatV);\n    let pct = ((volts - 2.5) / (3.6 - 2.5)) * 100;\n    if (pct > 100) pct = 100;\n    if (pct < 0) pct = 0;\n    storedData.battery = Math.round(pct);\n}\n\nstoredData.timestamp = now;\nstoredData.device_id = deviceId;\nstoredData.health = {\n    status: health.status,\n    suspicious_active: health.suspicious_active,\n    reason: health.reason,\n    consecutive_no_response: health.consecutive_no_response\n};\n\nflow.set('capteur_sol_data', storedData);\nflow.set('capteur_health', health);\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `Sol: ${storedData.humidity ?? '--'}% | OK`\n});\n\nmsg.payload = storedData;\nreturn msg;\n",
         "outputs": 1,
@@ -1006,21 +848,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 440,
+        "x": 720,
+        "y": 690,
         "wires": [
             [
-                "0cea4d0000000001",
-                "faec0b241e5e1612",
-                "0cea4d0000000003"
+                "0cea4dl00000000c"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000002"
     },
     {
         "id": "5efde55060d13ee1",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "Sauver AUTO / blocage maintenance",
         "func": "// Sauvegarde du switch AUTO.\n// Si maintenance active ou coupure énergie EcoFlow, on interdit d'activer AUTO.\nlet requested = msg.payload === true;\n// Arrêt volontaire de l'utilisateur : on annule tout réarmement automatique\nif (msg.payload === false) flow.set('auto_before_cutoff', null);\nconst maintenance = flow.get('maintenance_active') === true;\n\nconst ecoLast = global.get(\"ecoflow_last_seen\") || global.get(\"ecoflow_last_update\");\nconst ecoAgeMin = ecoLast ? Math.round((Date.now() - Number(ecoLast)) / 60000) : null;\nconst ecoStale = ecoAgeMin === null || ecoAgeMin > 15;\nconst ecoCutoff = global.get(\"energy_cutoff\") === true || global.get(\"energie_ok\") === false;\n\nif (maintenance && requested) {\n    requested = false;\n    node.warn('[AUTO] Activation refusée : mode maintenance actif');\n}\n\nif ((ecoCutoff || ecoStale) && requested) {\n    requested = false;\n    node.warn(`[AUTO] Activation refusée : sécurité EcoFlow active | SOC=${global.get(\"ecoflow_soc\") ?? \"--\"}% | âge=${ecoAgeMin ?? \"--\"}min`);\n}\n\nflow.set('auto_active', requested);\nmsg.topic = 'auto_state';\nmsg.payload = requested;\nmsg.auto_active = requested;\nmsg.maintenance_active = maintenance;\nmsg.energy_cutoff = ecoCutoff;\nreturn msg;\n",
         "outputs": 1,
@@ -1029,20 +869,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
-        "y": 180,
+        "x": 720,
+        "y": 1380,
         "wires": [
             [
-                "0cea4d0000000001",
-                "2423d0b705a7fc53"
+                "0cea4dl00000000e"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000003"
     },
     {
         "id": "20ee331cf07e3574",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Init",
         "props": [
             {
@@ -1054,8 +893,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 250,
-        "y": 100,
+        "x": 160,
+        "y": 480,
         "wires": [
             [
                 "9c6f7de96310d061",
@@ -1063,13 +902,13 @@
                 "18ee0e75969e0b8e",
                 "050fd847a6223581"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "9c6f7de96310d061",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Get State",
         "func": "msg.payload = flow.get('auto_active') || false;\nmsg.topic = \"auto_state\";\nmsg.maintenance_active = flow.get('maintenance_active') || false;\nreturn msg;\n",
         "outputs": 1,
@@ -1078,19 +917,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 100,
+        "x": 440,
+        "y": 1220,
         "wires": [
             [
-                "0cea4d0000000001"
+                "0cea4dl00000000f"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000003"
     },
     {
         "id": "e4e1df73358e94f1",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "Synchro Manuel (Mode Rapide)",
         "func": "// En mode AUTO (IA), l'Orchestre gère les changements de mode → pas de setTimeout\nconst isAuto = flow.get('auto_active') || false;\n\nif (msg.topic === \"valve\") {\n    const cmd = msg.payload.command;\n    const deviceId = msg.payload.device_id;\n\n    if (isAuto) {\n        // Mode IA : transmettre la commande SANS setTimeout pour éviter les rafales\n        return msg;\n    }\n\n    // Mode MANUEL : comportement original avec changement de fréquence auto\n    const dernierEnvoi = flow.get(\"last_config_send_ts\") || 0;\n    const now = Date.now();\n    const delaiMin = 6000;\n\n    node.send([msg]);\n    if ((now - dernierEnvoi) > delaiMin) {\n        flow.set(\"last_config_send_ts\", now + 4000);\n        const cfg = Object.assign({ openHex: \"01\", fastModeHex: \"02\", slowModeHex: \"1E\" }, flow.get(\"config_jardin\") || {});\n        // OUVRIR (port 10) => passage en mode RAPIDE ; sinon retour mode ECO (port 11)\n        const configCmd = (cmd === cfg.openHex) ? cfg.fastModeHex : cfg.slowModeHex;\n        setTimeout(() => node.send([{\n            topic: \"config\",\n            payload: { device_id: deviceId, command: configCmd }\n        }]), 5000);\n    }\n    return null;\n}\n\nreturn msg;\n",
         "outputs": 1,
@@ -1099,36 +938,36 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 660,
+        "x": 440,
+        "y": 1830,
         "wires": [
             [
                 "16d6da0d2161dab6"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "81792f6d82498331",
         "type": "link in",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "link in 1",
         "links": [
             "3a85620bbcc9ca35"
         ],
-        "x": 175,
-        "y": 660,
+        "x": 160,
+        "y": 1910,
         "wires": [
             [
                 "e4e1df73358e94f1"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "51e421fe3dc86011",
         "type": "delay",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "⏳ File d'attente LYVA (1 msg / 4s)",
         "pauseType": "rate",
         "timeout": "5",
@@ -1142,19 +981,19 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1060,
-        "y": 660,
+        "x": 1280,
+        "y": 1750,
         "wires": [
             [
                 "c71905d5a96053e7"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "31df24da0918d94b",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "⏱ Check IA (1h)",
         "props": [
             {
@@ -1168,19 +1007,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 170,
-        "y": 920,
+        "x": 160,
+        "y": 2280,
         "wires": [
             [
                 "4424d0e8e9574c50"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "4424d0e8e9574c50",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "🛡️ Pré-check Node-RED v7 - sans blocage capteur",
         "func": "// PRÉ-CHECK NODE-RED v6 — IA = conseiller, Node-RED garde la sécurité\n// Ajout : profils de plantes + arrosage souterrain + capteur calibré max 25%.\n// Ajout v6 : quota débitmètre journalier 200 L pour bloquer uniquement l'AUTO.\n// Ajout v7 : retrait du blocage capteur suspect. Une humidité très basse reste prioritaire.\n\nconst DEFAULT_CONFIG = {\n    maxSolAgeMin: 180,\n    maxMeteoAgeMin: 120,\n    minHour: 7,\n    maxHour: 20,\n    rainDailyBlockMm: 3,\n    rainPop3hBlockPct: 60,\n    minHoursBetweenWatering: 6,\n    minConfidence: 0.55,\n    maxIrrigationMin: 5,\n    maxValveStateAgeMin: 240,\n    irrigationType: \"souterrain\",\n    sensorObservationDelayMin: 180,\n    sensorScaleMode: \"calibre_bas_25pct\",\n    sensorWetMaxPct: 25,\n    sensorComfortPct: 22,\n    sensorDryPct: 15,\n\n    maxAutoWateringsPerDay: 2,\n    dailyWaterQuotaL: 200,\n    sensorSuspiciousLowPct: 14,\n    sensorMinRiseAfterWateringPct: 1,\n    sensorSuspiciousAfterWaterings: 3,\n    sensorHardMinPct: 0,\n    sensorHardMaxPct: 100,\n    activePlantProfile: \"permaculture_mix\",\n    plantProfiles: {}\n};\nconst CONFIG = Object.assign({}, DEFAULT_CONFIG, flow.get(\"config_jardin\") || {});\nconst TZJARDIN = CONFIG.timezone || \"Europe/Paris\";\n\nfunction num(v) {\n    const n = parseFloat(v);\n    return Number.isFinite(n) ? n : null;\n}\nfunction ageMin(ts) {\n    if (ts === undefined || ts === null || ts === \"\") return null;\n    const n = Number(ts);\n    if (!Number.isFinite(n)) return null;\n    return Math.max(0, Math.round((Date.now() - n) / 60000));\n}\nfunction clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }\nfunction fmtPct(v) { return Number.isFinite(v) ? `${v}%` : \"--\"; }\nfunction fmtMm(v) { return Number.isFinite(v) ? `${v}mm` : \"--\"; }\nfunction valveLooksOpen(state) {\n    const s = String(state || \"\").toLowerCase();\n    return s.includes(\"ouvert\") || s.includes(\"open\");\n}\nfunction dayKey(ts) {\n    // Jour calendaire dans le fuseau du jardin (indépendant du fuseau du serveur)\n    const d = ts ? new Date(ts) : new Date();\n    return d.toLocaleDateString('en-CA', { timeZone: TZJARDIN });\n}\nfunction buildLogEntry(duree, raison, hum, pluie, deficit, methode, extra = {}) {\n    const now = new Date();\n    return Object.assign({\n        ts:        now.getTime(),\n        date:      now.toLocaleDateString('fr-FR', { timeZone: TZJARDIN, weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }),\n        heure:     now.toLocaleTimeString('fr-FR', { timeZone: TZJARDIN, hour: '2-digit', minute: '2-digit', second: '2-digit' }),\n        type:      duree > 0 ? \"ARROSAGE\" : \"VEILLE\",\n        typeClass: duree > 0 ? \"type-arrosage\" : \"type-veille\",\n        duree,\n        raison,\n        humidite:  fmtPct(hum),\n        pluie:     fmtMm(pluie),\n        deficit:   fmtPct(deficit),\n        methode\n    }, extra);\n}\nfunction logEntry(entry) {\n    let log = global.get(\"ia_command_log\") || [];\n    log.unshift(entry);\n    if (log.length > 200) log = log.slice(0, 200);\n    global.set(\"ia_command_log\", log);\n}\nfunction veille(raison, methode, extra = {}) {\n    node.warn(`[IA PRÉ-CHECK] VEILLE — ${raison}`);\n    const entry = buildLogEntry(0, raison, extra.humSol, extra.pluie, extra.deficit, methode || \"pre-check\", {\n        confiance: extra.confiance ?? null,\n        age_capteur_min: extra.ageSolMin ?? null,\n        age_meteo_min: extra.ageMeteoMin ?? null,\n        etat_vanne: extra.etatVanne ?? null,\n        capteur_status: extra.capteurStatus ?? null,\n        arrosages_aujourdhui: extra.arrosagesAujourdhui ?? null,\n        plant_profile: extra.plantProfileLabel ?? null,\n        irrigation_type: extra.irrigationType ?? null,\n        seuil_declenchement_pct: extra.cibleMin ?? null,\n        objectif_pct: extra.targetPct ?? null\n    });\n    logEntry(entry);\n    node.send([null, {\n        payload: {\n            action: extra.action || \"VEILLE\",\n            raison,\n            deficit: Number.isFinite(extra.deficit) ? extra.deficit : null,\n            methode: methode || \"pre-check\",\n            confiance: extra.confiance ?? null,\n            age_capteur_min: extra.ageSolMin ?? null,\n            age_meteo_min: extra.ageMeteoMin ?? null,\n            capteur_status: extra.capteurStatus ?? null,\n            arrosages_aujourdhui: extra.arrosagesAujourdhui ?? null,\n            plant_profile_label: extra.plantProfileLabel ?? null,\n            irrigation_type: extra.irrigationType ?? null,\n            seuil_declenchement_pct: extra.cibleMin ?? null,\n            objectif_pct: extra.targetPct ?? null\n        }\n    }, { topic: \"new-entry\", payload: entry }]);\n    return null;\n}\n\n// 0. Mode maintenance\nif (flow.get(\"maintenance_active\") === true) {\n    return veille(\"Mode maintenance actif — IA et automatisme bloqués. Commandes manuelles uniquement.\", \"maintenance\", {\n        action: \"MAINTENANCE\"\n    });\n}\n\n// 1. Sécurité énergie EcoFlow\nconst ecoLast = global.get(\"ecoflow_last_seen\") || global.get(\"ecoflow_last_update\");\nconst ecoAgeMin = ageMin(ecoLast);\nconst ecoStale = ecoAgeMin === null || ecoAgeMin > 15;\nconst ecoCutoff = global.get(\"energy_cutoff\") === true || global.get(\"energie_ok\") === false;\nconst ecoSoc = global.get(\"ecoflow_soc\");\n\nif (ecoCutoff || ecoStale) {\n    if (flow.get(\"auto_active\") === true) flow.set(\"auto_before_cutoff\", true);\n    flow.set(\"auto_active\", false);\n    flow.set(\"arrosage_state\", \"IDLE\");\n    flow.set(\"arrosage_debut\", null);\n    flow.set(\"arrosage_duree_ms\", 0);\n    flow.set(\"pending_config_lent\", false);\n    return veille(\n        `Sécurité EcoFlow active — AUTO bloqué, SOC=${ecoSoc ?? \"--\"}%, données=${ecoAgeMin === null ? \"absentes\" : ecoAgeMin + \"min\"}. Attente recharge.`,\n        \"energy-cutoff\",\n        {\n            action: \"ENERGY CUTOFF\",\n            confiance: 1\n        }\n    );\n}\n\n// 2. Kill switch AUTO\nif (flow.get('auto_active') !== true) {\n    return veille(\"Mode MANUEL — basculez sur AUTO pour activer l'aide au pilotage IA.\", \"manuel\", {\n        action: \"MODE MANUEL\"\n    });\n}\n\n// 2. État d'orchestration\nconst arrosageState = flow.get(\"arrosage_state\") || \"IDLE\";\nif (arrosageState !== \"IDLE\") {\n    return veille(`Automatisme occupé : état ${arrosageState}. Nouvelle décision IA ignorée.`, \"collision\");\n}\n\n// 3. Récupération des données\nconst sol     = flow.get('capteur_sol_data') || {};\nconst vanne   = flow.get('valve_state') || flow.get('vanne_lyva_state') || {};\nconst weather = global.get('meteo_live')     || {};\nlet capteurHealth = flow.get('capteur_health') || {};\n\nconst humSol = num(sol.humidity);\nconst tempSol = num(sol.temperature);\nconst ageSolMin = ageMin(sol.timestamp);\n\nconst weatherTs = weather.timestamp || weather.updatedAtTs || weather._timestamp || weather.ts;\nconst ageMeteoMin = ageMin(weatherTs);\n\nconst heure = Number(new Intl.DateTimeFormat('en-GB', { timeZone: TZJARDIN, hour: 'numeric', hourCycle: 'h23' }).format(new Date()));\nconst pluie = num(weather?.details?.rain) ?? 0;\nconst tempMeteo = num(weather?.header?.temp);\nconst temp = tempMeteo ?? tempSol ?? 20;\n\nlet probaPluie3h = 0;\nif (Array.isArray(weather.hourly) && weather.hourly.length > 0) {\n    for (let i = 0; i < 3; i++) {\n        if (weather.hourly[i] && weather.hourly[i].pop !== undefined) {\n            const p = num(weather.hourly[i].pop);\n            if (p !== null) probaPluie3h = Math.max(probaPluie3h, p);\n        }\n    }\n}\n\n// Historique arrosages\nconst historique = flow.get('historique_arrosages') || [];\nconst today = dayKey(Date.now());\nlet arrosagesAujourdhui = historique.filter(h => h && h.timestamp && dayKey(h.timestamp) === today).length;\n\n// v8 : un arrosage terminé mais pas encore calibré (fenêtre d'observation ~3h)\n// n'est pas encore dans l'historique. On le prend en compte ici pour que\n// minHoursBetweenWatering et la limite jour s'appliquent immédiatement.\nconst attentePost = flow.get('attente_mesure_post') || null;\nconst dernierFinTs = Number(flow.get('arrosage_fin_ts')) || 0;\nconst pendingArrosageTs = Math.max(attentePost && attentePost.ts ? Number(attentePost.ts) : 0, dernierFinTs) || null;\nif (attentePost && attentePost.ts && dayKey(attentePost.ts) === today) {\n    arrosagesAujourdhui += 1;\n}\n\n// Quota débitmètre journalier\nconst waterQuotaState = flow.get(\"water_quota_state\") || {};\nconst dailyWaterQuotaL = num(CONFIG.dailyWaterQuotaL) ?? 200;\nconst waterQuotaDayKey = waterQuotaState.dayKey || null;\nconst waterQuotaIsToday = waterQuotaDayKey === today;\n// Si le dernier état quota appartient à un ancien jour, on ne bloque pas l'AUTO.\n// Le prochain uplink débitmètre recalera le compteur du jour.\nconst waterConsumedTodayL = waterQuotaIsToday ? num(waterQuotaState.consumed) : 0;\nconst waterRemainingTodayL = waterConsumedTodayL !== null ? Math.max(0, dailyWaterQuotaL - waterConsumedTodayL) : dailyWaterQuotaL;\nconst waterQuotaReached = waterQuotaIsToday && (waterQuotaState.reached === true || (waterConsumedTodayL !== null && waterConsumedTodayL >= dailyWaterQuotaL));\n\nconst dernierArrosage = historique[0] || null;\n// v8 : le dernier arrosage réel peut être plus récent que l'historique (calibration différée).\n// Math.floor (et non round) pour ne jamais sous-estimer la contrainte d'écart minimum.\nconst dernierArrosageTs = Math.max(\n    dernierArrosage && dernierArrosage.timestamp ? Number(dernierArrosage.timestamp) : 0,\n    pendingArrosageTs || 0\n) || null;\nconst dernierArrosageH = dernierArrosageTs\n    ? Math.floor((Date.now() - dernierArrosageTs) / 3600000)\n    : null;\n\n// Saison\nconst mois = Number(new Intl.DateTimeFormat('en-GB', { timeZone: TZJARDIN, month: 'numeric' }).format(new Date()));\nconst saison = (mois >= 6 && mois <= 8) ? 'ete' : ((mois >= 12 || mois <= 2) ? 'hiver' : 'mi-saison');\n\n// Profil plante actif\nconst profiles = CONFIG.plantProfiles || {};\nlet activePlantProfileKey = flow.get(\"active_plant_profile_key\") || CONFIG.activePlantProfile || \"permaculture_mix\";\nif (!profiles[activePlantProfileKey] && profiles.permaculture_mix) activePlantProfileKey = \"permaculture_mix\";\nconst profile = Object.assign({\n    label: activePlantProfileKey,\n    triggerPct: saison === 'ete' ? 18 : 17,\n    targetPct: saison === 'ete' ? 23 : 22,\n    maxPct: 25,\n    minHoursBetweenWatering: CONFIG.minHoursBetweenWatering,\n    maxAutoWateringsPerDay: CONFIG.maxAutoWateringsPerDay,\n    maxIrrigationMin: CONFIG.maxIrrigationMin,\n    summerAdjustPct: 0,\n    winterAdjustPct: 0\n}, profiles[activePlantProfileKey] || {});\n\nconst seasonAdj = saison === 'ete' ? (num(profile.summerAdjustPct) ?? 0) : (saison === 'hiver' ? (num(profile.winterAdjustPct) ?? 0) : 0);\nconst sensorWetMaxPct = num(CONFIG.sensorWetMaxPct) ?? 25;\nconst cibleMin = clamp(Math.round((num(profile.triggerPct) ?? 17) + seasonAdj), 0, sensorWetMaxPct);\nconst targetPct = clamp(Math.round((num(profile.targetPct) ?? 22) + seasonAdj), 0, sensorWetMaxPct);\nconst cibleMax = clamp(Math.round((num(profile.maxPct) ?? sensorWetMaxPct) + seasonAdj), 0, sensorWetMaxPct);\nconst effectiveMinHours = num(profile.minHoursBetweenWatering) ?? CONFIG.minHoursBetweenWatering;\nconst effectiveMaxWateringsDay = num(profile.maxAutoWateringsPerDay) ?? CONFIG.maxAutoWateringsPerDay;\nconst effectiveMaxIrrigationMin = num(profile.maxIrrigationMin) ?? CONFIG.maxIrrigationMin;\n\nconst effectiveConfig = Object.assign({}, CONFIG, {\n    minHoursBetweenWatering: effectiveMinHours,\n    maxAutoWateringsPerDay: effectiveMaxWateringsDay,\n    maxIrrigationMin: effectiveMaxIrrigationMin,\n    activePlantProfileKey,\n    activePlantProfileLabel: profile.label || activePlantProfileKey,\n    activePlantProfile: profile,\n    effectiveTriggerPct: cibleMin,\n    effectiveTargetPct: targetPct,\n    effectiveMaxPct: cibleMax,\n    sensorScaleMode: CONFIG.sensorScaleMode || \"calibre_bas_25pct\",\n    sensorWetMaxPct\n});\n\nconst deficit = (humSol !== null) ? parseFloat((cibleMin - humSol).toFixed(1)) : null;\n\nconst etatVanne = vanne.confirmed_state || vanne.state || \"inconnu\";\nconst ageVanneMin = ageMin(vanne.last_confirmed_ts || vanne.state_confirmed_ts || vanne.timestamp || vanne.last_seen_ts);\n\n// 3b. Sécurité capteur suspect désactivée.\n// Le capteur est utilisé comme indicateur de pilotage, pas comme blocage AUTO.\n// Si l'humidité est très basse, le système peut arroser tant que les autres sécurités sont OK.\ncapteurHealth.suspicious_active = false;\ncapteurHealth.status = \"OK\";\ncapteurHealth.reason = \"Sécurité capteur suspect désactivée : la valeur basse déclenche selon seuil plante.\";\ncapteurHealth.suspect_security_disabled = true;\nflow.set('capteur_health', capteurHealth);\nconst capteurStatus = \"OK\";\n\nconst common = {\n    humSol,\n    pluie,\n    deficit,\n    ageSolMin,\n    ageMeteoMin,\n    etatVanne,\n    capteurStatus,\n    arrosagesAujourdhui,\n    plantProfileLabel: profile.label || activePlantProfileKey,\n    irrigationType: CONFIG.irrigationType,\n    cibleMin,\n    targetPct,\n    waterConsumedTodayL,\n    dailyWaterQuotaL,\n    waterRemainingTodayL,\n    waterQuotaReached\n};\n\nconst REGLES = [\n    { test: humSol === null || humSol < CONFIG.sensorHardMinPct || humSol > CONFIG.sensorHardMaxPct, raison: `Donnée capteur sol invalide ou absente : ${sol.humidity ?? \"absente\"}` },\n    { test: arrosagesAujourdhui >= effectiveMaxWateringsDay, raison: `Limite d'arrosages automatiques atteinte aujourd'hui : ${arrosagesAujourdhui}/${effectiveMaxWateringsDay}` },\n    { test: waterQuotaReached === true, raison: `Quota eau journalier atteint : ${waterConsumedTodayL ?? dailyWaterQuotaL}/${dailyWaterQuotaL} L. AUTO bloqué jusqu’au reset journalier ou reset manuel.` },\n    { test: ageSolMin === null, raison: \"Aucun timestamp capteur sol disponible — donnée LoRaWAN non confirmée\" },\n    { test: ageSolMin !== null && ageSolMin > CONFIG.maxSolAgeMin, raison: `Donnée capteur sol trop ancienne : ${ageSolMin}min > ${CONFIG.maxSolAgeMin}min` },\n    { test: !weather.details || !Array.isArray(weather.hourly), raison: \"Données météo absentes ou incomplètes\" },\n    { test: ageMeteoMin === null, raison: \"Aucun timestamp météo disponible — attendre le prochain rafraîchissement météo\" },\n    { test: ageMeteoMin !== null && ageMeteoMin > CONFIG.maxMeteoAgeMin, raison: `Donnée météo trop ancienne : ${ageMeteoMin}min > ${CONFIG.maxMeteoAgeMin}min` },\n    { test: valveLooksOpen(etatVanne), raison: `Vanne déjà signalée ouverte (${etatVanne}) — pas de nouvelle commande` },\n    { test: ageVanneMin !== null && ageVanneMin > CONFIG.maxValveStateAgeMin, raison: `État vanne trop ancien : ${ageVanneMin}min > ${CONFIG.maxValveStateAgeMin}min` },\n    { test: humSol !== null && humSol >= cibleMin, raison: `Sol à ${humSol}% ≥ seuil ${cibleMin}% (${profile.label || activePlantProfileKey}) — pas besoin d'arroser` },\n    { test: heure < CONFIG.minHour || heure > CONFIG.maxHour, raison: `Hors plage horaire (${heure}h) — arrosage autorisé ${CONFIG.minHour}h-${CONFIG.maxHour}h` },\n    { test: pluie > CONFIG.rainDailyBlockMm, raison: `Pluie journalière ${pluie}mm > ${CONFIG.rainDailyBlockMm}mm — arrosage bloqué` },\n    { test: probaPluie3h > CONFIG.rainPop3hBlockPct, raison: `Probabilité pluie dans 3h : ${probaPluie3h}% > ${CONFIG.rainPop3hBlockPct}%` },\n    { test: dernierArrosageH !== null && dernierArrosageH < effectiveMinHours, raison: `Dernier arrosage il y a ${dernierArrosageH}h < ${effectiveMinHours}h — trop tôt pour le profil ${profile.label || activePlantProfileKey}` },\n    { test: deficit !== null && deficit <= 0, raison: `Déficit nul ou négatif (${deficit}%) — arrosage inutile` }\n];\n\nfor (const regle of REGLES) {\n    if (regle.test) return veille(regle.raison, \"pre-check\", common);\n}\n\n// Calibration simple à partir de l'historique\nlet efficaciteParMin = null;\nif (historique.length >= 2) {\n    let totalDelta = 0, totalDuree = 0, count = 0;\n    historique.slice(0, 5).forEach(h => {\n        if (h.humidite_avant !== null && h.humidite_apres !== null && h.duree_min > 0) {\n            totalDelta += (h.humidite_apres - h.humidite_avant);\n            totalDuree += h.duree_min;\n            count++;\n        }\n    });\n    if (count > 0 && totalDuree > 0) {\n        efficaciteParMin = Math.round((totalDelta / totalDuree) * 10) / 10;\n    }\n}\n\nconst ctx = {\n    source: \"LoRaWAN + Open-Meteo\",\n    donnees_ok: true,\n    config: effectiveConfig,\n    humSol,\n    temp,\n    cibleMin,\n    cibleMax,\n    targetPct,\n    deficit,\n    saison,\n    heure,\n    pluie,\n    probaPluie3h,\n    dernierArrosageH,\n    dernierHumApres: dernierArrosage ? dernierArrosage.humidite_apres : null,\n    efficaciteParMin,\n    nbArrosages: historique.length,\n    arrosagesAujourdhui,\n    maxArrosagesJour: effectiveMaxWateringsDay,\n    minHoursBetweenWatering: effectiveMinHours,\n    etatVanne,\n    age_donnee_capteur_min: ageSolMin,\n    age_meteo_min: ageMeteoMin,\n    age_etat_vanne_min: ageVanneMin,\n    batterie_capteur: sol.battery ?? null,\n    batterie_vanne: vanne.battery ?? null,\n    capteur_fiable: true,\n    capteur_status: \"OK\",\n    capteur_raison: \"Sécurité capteur suspect désactivée\",\n    seuil_capteur_suspect_pct: null,\n    min_hausse_attendue_pct: null,\n    irrigation_type: CONFIG.irrigationType,\n    sensor_observation_delay_min: CONFIG.sensorObservationDelayMin,\n    active_plant_profile_key: activePlantProfileKey,\n    active_plant_profile_label: profile.label || activePlantProfileKey,\n    active_plant_profile_description: profile.description || null,\n    sensor_scale_mode: CONFIG.sensorScaleMode || \"calibre_bas_25pct\",\n    sensor_wet_max_pct: sensorWetMaxPct,\n    sensor_comfort_pct: CONFIG.sensorComfortPct ?? 22,\n    sensor_dry_pct: CONFIG.sensorDryPct ?? 15,\n    water_quota_l: dailyWaterQuotaL,\n    water_consumed_today_l: waterConsumedTodayL,\n    water_remaining_today_l: waterRemainingTodayL,\n    water_quota_reached: waterQuotaReached,\n    water_quota_day_key: waterQuotaDayKey,\n    plant_profile: profile\n};\n\nflow.set('ia_ctx', ctx);\nmsg.ia_ctx = ctx;\n\nnode.warn(`[IA PRÉ-CHECK] OK — Profil ${profile.label || activePlantProfileKey} | ${CONFIG.irrigationType} | Sol ${humSol}% | seuil ${cibleMin}% | déficit ${deficit}% | ${arrosagesAujourdhui}/${effectiveMaxWateringsDay} | Eau ${waterConsumedTodayL ?? 0}/${dailyWaterQuotaL}L → conseil IA`);\nreturn [msg, null, null];\n",
         "outputs": 3,
@@ -1189,25 +1028,25 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 840,
+        "x": 440,
+        "y": 2280,
         "wires": [
             [
                 "d80e6926d824fe4e"
             ],
             [
-                "0cea4d0000000003"
+                "0cea4dl000000010"
             ],
             [
                 "cb73c5fce83c18e9"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "d80e6926d824fe4e",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "📝 Build Prompt v7 - sans blocage capteur",
         "func": "// BUILD PROMPT v6 — IA = aide au pilotage haut niveau\n// Ajout : profil plante + arrosage souterrain + capteur calibré max 25% + quota eau journalier.\n\nconst ctx = msg.ia_ctx || flow.get('ia_ctx') || {};\nconst apiKey = env.get(\"OPENAI_API_KEY\") || \"\";\n\nif (!apiKey || apiKey.trim() === \"\") {\n    node.error(\"❌ OPENAI_API_KEY manquante. Configure la clé dans le global-config Node-RED ou en variable d'environnement.\");\n    return null;\n}\n\nconst inputData = {\n    source: ctx.source || \"LoRaWAN + météo\",\n    irrigation_type: ctx.irrigation_type || \"souterrain\",\n    observation_capteur_apres_arrosage_min: ctx.sensor_observation_delay_min,\n    mode_echelle_capteur: ctx.sensor_scale_mode,\n    humidite_max_observee_capteur_pct: ctx.sensor_wet_max_pct,\n    humidite_confort_capteur_pct: ctx.sensor_comfort_pct,\n    humidite_seche_capteur_pct: ctx.sensor_dry_pct,\n    profil_plante: ctx.active_plant_profile_label,\n    description_profil_plante: ctx.active_plant_profile_description,\n    seuil_declenchement_pct: ctx.cibleMin,\n    objectif_humidite_pct: ctx.targetPct,\n    limite_haute_pct: ctx.cibleMax,\n    humidite_sol_pct: ctx.humSol,\n    temperature_c: ctx.temp,\n    deficit_pct: ctx.deficit,\n    saison: ctx.saison,\n    heure_locale: ctx.heure,\n    pluie_jour_mm: ctx.pluie,\n    probabilite_pluie_3h_pct: ctx.probaPluie3h,\n    dernier_arrosage_h: ctx.dernierArrosageH,\n    ecart_minimum_entre_arrosages_h: ctx.minHoursBetweenWatering,\n    arrosages_automatiques_aujourdhui: ctx.arrosagesAujourdhui,\n    max_arrosages_automatiques_jour: ctx.maxArrosagesJour,\n    quota_eau_jour_l: ctx.water_quota_l,\n    eau_utilisee_jour_l: ctx.water_consumed_today_l,\n    eau_restante_quota_l: ctx.water_remaining_today_l,\n    quota_eau_atteint: ctx.water_quota_reached,\n    humidite_apres_dernier_arrosage_pct: ctx.dernierHumApres,\n    calibration_gain_pct_par_min: ctx.efficaciteParMin,\n    nb_arrosages_historique: ctx.nbArrosages,\n    capteur_fiable: ctx.capteur_fiable,\n    capteur_status: ctx.capteur_status,\n    capteur_raison: ctx.capteur_raison,\n    seuil_capteur_suspect_pct: ctx.seuil_capteur_suspect_pct,\n    min_hausse_attendue_apres_arrosage_pct: ctx.min_hausse_attendue_pct,\n    etat_vanne_confirme: ctx.etatVanne,\n    age_capteur_sol_min: ctx.age_donnee_capteur_min,\n    age_meteo_min: ctx.age_meteo_min,\n    age_etat_vanne_min: ctx.age_etat_vanne_min,\n    batterie_capteur_pct: ctx.batterie_capteur,\n    batterie_vanne_pct: ctx.batterie_vanne,\n    debit_theorique_l_min: ctx.config?.theoreticalFlowLMin || 6,\n    duree_max_autorisee_min: ctx.config?.maxIrrigationMin || 5\n};\n\nconst systemPrompt = `Tu es un conseiller de pilotage pour un jardin de permaculture automatisé en LoRaWAN.\n\nRÈGLE PRINCIPALE :\n- Tu ne commandes jamais directement la vanne.\n- Tu proposes uniquement une décision de haut niveau.\n- Node-RED validera ensuite toutes les sécurités et bornera la durée.\n\nCONTEXTE IMPORTANT :\n- L'irrigation est souterraine.\n- La mesure d'humidité peut réagir lentement après arrosage.\n- La sonde est calibrée sur une plage basse : 20-25% correspond déjà à un sol humide/correct sur ce montage. Ne jamais viser 30-40% avec ce capteur.\n- Il faut donc raisonner avec le profil de plante, les seuils calibrés 14-25% et l'historique, pas avec une valeur théorique universelle.\n\nRÔLE :\nAnalyser humidité du sol, type de plante, météo, saison, âge des données, historique et état de vanne confirmé.\nDécider s'il faut arroser maintenant ou rester en veille.\nNe pas utiliser de sécurité débitmètre : elle est volontairement exclue.\n\nCONTRAINTES :\n- Ne jamais bloquer uniquement parce que le capteur n'a pas remonté après arrosage : cette sécurité est désactivée sur ce montage.\n- Si l'humidité est très basse, par exemple < 10%, considérer la situation comme critique et proposer ARROSER si les autres contraintes sont OK.\n- Si la limite d'arrosages automatiques du jour est atteinte : action = \"VEILLE\".\n- Si quota_eau_atteint = true ou eau_utilisee_jour_l >= quota_eau_jour_l : action = \"VEILLE\".\n- Si les données semblent anciennes, incertaines ou insuffisantes : action = \"VEILLE\".\n- Si l'humidité est déjà supérieure au seuil de déclenchement du profil plante : action = \"VEILLE\".\n- Si l'humidité est entre 20 et 25%, considérer le sol comme correctement humide pour cette installation.\n- Si pluie forte ou pluie proche probable : action = \"VEILLE\".\n- Si arrosage utile : action = \"ARROSER\".\n- Durée d'arrosage autorisée : entier entre 1 et duree_max_autorisee_min.\n- En arrosage souterrain, privilégier moins de cycles mais des décisions prudentes.\n- Si calibration disponible et positive, privilégier : durée ≈ déficit / calibration_gain_pct_par_min.\n- Sinon, utiliser une estimation conservative : durée ≈ déficit × 1.2, puis borner.\n- La confiance doit être entre 0 et 1.\n- Si confiance < 0.55 : action = \"VEILLE\".\n\nRéponds uniquement en JSON valide, sans backticks, sans texte autour :\n{\n  \"action\": \"ARROSER\" ou \"VEILLE\",\n  \"minutes\": nombre_entier,\n  \"confiance\": nombre_entre_0_et_1,\n  \"raison\": \"explication courte et concrète avec le profil plante\"\n}`;\n\nmsg.url = \"https://api.openai.com/v1/chat/completions\";\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer \" + apiKey\n};\nmsg.payload = {\n    model: \"gpt-4o-mini\",\n    messages: [\n        { role: \"system\", content: systemPrompt },\n        { role: \"user\", content: \"Données à analyser :\\n\" + JSON.stringify(inputData, null, 2) }\n    ],\n    temperature: 0.1,\n    max_tokens: 260,\n    response_format: { type: \"json_object\" }\n};\n\nreturn msg;\n",
         "outputs": 1,
@@ -1216,19 +1055,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
-        "y": 920,
+        "x": 720,
+        "y": 2200,
         "wires": [
             [
                 "eaf29464cbfd2c80"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "eaf29464cbfd2c80",
         "type": "http request",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "🌐 Appel OpenAI",
         "method": "POST",
         "ret": "obj",
@@ -1241,19 +1080,19 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 770,
-        "y": 840,
+        "x": 1000,
+        "y": 2200,
         "wires": [
             [
                 "ad8a5f67a6f691b1"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "ad8a5f67a6f691b1",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "⚙️ Parse & Decide v7 - sans blocage capteur",
         "func": "// PARSE & DECIDE v6\n// OpenAI conseille. Node-RED valide, bloque ou lance l'arrosage.\n// Ajout : profil plante + arrosage souterrain + capteur calibré max 25%.\n// Ajout v6 : quota débitmètre journalier. Si atteint, AUTO bloqué mais MANUEL conservé.\n// Ajout v7 : suppression du blocker capteur suspect.\n\nconst ctx = flow.get('ia_ctx') || {};\nconst cfg = ctx.config || {};\nconst TZJARDIN = cfg.timezone || \"Europe/Paris\";\nconst maxMin = cfg.maxIrrigationMin || 5;\nconst minConfidence = cfg.minConfidence || 0.55;\n\nfunction n(v) {\n    const x = parseFloat(v);\n    return Number.isFinite(x) ? x : null;\n}\nfunction valveLooksOpen(state) {\n    const s = String(state || \"\").toLowerCase();\n    return s.includes(\"ouvert\") || s.includes(\"open\");\n}\nfunction clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }\nfunction parseOpenAIResponse(msg) {\n    if (!msg.payload || !msg.payload.choices || !msg.payload.choices[0]?.message?.content) {\n        throw new Error(\"Réponse OpenAI invalide ou vide\");\n    }\n    let raw = msg.payload.choices[0].message.content.trim();\n    raw = raw.replace(/^`{1,3}(?:json)?\\s*/i, '').replace(/\\s*`{1,3}$/i, '').trim();\n    return JSON.parse(raw);\n}\nfunction buildEntry(duree, raison, methode, extra = {}) {\n    const now = new Date();\n    return Object.assign({\n        ts:        now.getTime(),\n        date:      now.toLocaleDateString('fr-FR', { timeZone: TZJARDIN, weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }),\n        heure:     now.toLocaleTimeString('fr-FR', { timeZone: TZJARDIN, hour: '2-digit', minute: '2-digit', second: '2-digit' }),\n        type:      duree > 0 ? \"ARROSAGE\" : \"VEILLE\",\n        typeClass: duree > 0 ? \"type-arrosage\" : \"type-veille\",\n        duree,\n        raison,\n        humidite:  (ctx.humSol ?? \"--\") + \"%\",\n        pluie:     (ctx.pluie ?? \"--\") + \"mm\",\n        deficit:   (ctx.deficit ?? \"--\") + \"%\",\n        methode,\n        plant_profile: ctx.active_plant_profile_label || null,\n        irrigation_type: ctx.irrigation_type || null,\n        seuil_declenchement_pct: ctx.cibleMin ?? null,\n        objectif_pct: ctx.targetPct ?? null,\n        water_consumed_today_l: ctx.water_consumed_today_l ?? null,\n        water_quota_l: ctx.water_quota_l ?? null,\n        water_remaining_today_l: ctx.water_remaining_today_l ?? null,\n        water_quota_reached: ctx.water_quota_reached ?? null\n    }, extra);\n}\nfunction pushLog(entry) {\n    let log = global.get(\"ia_command_log\") || [];\n    log.unshift(entry);\n    if (log.length > 200) log = log.slice(0, 200);\n    global.set(\"ia_command_log\", log);\n}\nfunction ui(action, raison, duree, methode, confiance) {\n    return {\n        payload: {\n            action,\n            raison,\n            duree,\n            deficit: ctx.deficit ?? null,\n            methode,\n            confiance,\n            age_capteur_min: ctx.age_donnee_capteur_min ?? null,\n            age_meteo_min: ctx.age_meteo_min ?? null,\n            capteur_status: ctx.capteur_status ?? null,\n            arrosages_aujourdhui: ctx.arrosagesAujourdhui ?? null,\n            plant_profile_label: ctx.active_plant_profile_label ?? null,\n            irrigation_type: ctx.irrigation_type ?? null,\n            seuil_declenchement_pct: ctx.cibleMin ?? null,\n            objectif_pct: ctx.targetPct ?? null,\n            water_consumed_today_l: ctx.water_consumed_today_l ?? null,\n            water_quota_l: ctx.water_quota_l ?? null,\n            water_remaining_today_l: ctx.water_remaining_today_l ?? null,\n            water_quota_reached: ctx.water_quota_reached ?? null\n        }\n    };\n}\n\nlet decision = {};\ntry {\n    decision = parseOpenAIResponse(msg);\n} catch(e) {\n    const raison = \"[IA] Réponse JSON inexploitable : \" + e.message;\n    node.error(raison);\n    const entry = buildEntry(0, raison, \"openai-error\", { type: \"VEILLE\", typeClass: \"type-veille\", confiance: 0, age_capteur_min: ctx.age_donnee_capteur_min ?? null, age_meteo_min: ctx.age_meteo_min ?? null });\n    pushLog(entry);\n    return [null, ui(\"VEILLE\", raison, 0, \"openai-error\", 0), { topic: \"new-entry\", payload: entry }];\n}\n\nlet action = String(decision.action || \"\").toUpperCase().trim();\nif (action !== \"ARROSER\" && action !== \"VEILLE\") action = n(decision.minutes) > 0 ? \"ARROSER\" : \"VEILLE\";\n\nlet confiance = n(decision.confiance);\nif (confiance === null) confiance = 0;\nconfiance = clamp(confiance, 0, 1);\n\nlet duree = Math.round(n(decision.minutes) || 0);\nlet raison = String(decision.raison || \"Décision IA sans explication\").slice(0, 260);\n\nif (action !== \"ARROSER\") duree = 0;\nif (action === \"ARROSER\") {\n    if (duree <= 0) {\n        action = \"VEILLE\";\n        duree = 0;\n        raison = \"IA a demandé ARROSER mais sans durée exploitable — veille par sécurité\";\n    } else {\n        duree = clamp(duree, 1, maxMin);\n    }\n}\n\nconst blockers = [];\nconst humSol = n(ctx.humSol);\nconst cibleMin = n(ctx.cibleMin);\nconst heure = Number(new Intl.DateTimeFormat('en-GB', { timeZone: TZJARDIN, hour: 'numeric', hourCycle: 'h23' }).format(new Date()));\n\nif (ctx.donnees_ok !== true) blockers.push(\"contexte IA marqué non fiable\");\nif (ctx.arrosagesAujourdhui !== null && ctx.arrosagesAujourdhui !== undefined && ctx.arrosagesAujourdhui >= (cfg.maxAutoWateringsPerDay || 2)) blockers.push(`limite arrosages jour atteinte (${ctx.arrosagesAujourdhui}/${cfg.maxAutoWateringsPerDay || 2})`);\nif (ctx.water_quota_reached === true || (n(ctx.water_consumed_today_l) !== null && n(ctx.water_quota_l) !== null && n(ctx.water_consumed_today_l) >= n(ctx.water_quota_l))) blockers.push(`quota eau journalier atteint (${ctx.water_consumed_today_l ?? ctx.water_quota_l}/${ctx.water_quota_l || 200} L) — AUTO bloqué jusqu’au reset`);\nif (ctx.age_donnee_capteur_min === null || ctx.age_donnee_capteur_min === undefined) blockers.push(\"âge capteur sol absent\");\nif (ctx.age_meteo_min === null || ctx.age_meteo_min === undefined) blockers.push(\"âge météo absent\");\nif (ctx.age_donnee_capteur_min > (cfg.maxSolAgeMin || 180)) blockers.push(`capteur sol trop ancien (${ctx.age_donnee_capteur_min}min)`);\nif (ctx.age_meteo_min > (cfg.maxMeteoAgeMin || 120)) blockers.push(`météo trop ancienne (${ctx.age_meteo_min}min)`);\nif (humSol !== null && cibleMin !== null && humSol >= cibleMin) blockers.push(`humidité suffisante (${humSol}% ≥ seuil ${cibleMin}% pour ${ctx.active_plant_profile_label || 'profil plante'})`);\nif (heure < (cfg.minHour || 7) || heure > (cfg.maxHour || 20)) blockers.push(`hors plage horaire (${heure}h)`);\nif ((ctx.pluie || 0) > (cfg.rainDailyBlockMm || 3)) blockers.push(`pluie journalière trop forte (${ctx.pluie}mm)`);\nif ((ctx.probaPluie3h || 0) > (cfg.rainPop3hBlockPct || 60)) blockers.push(`pluie probable à 3h (${ctx.probaPluie3h}%)`);\nif (ctx.dernierArrosageH !== null && ctx.dernierArrosageH < (cfg.minHoursBetweenWatering || 6)) blockers.push(`dernier arrosage trop récent (${ctx.dernierArrosageH}h < ${cfg.minHoursBetweenWatering || 6}h)`);\nif (valveLooksOpen(ctx.etatVanne)) blockers.push(`vanne déjà ouverte (${ctx.etatVanne})`);\nif (action === \"ARROSER\" && confiance < minConfidence) blockers.push(`confiance IA trop faible (${confiance})`);\n\nconst ecoLastDecision = global.get(\"ecoflow_last_seen\") || global.get(\"ecoflow_last_update\");\nconst ecoAgeDecisionMin = ecoLastDecision ? Math.round((Date.now() - Number(ecoLastDecision)) / 60000) : null;\nconst ecoStaleDecision = ecoAgeDecisionMin === null || ecoAgeDecisionMin > 15;\nconst ecoCutoffDecision = global.get(\"energy_cutoff\") === true || global.get(\"energie_ok\") === false;\nif (ecoCutoffDecision || ecoStaleDecision) blockers.push(`sécurité EcoFlow active (SOC=${global.get(\"ecoflow_soc\") ?? \"--\"}%, âge=${ecoAgeDecisionMin ?? \"--\"}min)`);\n\nif (flow.get(\"maintenance_active\") === true) blockers.push(\"maintenance active\");\nconst currentState = flow.get(\"arrosage_state\") || \"IDLE\";\nif (action === \"ARROSER\" && currentState !== \"IDLE\") blockers.push(`automatisme occupé (${currentState})`);\n\nif (blockers.length > 0) {\n    duree = 0;\n    action = \"VEILLE\";\n    raison = \"Blocage Node-RED : \" + blockers.join(\" | \");\n}\n\nconst entry = buildEntry(duree, raison, \"openai+validation\", {\n    type: duree > 0 ? \"ARROSAGE\" : (blockers.length > 0 ? \"BLOQUÉ\" : \"VEILLE\"),\n    typeClass: duree > 0 ? \"type-arrosage\" : \"type-veille\",\n    confiance,\n    action_ia: decision.action || null,\n    age_capteur_min: ctx.age_donnee_capteur_min ?? null,\n    age_meteo_min: ctx.age_meteo_min ?? null,\n    etat_vanne: ctx.etatVanne ?? null,\n    capteur_status: ctx.capteur_status ?? null,\n    arrosages_aujourdhui: ctx.arrosagesAujourdhui ?? null,\n    water_consumed_today_l: ctx.water_consumed_today_l ?? null,\n    water_quota_l: ctx.water_quota_l ?? null,\n    water_quota_reached: ctx.water_quota_reached ?? null\n});\npushLog(entry);\n\nnode.warn(`[IA PARSE] ${duree > 0 ? \"ARROSAGE \" + duree + \"min\" : \"VEILLE\"} | ${ctx.active_plant_profile_label || 'profil'} | confiance ${confiance} | ${raison}`);\n\nconst msgUI = ui(duree > 0 ? \"ARROSAGE \" + duree + \" min\" : \"VEILLE\", raison, duree, entry.methode, confiance);\nconst msgLog = { topic: \"new-entry\", payload: entry };\n\nif (duree <= 0) return [null, msgUI, msgLog];\n\nflow.set(\"arrosage_state\",    \"PREP_RAPIDE\");\nflow.set(\"arrosage_duree_ms\", duree * 60 * 1000);\nflow.set(\"arrosage_debut\",    null);\nflow.set(\"arrosage_device\",   (cfg.valveDevice || \"lyva-tre\"));\n\nnode.warn(`[IA PARSE] 🚿 Demande validée — ${ctx.active_plant_profile_label || 'profil plante'} — préparation mode rapide puis arrosage ${duree}min`);\n\nreturn [\n    { topic: \"config\", origin: \"auto\", payload: { device_id: (cfg.valveDevice || \"lyva-tre\"), command: (cfg.fastModeHex || \"02\"), origin: \"auto\" } },\n    msgUI,\n    msgLog\n];\n",
         "outputs": 3,
@@ -1262,39 +1101,39 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
-        "y": 840,
+        "x": 1280,
+        "y": 2200,
         "wires": [
             [
                 "3a85620bbcc9ca35"
             ],
             [
-                "0cea4d0000000003"
+                "0cea4dl000000011"
             ],
             [
                 "cb73c5fce83c18e9"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "3a85620bbcc9ca35",
         "type": "link out",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "→ Envoie",
         "mode": "link",
         "links": [
             "81792f6d82498331"
         ],
-        "x": 1495,
-        "y": 840,
-        "wires": []
+        "x": 1560,
+        "y": 2200,
+        "wires": [],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "cb73c5fce83c18e9",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "📊 Logger",
         "func": "// Passe simplement l'entry au panel\nreturn msg;\n",
         "outputs": 1,
@@ -1303,19 +1142,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 1040,
+        "x": 1560,
+        "y": 2360,
         "wires": [
             [
-                "0cea4d0000000003"
+                "0cea4dl000000012"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "18912cd060c802ea",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "Clear Log",
         "func": "if (msg.topic === 'clear-log') { global.set('ia_command_log', []); node.warn('[LOG IA] Effacé'); }\nreturn null;\n",
         "outputs": 0,
@@ -1324,15 +1163,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1450,
-        "y": 960,
-        "wires": []
+        "x": 440,
+        "y": 2200,
+        "wires": [],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "213bd379bc05c99a",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "Au démarrage",
         "props": [
             {
@@ -1346,19 +1185,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
-        "y": 990,
+        "x": 160,
+        "y": 2360,
         "wires": [
             [
                 "0e94fbf30d81c56d"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "0e94fbf30d81c56d",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "Init Log",
         "func": "const log = global.get('ia_command_log') || [];\nmsg.topic = 'init-log';\nmsg.payload = log;\nreturn msg;\n",
         "outputs": 1,
@@ -1368,18 +1207,18 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 990,
+        "y": 2360,
         "wires": [
             [
-                "0cea4d0000000003"
+                "0cea4dl000000013"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000005"
     },
     {
         "id": "31b8a15b7deeadd2",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "🔴 Reset d'urgence",
         "props": [
             {
@@ -1393,19 +1232,19 @@
         "topic": "",
         "payload": "reset",
         "payloadType": "str",
-        "x": 260,
-        "y": 1080,
+        "x": 160,
+        "y": 2570,
         "wires": [
             [
                 "765d01e43b54e20b"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000006"
     },
     {
         "id": "765d01e43b54e20b",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
         "name": "Reset → IDLE",
         "func": "const old = flow.get('arrosage_state') || 'IDLE';\nflow.set('arrosage_state', 'IDLE');\nflow.set('arrosage_debut', null);\nflow.set('arrosage_duree_ms', 0);\nflow.set('pending_config_lent', false);\nflow.set('arrosage_fin_ts', null);\n\nlet vs = flow.get('valve_state');\nif (vs) {\n    vs.pending_command = null;\n    vs.pending_state = null;\n    vs.pending_since_ts = null;\n    vs.error = null;\n    if (vs.confirmed_state) {\n        const s = String(vs.confirmed_state).toLowerCase();\n        vs.status = s.includes('ouvert') ? 'OPEN_CONFIRMED' : (s.includes('ferm') ? 'CLOSED_CONFIRMED' : 'UNKNOWN_CONFIRMED');\n    }\n    flow.set('valve_state', vs);\n}\n\n// Reset capteur : la sécurité suspect est désactivée en v7.\nlet ch = flow.get('capteur_health') || {};\nch.suspicious_active = false;\nch.status = \"OK\";\nch.reason = \"Reset manuel — profil plante conservé\";\nch.consecutive_no_response = 0;\nch.cleared_ts = Date.now();\nflow.set('capteur_health', ch);\n\n// Reset quota eau : libère immédiatement le blocage AUTO.\n// Le débitmètre recalera son point zéro journalier au prochain uplink.\nconst quotaResetTs = Date.now();\nflow.set(\"water_quota_reset_request_ts\", quotaResetTs);\nflow.set(\"water_quota_state\", {\n    dayKey: null,\n    consumed: 0,\n    quota: (flow.get(\"config_jardin\") || {}).dailyWaterQuotaL || 200,\n    remaining: (flow.get(\"config_jardin\") || {}).dailyWaterQuotaL || 200,\n    reached: false,\n    percent: 0,\n    timestamp: quotaResetTs,\n    reset_pending_next_flowmeter_uplink: true\n});\n\nnode.status({ fill: 'green', shape: 'dot', text: 'Reset OK — était: ' + old });\nnode.warn('[RESET] arrosage_state → IDLE (était: ' + old + ')');\nreturn null;\n",
         "outputs": 0,
@@ -1414,15 +1253,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1080,
-        "wires": []
+        "x": 440,
+        "y": 2570,
+        "wires": [],
+        "g": "0cea4dg000000006"
     },
     {
         "id": "8d64c55c4241bc9d",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "Init mode UI (démarrage)",
         "props": [],
         "repeat": "",
@@ -1430,19 +1269,19 @@
         "once": true,
         "onceDelay": "1.5",
         "topic": "",
-        "x": 510,
-        "y": 280,
+        "x": 160,
+        "y": 1460,
         "wires": [
             [
                 "cee2c76b3d49c08b"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000003"
     },
     {
         "id": "cee2c76b3d49c08b",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "d1faaff7fc85bd62",
         "name": "Seed Mode UI",
         "func": "// Restaure l'affichage du mode au démarrage / redéploiement\nconst mode = flow.get('vanne_current_mode');\nif (mode === 2 || mode === 30) {\n    msg.payload = { mode: mode };\n    return msg;\n}\n// Mode encore inconnu (aucun uplink f_port 11 reçu) -> on n'affiche rien\nreturn null;\n",
         "outputs": 1,
@@ -1450,20 +1289,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 320,
+        "x": 440,
+        "y": 1300,
         "wires": [
             [
-                "0cea4d0000000001",
-                "0cea4d0000000005"
+                "0cea4dl000000014"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000003"
     },
     {
         "id": "405d46c399d22291",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "⚙️ Init Config Jardin v7 - sans blocage capteur",
         "func": "// CONFIG JARDIN CENTRALISÉE v7\n// Ajout v5 : capteur calibré sur plage basse. Chez ce système,\n// 20-25% correspond déjà à une zone humide correcte en arrosage souterrain.\n// Modifier ces valeurs ici plutôt que dans chaque nœud.\n\nconst DEFAULT_CONFIG = {\n    configSchemaVersion: 7,\n\n    // Fuseau horaire de référence (plages horaires, saisons, resets journaliers).\n    timezone: \"Europe/Paris\",\n\n    appId: \"jardin-version1\",\n    valveDevice: \"lyva-tre\",\n    sensorDevice: \"dragino-moisture\",\n    flowmeterDevice: \"debitmetre\",\n\n    surfaceM2: 24,\n    theoreticalFlowLMin: 6,\n    dailyWaterQuotaL: 200,\n\n    // Arrosage souterrain : l'eau met du temps à atteindre la zone mesurée par le capteur.\n    irrigationType: \"souterrain\",\n    sensorObservationDelayMin: 180,\n\n    // Plage réelle observée du capteur.\n    // Ne pas viser 40-60% : sur ce montage, 20-25% = humide.\n    sensorScaleMode: \"calibre_bas_25pct\",\n    sensorWetMaxPct: 25,\n    sensorComfortPct: 22,\n    sensorDryPct: 15,\n\n    minHour: 7,\n    maxHour: 20,\n    rainDailyBlockMm: 3,\n    rainPop3hBlockPct: 60,\n    minHoursBetweenWatering: 6,\n\n    // Capteur calibré bas.\n    // La sécurité \"capteur suspect / hausse insuffisante\" est désactivée :\n    // une humidité très basse peut déclencher l'AUTO.\n    maxAutoWateringsPerDay: 2,\n    sensorSuspiciousLowPct: 14,\n    sensorMinRiseAfterWateringPct: 1,\n    sensorSuspiciousAfterWaterings: 3,\n    sensorHardMinPct: 0,\n    sensorHardMaxPct: 100,\n\n    maxSolAgeMin: 180,\n    maxMeteoAgeMin: 120,\n    maxValveStateAgeMin: 240,\n\n    minConfidence: 0.55,\n    maxIrrigationMin: 5,\n\n    commandTimeoutMin: 10,\n    commandCooldownMs: 10000,\n\n    // Port 10 (downlink action vanne)\n    openHex: \"01\",      // OUVRIR (port 10)\n    closeHex: \"02\",     // FERMER (port 10) — attention : même hex que fastModeHex mais port différent\n    // Port 11 (downlink config fréquence de réveil)\n    fastModeHex: \"02\",  // Mode RAPIDE 2 min (port 11)\n    slowModeHex: \"1E\",  // Mode ECO 30 min (port 11)\n\n    maintenanceDefault: false,\n\n    activePlantProfile: \"permaculture_mix\",\n    plantProfiles: {\n        permaculture_mix: {\n            label: \"Permaculture mixte\",\n            description: \"Profil prudent calibré capteur bas : 20-25% = sol humide en arrosage souterrain.\",\n            triggerPct: 17,\n            targetPct: 22,\n            maxPct: 25,\n            minHoursBetweenWatering: 6,\n            maxAutoWateringsPerDay: 2,\n            maxIrrigationMin: 5,\n            summerAdjustPct: 1,\n            winterAdjustPct: -1\n        },\n        tomates_poivrons_aubergines: {\n            label: \"Tomates / poivrons / aubergines\",\n            description: \"Légumes-fruits : arrosage profond, pas trop fréquent. Plage calibrée max 25%.\",\n            triggerPct: 17,\n            targetPct: 22,\n            maxPct: 25,\n            minHoursBetweenWatering: 8,\n            maxAutoWateringsPerDay: 2,\n            maxIrrigationMin: 5,\n            summerAdjustPct: 1,\n            winterAdjustPct: -1\n        },\n        salades_feuilles: {\n            label: \"Salades / feuilles / basilic\",\n            description: \"Plantes plus sensibles au stress hydrique, mais seuils adaptés au capteur bas.\",\n            triggerPct: 18,\n            targetPct: 23,\n            maxPct: 25,\n            minHoursBetweenWatering: 6,\n            maxAutoWateringsPerDay: 2,\n            maxIrrigationMin: 5,\n            summerAdjustPct: 1,\n            winterAdjustPct: 0\n        },\n        courgettes_concombres: {\n            label: \"Courgettes / concombres\",\n            description: \"Besoin en eau plus élevé, sans dépasser la plage utile réelle 20-25%.\",\n            triggerPct: 18,\n            targetPct: 24,\n            maxPct: 25,\n            minHoursBetweenWatering: 6,\n            maxAutoWateringsPerDay: 2,\n            maxIrrigationMin: 5,\n            summerAdjustPct: 1,\n            winterAdjustPct: 0\n        },\n        aromatiques_mediterraneennes: {\n            label: \"Aromatiques méditerranéennes\",\n            description: \"Thym, romarin, lavande : besoin faible, éviter l'excès d'eau.\",\n            triggerPct: 14,\n            targetPct: 18,\n            maxPct: 22,\n            minHoursBetweenWatering: 12,\n            maxAutoWateringsPerDay: 1,\n            maxIrrigationMin: 3,\n            summerAdjustPct: 1,\n            winterAdjustPct: -1\n        },\n        semis_jeunes_plants: {\n            label: \"Semis / jeunes plants\",\n            description: \"Besoin régulier, à utiliser seulement si le capteur est proche de la zone racinaire.\",\n            triggerPct: 19,\n            targetPct: 24,\n            maxPct: 25,\n            minHoursBetweenWatering: 6,\n            maxAutoWateringsPerDay: 2,\n            maxIrrigationMin: 4,\n            summerAdjustPct: 1,\n            winterAdjustPct: 0\n        }\n    }\n};\n\nlet current = flow.get(\"config_jardin\") || {};\nconst previousVersion = Number(current.configSchemaVersion || 0);\n\nlet cfg = Object.assign({}, DEFAULT_CONFIG, current);\ncfg.plantProfiles = Object.assign({}, DEFAULT_CONFIG.plantProfiles, current.plantProfiles || {});\n\n// Sécurité : un fuseau horaire invalide ferait planter tous les calculs Intl en aval.\ntry {\n    new Intl.DateTimeFormat('en-GB', { timeZone: cfg.timezone });\n} catch (e) {\n    node.warn(`[CONFIG] Fuseau horaire invalide (${cfg.timezone}) — retour à Europe/Paris`);\n    cfg.timezone = \"Europe/Paris\";\n}\n\n// Migration v5 : force les seuils calibrés bas si l'ancien contexte existait déjà.\n// Cela évite de garder les anciens objectifs 30-40% impossibles à atteindre avec ce capteur.\nif (previousVersion < 5) {\n    cfg = Object.assign({}, cfg, {\n        configSchemaVersion: 7,\n        irrigationType: DEFAULT_CONFIG.irrigationType,\n        sensorObservationDelayMin: DEFAULT_CONFIG.sensorObservationDelayMin,\n        sensorScaleMode: DEFAULT_CONFIG.sensorScaleMode,\n        sensorWetMaxPct: DEFAULT_CONFIG.sensorWetMaxPct,\n        sensorComfortPct: DEFAULT_CONFIG.sensorComfortPct,\n        sensorDryPct: DEFAULT_CONFIG.sensorDryPct,\n        minHoursBetweenWatering: DEFAULT_CONFIG.minHoursBetweenWatering,\n        maxAutoWateringsPerDay: DEFAULT_CONFIG.maxAutoWateringsPerDay,\n        sensorSuspiciousLowPct: DEFAULT_CONFIG.sensorSuspiciousLowPct,\n        sensorMinRiseAfterWateringPct: DEFAULT_CONFIG.sensorMinRiseAfterWateringPct,\n        sensorSuspiciousAfterWaterings: DEFAULT_CONFIG.sensorSuspiciousAfterWaterings,\n        activePlantProfile: current.activePlantProfile || DEFAULT_CONFIG.activePlantProfile\n    });\n    cfg.plantProfiles = DEFAULT_CONFIG.plantProfiles;\n    flow.set('capteur_health', { status: \"OK\", suspicious_active: false, reason: \"Migration v5 : plage capteur recalibrée 20-25%\" });\n}\n\n// v7 : on neutralise définitivement l'ancien blocage capteur suspect.\nflow.set('capteur_health', {\n    status: \"OK\",\n    suspicious_active: false,\n    reason: \"v7 : sécurité capteur suspect désactivée\",\n    consecutive_no_response: 0,\n    suspect_security_disabled: true,\n    cleared_ts: Date.now()\n});\n\nflow.set(\"config_jardin\", cfg);\n\nlet activeKey = flow.get(\"active_plant_profile_key\") || cfg.activePlantProfile || \"permaculture_mix\";\nif (!cfg.plantProfiles[activeKey]) activeKey = \"permaculture_mix\";\nflow.set(\"active_plant_profile_key\", activeKey);\nflow.set(\"plant_profile_state\", {\n    key: activeKey,\n    profile: cfg.plantProfiles[activeKey],\n    irrigation_type: cfg.irrigationType,\n    sensor_observation_delay_min: cfg.sensorObservationDelayMin,\n    sensor_scale_mode: cfg.sensorScaleMode,\n    sensor_wet_max_pct: cfg.sensorWetMaxPct\n});\n\nif (flow.get(\"maintenance_active\") === undefined) {\n    flow.set(\"maintenance_active\", cfg.maintenanceDefault === true);\n}\nif (!flow.get(\"arrosage_state\")) {\n    flow.set(\"arrosage_state\", \"IDLE\");\n}\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `v7 OK | capteur critique autorisé | quota ${cfg.dailyWaterQuotaL}L | ${cfg.plantProfiles[activeKey]?.label || activeKey}` });\nmsg.topic = \"config_jardin\";\nmsg.payload = cfg;\nreturn msg;\n",
         "outputs": 1,
@@ -1472,11 +1310,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 200,
+        "x": 440,
+        "y": 240,
         "wires": [
             []
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "18ee0e75969e0b8e",
@@ -1490,17 +1329,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
-        "y": 1140,
+        "x": 440,
+        "y": 80,
         "wires": [
             [
-                "0cea4d0000000005",
-                "0cea4d0000000003",
-                "0cea4d0000000001",
                 "faec0b241e5e1612",
-                "2423d0b705a7fc53"
+                "2423d0b705a7fc53",
+                "0cea4dl000000015"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "3944d7a2012cf0f1",
@@ -1517,13 +1355,14 @@
         "once": true,
         "onceDelay": 5,
         "topic": "",
-        "x": 980,
-        "y": 1260,
+        "x": 160,
+        "y": 2650,
         "wires": [
             [
                 "0fb0992b20faf42a"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000006"
     },
     {
         "id": "0fb0992b20faf42a",
@@ -1537,14 +1376,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1260,
-        "y": 1260,
+        "x": 440,
+        "y": 2650,
         "wires": [
             [
-                "0cea4d0000000003",
-                "faec0b241e5e1612"
+                "0cea4dl000000016"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000006"
     },
     {
         "id": "050fd847a6223581",
@@ -1558,14 +1397,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 1140,
+        "x": 440,
+        "y": 160,
         "wires": [
             [
-                "0cea4d0000000005",
-                "0cea4d0000000003"
+                "0cea4dl000000017"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "9d79c58891cac1e9",
@@ -1575,19 +1414,19 @@
         "links": [
             "5dc3c534d009ac17"
         ],
-        "x": 175,
-        "y": 720,
+        "x": 160,
+        "y": 1990,
         "wires": [
             [
                 "ce1dc0ef337ae4e2"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "ce1dc0ef337ae4e2",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "a2cc82f4a65994b5",
         "name": "🛑 Coupure énergie EcoFlow",
         "func": "// COUPURE ÉNERGIE ECOFLOW — applique la sécurité côté flow arrosage\n// Entrée : évènements ENERGY_CUTOFF_ENTER / ENERGY_RESUME du tab EcoFlow.\n// Sortie 1 : ordre fermeture vanne LYVA\n// Sortie 2 : log dashboard\n// Sortie 3 : commande pompe OFF à raccorder si une sortie pompe existe\n\nconst cfg = Object.assign({\n    valveDevice: \"lyva-tre\",\n    closeHex: \"02\"\n}, flow.get(\"config_jardin\") || {});\n\nconst evt = msg.payload || {};\nconst event = evt.event || \"ENERGY_CUTOFF_ENTER\";\nconst soc = evt.soc ?? global.get(\"ecoflow_soc\");\nconst reason = evt.reason || global.get(\"energy_cutoff_reason\") || \"Coupure énergie EcoFlow\";\n\nflow.set(\"energy_cutoff_state\", {\n    active: global.get(\"energy_cutoff\") === true,\n    soc,\n    reason,\n    event,\n    timestamp: Date.now()\n});\n\nif (event === \"ENERGY_RESUME\") {\n    flow.set(\"energy_cutoff_active\", false);\n    flow.set(\"arrosage_state\", \"IDLE\");\n    flow.set(\"pending_config_lent\", false);\n\n    // Réarmement AUTO si la coupure l'avait désactivé\n    let autoMsg = null;\n    if (flow.get(\"auto_before_cutoff\") === true) {\n        flow.set(\"auto_active\", true);\n        flow.set(\"auto_before_cutoff\", null);\n        autoMsg = { topic: \"auto_state\", payload: true, auto_active: true };\n        node.warn(\"[ECOFLOW] AUTO réactivé automatiquement après reprise énergie\");\n    }\n\n    const logMsg = {\n        topic: \"energy\",\n        payload: {\n            event: \"ENERGY_RESUME\",\n            soc,\n            message: `EcoFlow rechargée (${soc}%) — arrosage de nouveau autorisable`,\n            type: \"success\"\n        }\n    };\n\n    node.warn(`[ECOFLOW] Reprise autorisée — SOC ${soc}%`);\n    return [null, logMsg, null, autoMsg];\n}\n\n// Coupure énergie : arrêt complet de la logique arrosage\n// On mémorise l'état AUTO pour réarmement à la reprise\nif (flow.get(\"auto_active\") === true) flow.set(\"auto_before_cutoff\", true);\nflow.set(\"energy_cutoff_active\", true);\nflow.set(\"auto_active\", false);\nflow.set(\"arrosage_state\", \"IDLE\");\nflow.set(\"arrosage_debut\", null);\nflow.set(\"arrosage_duree_ms\", 0);\nflow.set(\"pending_config_lent\", false);\nflow.set(\"attente_mesure_post\", null);\n\n// Nettoyage état pending vanne\nlet vs = flow.get(\"valve_state\") || {};\nvs.pending_command = null;\nvs.pending_state = null;\nvs.pending_since_ts = null;\nvs.error = reason;\nflow.set(\"valve_state\", vs);\n\n// Fermeture vanne : on laisse passer même en coupure énergie\nconst closeMsg = {\n    topic: \"valve\",\n    origin: \"energy_cutoff\",\n    payload: {\n        device_id: cfg.valveDevice,\n        command: cfg.closeHex,\n        origin: \"energy_cutoff\",\n        reason\n    }\n};\n\n// Log pour dashboard\nconst logMsg = {\n    topic: \"energy\",\n    payload: {\n        event: \"ENERGY_CUTOFF_ENTER\",\n        soc,\n        message: `Coupure énergie EcoFlow (${soc}%) — AUTO OFF, fermeture vanne, pompe OFF à raccorder`,\n        type: \"error\"\n    }\n};\n\n// Sortie pompe OFF à raccorder si tu ajoutes un relais, une prise connectée,\n// ou une commande EcoFlow setQuota validée pour couper la sortie AC/DC.\nconst pumpMsg = {\n    topic: \"pump\",\n    payload: {\n        command: \"OFF\",\n        soc,\n        reason,\n        note: \"À raccorder à la commande réelle de pompe : relais, prise connectée, MQTT, API EcoFlow AC/DC, etc.\"\n    }\n};\n\nnode.warn(`[ECOFLOW] COUPURE — ${reason} — AUTO OFF + fermeture vanne`);\nreturn [closeMsg, logMsg, pumpMsg, null];\n",
         "outputs": 4,
@@ -1596,23 +1435,23 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 720,
+        "x": 440,
+        "y": 1910,
         "wires": [
             [
                 "16d6da0d2161dab6"
             ],
             [
-                "faec0b241e5e1612",
-                "2423d0b705a7fc53"
+                "0cea4dl000000018"
             ],
             [
                 "f580c53a36bdafc2"
             ],
             [
-                "0cea4d0000000001"
+                "0cea4dl000000019"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "f580c53a36bdafc2",
@@ -1627,28 +1466,30 @@
         "targetType": "msg",
         "statusVal": "payload.command",
         "statusType": "msg",
-        "x": 760,
-        "y": 760,
-        "wires": []
+        "x": 720,
+        "y": 1830,
+        "wires": [],
+        "g": "0cea4dg000000004"
     },
     {
         "id": "f6ff3751a2bc4546",
         "type": "ui-event",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "ui": "811a3e80cfeff7b1",
         "name": "Événements Dashboard",
-        "x": 150,
-        "y": 1040,
+        "x": 160,
+        "y": 690,
         "wires": [
             [
                 "85be2b112426a537"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000008"
     },
     {
         "id": "85be2b112426a537",
         "type": "switch",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "name": "topic == $pageview",
         "property": "topic",
         "propertyType": "msg",
@@ -1662,23 +1503,19 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 370,
-        "y": 1040,
+        "x": 440,
+        "y": 610,
         "wires": [
             [
-                "9c6f7de96310d061",
-                "18ee0e75969e0b8e",
-                "050fd847a6223581",
-                "cee2c76b3d49c08b",
-                "2423d0b705a7fc53"
+                "0cea4dl00000001a"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000008"
     },
     {
         "id": "047186d9f32f58e8",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
-        "g": "2e85a76d6012e7a1",
+        "z": "0cea4d00000000a1",
         "group": "",
         "page": "",
         "ui": "811a3e80cfeff7b1",
@@ -1693,17 +1530,17 @@
         "resendOnRefresh": false,
         "templateScope": "site:style",
         "className": "",
-        "x": 1360,
-        "y": 1040,
+        "x": 160,
+        "y": 610,
         "wires": [
             []
-        ]
+        ],
+        "g": "0cea4dg000000008"
     },
     {
         "id": "2423d0b705a7fc53",
         "type": "function",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "🧭 État système (agrégateur)",
         "func": "// ÉTAT SYSTÈME — agrège l'état réel pour la carte de synthèse (page Jardin).\n// Déclenché par : tick 30 s, ouverture de page, et événements clés (vanne,\n// coupure énergie, débitmètre, AUTO, maintenance). Le contenu du msg entrant\n// est ignoré : tout est relu depuis le contexte.\nconst vs = flow.get('valve_state') || {};\nconst quota = flow.get('water_quota_state') || {};\nconst soc = Number(global.get('ecoflow_soc'));\nconst cutoff = global.get('energy_cutoff') === true || global.get('energie_ok') === false;\nconst ecoLast = global.get('ecoflow_last_seen') || global.get('ecoflow_last_update');\nconst lastIA = (global.get('ia_command_log') || [])[0] || null;\n\nmsg.payload = {\n    valve_state: vs.confirmed_state || 'Inconnu',\n    valve_pending: vs.pending_state || null,\n    valve_battery: vs.battery ?? null,\n    arrosage_state: flow.get('arrosage_state') || 'IDLE',\n    auto: flow.get('auto_active') === true,\n    maintenance: flow.get('maintenance_active') === true,\n    soc: Number.isFinite(soc) ? Math.round(soc) : null,\n    energy_cutoff: cutoff,\n    energy_reason: global.get('energy_cutoff_reason') || null,\n    eco_age_min: ecoLast ? Math.round((Date.now() - Number(ecoLast)) / 60000) : null,\n    water_remaining: quota.remaining ?? null,\n    water_quota: quota.quota ?? null,\n    water_consumed: quota.consumed ?? null,\n    ia_type: lastIA ? lastIA.type : null,\n    ia_heure: lastIA ? lastIA.heure : null,\n    ia_raison: lastIA ? lastIA.raison : null,\n    ts: Date.now()\n};\nmsg.topic = 'etat_systeme';\nreturn msg;",
         "outputs": 1,
@@ -1712,20 +1549,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 40,
+        "x": 720,
+        "y": 320,
         "wires": [
             [
-                "0cea4d0000000001",
-                "0cea4d0000000003"
+                "0cea4dl00000001f"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "d9b7de748c685086",
         "type": "inject",
         "z": "b573ff303eba5d8f",
-        "g": "ff3ef9bd5a0d1fc2",
         "name": "Rafraîchir état (30 s)",
         "props": [
             {
@@ -1739,13 +1575,14 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 40,
+        "x": 160,
+        "y": 400,
         "wires": [
             [
                 "2423d0b705a7fc53"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
     },
     {
         "id": "069e272477a36cc8",
@@ -1763,12 +1600,13 @@
         "onceDelay": "0.1",
         "topic": "",
         "x": 160,
-        "y": 120,
+        "y": 80,
         "wires": [
             [
                 "68d13d64a8badd2c"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "68d13d64a8badd2c",
@@ -1782,13 +1620,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 120,
+        "x": 440,
+        "y": 80,
         "wires": [
             [
                 "d715f55252d940b6"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "d715f55252d940b6",
@@ -1806,13 +1645,14 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 610,
-        "y": 120,
+        "x": 720,
+        "y": 80,
         "wires": [
             [
                 "f9d353e2a391e8ce"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "f9d353e2a391e8ce",
@@ -1826,13 +1666,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 120,
+        "x": 1000,
+        "y": 80,
         "wires": [
             [
                 "a89b961b95d399cb"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "a89b961b95d399cb",
@@ -1850,13 +1691,14 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1010,
-        "y": 120,
+        "x": 1280,
+        "y": 80,
         "wires": [
             [
                 "8555c816997e2d48"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "8555c816997e2d48",
@@ -1870,14 +1712,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
-        "y": 120,
+        "x": 1560,
+        "y": 80,
         "wires": [
             [
-                "0cea4d0000000002",
-                "784c450160774bc7"
+                "784c450160774bc7",
+                "0cea4dl000000020"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "784c450160774bc7",
@@ -1891,11 +1734,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
-        "y": 240,
+        "x": 1840,
+        "y": 80,
         "wires": [
             []
-        ]
+        ],
+        "g": "0cea4dg000000009"
     },
     {
         "id": "4c3b03609b2d2440",
@@ -1914,13 +1758,14 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
-        "y": 120,
+        "x": 160,
+        "y": 80,
         "wires": [
             [
                 "2976dcddb6d0c62b"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000a"
     },
     {
         "id": "a64da3b915c1def9",
@@ -1934,12 +1779,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
-        "y": 140,
+        "x": 720,
+        "y": 80,
         "wires": [
             [
                 "ef0d2e96fb37e46c",
-                "0cea4d0000000004"
+                "0cea4dl000000022"
             ],
             [
                 "5dc3c534d009ac17",
@@ -1948,7 +1793,8 @@
             [
                 "6cb351b2672a6326"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000a"
     },
     {
         "id": "ef0d2e96fb37e46c",
@@ -1963,9 +1809,10 @@
         "targetType": "msg",
         "statusVal": "payload.status",
         "statusType": "msg",
-        "x": 1010,
-        "y": 140,
-        "wires": []
+        "x": 1000,
+        "y": 80,
+        "wires": [],
+        "g": "0cea4dg00000000a"
     },
     {
         "id": "e5c02f7944c3f6e7",
@@ -1984,13 +1831,14 @@
         "topic": "",
         "payload": "{\"commande\":\"ouvrir_vanne\",\"duree_minutes\":5}",
         "payloadType": "json",
-        "x": 230,
-        "y": 340,
+        "x": 160,
+        "y": 1030,
         "wires": [
             [
                 "62b456107dd9658a"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000d"
     },
     {
         "id": "62b456107dd9658a",
@@ -2004,8 +1852,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 280,
+        "x": 440,
+        "y": 1030,
         "wires": [
             [
                 "fb5609b1104d2a63"
@@ -2013,7 +1861,8 @@
             [
                 "630c4e9eb6a8cbf7"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000d"
     },
     {
         "id": "fb5609b1104d2a63",
@@ -2028,9 +1877,10 @@
         "targetType": "msg",
         "statusVal": "payload.raison",
         "statusType": "msg",
-        "x": 880,
-        "y": 240,
-        "wires": []
+        "x": 720,
+        "y": 1030,
+        "wires": [],
+        "g": "0cea4dg00000000d"
     },
     {
         "id": "630c4e9eb6a8cbf7",
@@ -2046,8 +1896,9 @@
         "statusVal": "payload.raison",
         "statusType": "msg",
         "x": 720,
-        "y": 340,
-        "wires": []
+        "y": 1110,
+        "wires": [],
+        "g": "0cea4dg00000000d"
     },
     {
         "id": "2976dcddb6d0c62b",
@@ -2057,13 +1908,14 @@
         "remote": "ecoflow_api_server_eu",
         "serial_number": "R351ZEB4HF4H0093",
         "function": "queryQuotaAll",
-        "x": 490,
-        "y": 140,
+        "x": 440,
+        "y": 80,
         "wires": [
             [
                 "a64da3b915c1def9"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000a"
     },
     {
         "id": "5dc3c534d009ac17",
@@ -2074,9 +1926,10 @@
         "links": [
             "9d79c58891cac1e9"
         ],
-        "x": 935,
-        "y": 200,
-        "wires": []
+        "x": 1000,
+        "y": 160,
+        "wires": [],
+        "g": "0cea4dg00000000a"
     },
     {
         "id": "81f7f98fe4bb8585",
@@ -2095,13 +1948,14 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 360,
-        "y": 220,
+        "x": 160,
+        "y": 450,
         "wires": [
             [
                 "166b8f172f7586f3"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000b"
     },
     {
         "id": "166b8f172f7586f3",
@@ -2115,13 +1969,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
-        "y": 280,
+        "x": 440,
+        "y": 450,
         "wires": [
             [
                 "6cb351b2672a6326"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000b"
     },
     {
         "id": "c4e68cf9e8540b81",
@@ -2132,13 +1987,14 @@
             "2976dcddb6d0c62b"
         ],
         "uncaught": false,
-        "x": 370,
-        "y": 400,
+        "x": 160,
+        "y": 530,
         "wires": [
             [
                 "cf04471c0c36f322"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000b"
     },
     {
         "id": "cf04471c0c36f322",
@@ -2152,13 +2008,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 400,
+        "x": 440,
+        "y": 530,
         "wires": [
             [
                 "6cb351b2672a6326"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000b"
     },
     {
         "id": "6cb351b2672a6326",
@@ -2172,8 +2029,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 360,
+        "x": 160,
+        "y": 740,
         "wires": [
             [
                 "a3aad5674c805a20"
@@ -2181,7 +2038,8 @@
             [
                 "514274823503e1bc"
             ]
-        ]
+        ],
+        "g": "0cea4dg00000000c"
     },
     {
         "id": "a3aad5674c805a20",
@@ -2195,9 +2053,10 @@
         "raw": false,
         "className": "",
         "name": "🔔 Alerte EcoFlow (Dashboard)",
-        "x": 1330,
-        "y": 300,
-        "wires": []
+        "x": 440,
+        "y": 740,
+        "wires": [],
+        "g": "0cea4dg00000000c"
     },
     {
         "id": "514274823503e1bc",
@@ -2212,9 +2071,10 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1330,
-        "y": 420,
-        "wires": []
+        "x": 440,
+        "y": 820,
+        "wires": [],
+        "g": "0cea4dg00000000c"
     },
     {
         "id": "f1e60c0ea9010001",
@@ -2325,7 +2185,7 @@
     {
         "id": "0cea4d0000000001",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "group": "0cea4d0000000011",
         "page": "",
         "ui": "",
@@ -2340,18 +2200,19 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1360,
-        "y": 900,
+        "x": 440,
+        "y": 80,
         "wires": [
             [
-                "57c6978bd4511918"
+                "0cea4dl000000024"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000007"
     },
     {
         "id": "0cea4d0000000002",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "group": "0cea4d0000000012",
         "page": "",
         "ui": "",
@@ -2366,16 +2227,17 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1360,
-        "y": 960,
+        "x": 440,
+        "y": 320,
         "wires": [
             []
-        ]
+        ],
+        "g": "0cea4dg000000007"
     },
     {
         "id": "0cea4d0000000003",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "group": "0cea4d0000000013",
         "page": "",
         "ui": "",
@@ -2390,18 +2252,19 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1360,
-        "y": 1020,
+        "x": 440,
+        "y": 240,
         "wires": [
             [
-                "18912cd060c802ea"
+                "0cea4dl000000026"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000007"
     },
     {
         "id": "0cea4d0000000004",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "group": "0cea4d0000000014",
         "page": "",
         "ui": "",
@@ -2416,16 +2279,17 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1360,
-        "y": 1080,
+        "x": 440,
+        "y": 400,
         "wires": [
             []
-        ]
+        ],
+        "g": "0cea4dg000000007"
     },
     {
         "id": "0cea4d0000000005",
         "type": "ui-template",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "group": "0cea4d0000000015",
         "page": "",
         "ui": "",
@@ -2440,18 +2304,19 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1360,
-        "y": 1140,
+        "x": 440,
+        "y": 160,
         "wires": [
             [
                 "0cea4d0000000021"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000007"
     },
     {
         "id": "0cea4d0000000021",
         "type": "switch",
-        "z": "b573ff303eba5d8f",
+        "z": "0cea4d00000000a1",
         "name": "Routage UI réglages",
         "property": "topic",
         "propertyType": "msg",
@@ -2475,19 +2340,1086 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1600,
-        "y": 1140,
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "0cea4dl000000028"
+            ],
+            [
+                "0cea4dl000000029"
+            ],
+            [
+                "0cea4dl00000002a"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000001",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Vanne →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000003",
+            "0cea4dl000000004"
+        ],
+        "x": 1000,
+        "y": 850,
+        "wires": [],
+        "g": "0cea4dg000000002"
+    },
+    {
+        "id": "0cea4dl000000002",
+        "type": "link in",
+        "z": "0cea4d00000000a1",
+        "name": "→ 🌊 Page Jardin (Ocean)",
+        "links": [
+            "0cea4dl000000001",
+            "0cea4dl000000005",
+            "0cea4dl000000007",
+            "0cea4dl00000000a",
+            "0cea4dl00000000b",
+            "0cea4dl00000000c",
+            "0cea4dl00000000e",
+            "0cea4dl00000000f",
+            "0cea4dl000000014",
+            "0cea4dl000000015",
+            "0cea4dl000000019",
+            "0cea4dl00000001f"
+        ],
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "0cea4d0000000001"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000003",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ Logger Central",
+        "links": [
+            "0cea4dl000000001",
+            "0cea4dl000000007",
+            "0cea4dl000000008",
+            "0cea4dl000000009",
+            "0cea4dl00000000c",
+            "0cea4dl000000016",
+            "0cea4dl000000018",
+            "0cea4dl00000002a"
+        ],
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "faec0b241e5e1612"
+            ]
+        ],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl000000004",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ 🧭 État système (agrégateur)",
+        "links": [
+            "0cea4dl000000001",
+            "0cea4dl000000007",
+            "0cea4dl00000000e",
+            "0cea4dl000000018",
+            "0cea4dl00000001a"
+        ],
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "2423d0b705a7fc53"
+            ]
+        ],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl000000005",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Affichage mode réveil (UI) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000006"
+        ],
+        "x": 1000,
+        "y": 1010,
+        "wires": [],
+        "g": "0cea4dg000000002"
+    },
+    {
+        "id": "0cea4dl000000006",
+        "type": "link in",
+        "z": "0cea4d00000000a1",
+        "name": "→ 🌊 Page Réglages (Ocean)",
+        "links": [
+            "0cea4dl000000005",
+            "0cea4dl000000014",
+            "0cea4dl000000015",
+            "0cea4dl000000017"
+        ],
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "0cea4d0000000005"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000007",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Litres du jour (reset auto) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000003",
+            "0cea4dl000000004"
+        ],
+        "x": 1280,
+        "y": 690,
+        "wires": [],
+        "g": "0cea4dg000000002"
+    },
+    {
+        "id": "0cea4dl000000008",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Routage UI vanne →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000003"
+        ],
+        "x": 720,
+        "y": 1460,
+        "wires": [],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl000000009",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Routage UI vanne →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000003"
+        ],
+        "x": 720,
+        "y": 1540,
+        "wires": [],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl00000000a",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Chef d'Orchestre (Réveils) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002"
+        ],
+        "x": 1280,
+        "y": 770,
+        "wires": [],
+        "g": "0cea4dg000000002"
+    },
+    {
+        "id": "0cea4dl00000000b",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Logger Central →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002"
+        ],
+        "x": 1000,
+        "y": 80,
+        "wires": [],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl00000000c",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Capteur (Dragino) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000003",
+            "0cea4dl00000000d"
+        ],
+        "x": 1000,
+        "y": 690,
+        "wires": [],
+        "g": "0cea4dg000000002"
+    },
+    {
+        "id": "0cea4dl00000000d",
+        "type": "link in",
+        "z": "0cea4d00000000a1",
+        "name": "→ 🌊 Page IA (Ocean)",
+        "links": [
+            "0cea4dl00000000c",
+            "0cea4dl000000010",
+            "0cea4dl000000011",
+            "0cea4dl000000012",
+            "0cea4dl000000013",
+            "0cea4dl000000015",
+            "0cea4dl000000016",
+            "0cea4dl000000017",
+            "0cea4dl00000001f"
+        ],
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "0cea4d0000000003"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl00000000e",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Sauver AUTO / blocage maintenance →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000004"
+        ],
+        "x": 1000,
+        "y": 1220,
+        "wires": [],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl00000000f",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Get State →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002"
+        ],
+        "x": 720,
+        "y": 1220,
+        "wires": [],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl000000010",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🛡️ Pré-check Node-RED v7 - sans blocage capteur →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000000d"
+        ],
+        "x": 720,
+        "y": 2280,
+        "wires": [],
+        "g": "0cea4dg000000005"
+    },
+    {
+        "id": "0cea4dl000000011",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "⚙️ Parse & Decide v7 - sans blocage capteur →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000000d"
+        ],
+        "x": 1560,
+        "y": 2280,
+        "wires": [],
+        "g": "0cea4dg000000005"
+    },
+    {
+        "id": "0cea4dl000000012",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "📊 Logger →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000000d"
+        ],
+        "x": 1840,
+        "y": 2200,
+        "wires": [],
+        "g": "0cea4dg000000005"
+    },
+    {
+        "id": "0cea4dl000000013",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Init Log →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000000d"
+        ],
+        "x": 720,
+        "y": 2360,
+        "wires": [],
+        "g": "0cea4dg000000005"
+    },
+    {
+        "id": "0cea4dl000000014",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "Seed Mode UI →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl000000006"
+        ],
+        "x": 720,
+        "y": 1300,
+        "wires": [],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl000000015",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🧰 Set Maintenance →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000006",
+            "0cea4dl00000000d",
+            "0cea4dl000000002"
+        ],
+        "x": 720,
+        "y": 160,
+        "wires": [],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl000000016",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "⏱ Timeout commande vanne →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000000d",
+            "0cea4dl000000003"
+        ],
+        "x": 720,
+        "y": 2570,
+        "wires": [],
+        "g": "0cea4dg000000006"
+    },
+    {
+        "id": "0cea4dl000000017",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🌱 Set Profil Plante v5 →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000006",
+            "0cea4dl00000000d"
+        ],
+        "x": 720,
+        "y": 240,
+        "wires": [],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl000000018",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🛑 Coupure énergie EcoFlow →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000003",
+            "0cea4dl000000004"
+        ],
+        "x": 720,
+        "y": 1910,
+        "wires": [],
+        "g": "0cea4dg000000004"
+    },
+    {
+        "id": "0cea4dl000000019",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🛑 Coupure énergie EcoFlow →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002"
+        ],
+        "x": 720,
+        "y": 1990,
+        "wires": [],
+        "g": "0cea4dg000000004"
+    },
+    {
+        "id": "0cea4dl00000001a",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "topic == $pageview →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000001b",
+            "0cea4dl00000001c",
+            "0cea4dl00000001d",
+            "0cea4dl00000001e",
+            "0cea4dl000000004"
+        ],
+        "x": 720,
+        "y": 610,
+        "wires": [],
+        "g": "0cea4dg000000008"
+    },
+    {
+        "id": "0cea4dl00000001b",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ Get State",
+        "links": [
+            "0cea4dl00000001a"
+        ],
+        "x": 160,
+        "y": 1220,
+        "wires": [
+            [
+                "9c6f7de96310d061"
+            ]
+        ],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl00000001c",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ 🧰 Set Maintenance",
+        "links": [
+            "0cea4dl00000001a",
+            "0cea4dl000000029"
+        ],
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "18ee0e75969e0b8e"
+            ]
+        ],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl00000001d",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ 🌱 Set Profil Plante v5",
+        "links": [
+            "0cea4dl00000001a",
+            "0cea4dl000000028"
+        ],
+        "x": 160,
+        "y": 320,
         "wires": [
             [
                 "050fd847a6223581"
-            ],
-            [
-                "18ee0e75969e0b8e"
-            ],
-            [
-                "de7aedfce1dfba47",
-                "faec0b241e5e1612"
             ]
-        ]
+        ],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl00000001e",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ Seed Mode UI",
+        "links": [
+            "0cea4dl00000001a"
+        ],
+        "x": 160,
+        "y": 1300,
+        "wires": [
+            [
+                "cee2c76b3d49c08b"
+            ]
+        ],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl00000001f",
+        "type": "link out",
+        "z": "b573ff303eba5d8f",
+        "name": "🧭 État système (agrégateur) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000002",
+            "0cea4dl00000000d"
+        ],
+        "x": 1000,
+        "y": 160,
+        "wires": [],
+        "g": "0cea4dg000000001"
+    },
+    {
+        "id": "0cea4dl000000020",
+        "type": "link out",
+        "z": "2ef387781c27c113",
+        "name": "Formatage →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000021"
+        ],
+        "x": 1840,
+        "y": 160,
+        "wires": [],
+        "g": "0cea4dg000000009"
+    },
+    {
+        "id": "0cea4dl000000021",
+        "type": "link in",
+        "z": "0cea4d00000000a1",
+        "name": "→ 🌊 Page Météo (Ocean)",
+        "links": [
+            "0cea4dl000000020"
+        ],
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "0cea4d0000000002"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000022",
+        "type": "link out",
+        "z": "ca2ef5c6111a3b41",
+        "name": "EcoFlow → energie_ok →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000023"
+        ],
+        "x": 1000,
+        "y": 240,
+        "wires": [],
+        "g": "0cea4dg00000000a"
+    },
+    {
+        "id": "0cea4dl000000023",
+        "type": "link in",
+        "z": "0cea4d00000000a1",
+        "name": "→ 🌊 Page EcoFlow (Ocean)",
+        "links": [
+            "0cea4dl000000022"
+        ],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "0cea4d0000000004"
+            ]
+        ],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000024",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "🌊 Page Jardin (Ocean) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000025"
+        ],
+        "x": 720,
+        "y": 80,
+        "wires": [],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000025",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ Routage UI vanne",
+        "links": [
+            "0cea4dl000000024"
+        ],
+        "x": 160,
+        "y": 1380,
+        "wires": [
+            [
+                "57c6978bd4511918"
+            ]
+        ],
+        "g": "0cea4dg000000003"
+    },
+    {
+        "id": "0cea4dl000000026",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "🌊 Page IA (Ocean) →",
+        "mode": "link",
+        "links": [
+            "0cea4dl000000027"
+        ],
+        "x": 720,
+        "y": 240,
+        "wires": [],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000027",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ Clear Log",
+        "links": [
+            "0cea4dl000000026"
+        ],
+        "x": 160,
+        "y": 2200,
+        "wires": [
+            [
+                "18912cd060c802ea"
+            ]
+        ],
+        "g": "0cea4dg000000005"
+    },
+    {
+        "id": "0cea4dl000000028",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "Routage UI réglages →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000001d"
+        ],
+        "x": 1000,
+        "y": 80,
+        "wires": [],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl000000029",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "Routage UI réglages →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000001c"
+        ],
+        "x": 1000,
+        "y": 160,
+        "wires": [],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl00000002a",
+        "type": "link out",
+        "z": "0cea4d00000000a1",
+        "name": "Routage UI réglages →",
+        "mode": "link",
+        "links": [
+            "0cea4dl00000002b",
+            "0cea4dl000000003"
+        ],
+        "x": 1000,
+        "y": 240,
+        "wires": [],
+        "g": "0cea4dg000000007"
+    },
+    {
+        "id": "0cea4dl00000002b",
+        "type": "link in",
+        "z": "b573ff303eba5d8f",
+        "name": "→ link out 2",
+        "links": [
+            "0cea4dl00000002a"
+        ],
+        "x": 160,
+        "y": 1750,
+        "wires": [
+            [
+                "de7aedfce1dfba47"
+            ]
+        ],
+        "g": "0cea4dg000000004"
+    },
+    {
+        "id": "0cea4dg000000001",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "⚙️ Config & supervision",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "405d46c399d22291",
+            "20ee331cf07e3574",
+            "d9b7de748c685086",
+            "2423d0b705a7fc53",
+            "faec0b241e5e1612",
+            "050fd847a6223581",
+            "18ee0e75969e0b8e",
+            "0cea4dl000000003",
+            "0cea4dl000000004",
+            "0cea4dl00000000b",
+            "0cea4dl000000015",
+            "0cea4dl000000017",
+            "0cea4dl00000001c",
+            "0cea4dl00000001d",
+            "0cea4dl00000001f"
+        ],
+        "x": 60,
+        "y": 35,
+        "w": 1160,
+        "h": 550
+    },
+    {
+        "id": "0cea4dg000000002",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "📡 Uplink LoRaWAN — capteurs & vanne",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "eab755fccd22dd4b",
+            "cbcefb7df3e36014",
+            "4a17195e96107102",
+            "58e756b1d4eebd60",
+            "4b61a820b625294c",
+            "7c5b5284c10fef2c",
+            "f300b7bb23d6cedb",
+            "958005c036bb72f5",
+            "0cea4dl000000001",
+            "0cea4dl000000005",
+            "0cea4dl000000007",
+            "0cea4dl00000000a",
+            "0cea4dl00000000c"
+        ],
+        "x": 60,
+        "y": 645,
+        "w": 1440,
+        "h": 470
+    },
+    {
+        "id": "0cea4dg000000003",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "🎛 Vanne — état & AUTO",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "8d64c55c4241bc9d",
+            "cee2c76b3d49c08b",
+            "9c6f7de96310d061",
+            "57c6978bd4511918",
+            "5efde55060d13ee1",
+            "0cea4dl000000008",
+            "0cea4dl000000009",
+            "0cea4dl00000000e",
+            "0cea4dl00000000f",
+            "0cea4dl000000014",
+            "0cea4dl00000001b",
+            "0cea4dl00000001e",
+            "0cea4dl000000025"
+        ],
+        "x": 60,
+        "y": 1175,
+        "w": 1160,
+        "h": 470
+    },
+    {
+        "id": "0cea4dg000000004",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "📤 Downlink LoRaWAN — envoi vers TTN",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "81792f6d82498331",
+            "17a02b5e494de06c",
+            "de7aedfce1dfba47",
+            "9d79c58891cac1e9",
+            "e4e1df73358e94f1",
+            "ce1dc0ef337ae4e2",
+            "fc2137f9c1521659",
+            "ccead23c1930b0b4",
+            "51e421fe3dc86011",
+            "c71905d5a96053e7",
+            "f580c53a36bdafc2",
+            "16d6da0d2161dab6",
+            "0cea4dl000000018",
+            "0cea4dl000000019",
+            "0cea4dl00000002b"
+        ],
+        "x": 60,
+        "y": 1705,
+        "w": 1720,
+        "h": 390
+    },
+    {
+        "id": "0cea4dg000000005",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "🤖 Pilotage IA",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "31df24da0918d94b",
+            "4424d0e8e9574c50",
+            "d80e6926d824fe4e",
+            "eaf29464cbfd2c80",
+            "ad8a5f67a6f691b1",
+            "3a85620bbcc9ca35",
+            "213bd379bc05c99a",
+            "0e94fbf30d81c56d",
+            "cb73c5fce83c18e9",
+            "18912cd060c802ea",
+            "0cea4dl000000010",
+            "0cea4dl000000011",
+            "0cea4dl000000012",
+            "0cea4dl000000013",
+            "0cea4dl000000027"
+        ],
+        "x": 60,
+        "y": 2155,
+        "w": 2000,
+        "h": 310
+    },
+    {
+        "id": "0cea4dg000000006",
+        "type": "group",
+        "z": "b573ff303eba5d8f",
+        "name": "🛟 Sécurité & reset",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "3944d7a2012cf0f1",
+            "0fb0992b20faf42a",
+            "31b8a15b7deeadd2",
+            "765d01e43b54e20b",
+            "0cea4dl000000016"
+        ],
+        "x": 60,
+        "y": 2525,
+        "w": 880,
+        "h": 230
+    },
+    {
+        "id": "0cea4dg000000007",
+        "type": "group",
+        "z": "0cea4d00000000a1",
+        "name": "🌊 Pages du dashboard",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "0cea4d0000000001",
+            "0cea4d0000000002",
+            "0cea4d0000000003",
+            "0cea4d0000000004",
+            "0cea4d0000000005",
+            "0cea4d0000000021",
+            "0cea4dl000000002",
+            "0cea4dl000000006",
+            "0cea4dl00000000d",
+            "0cea4dl000000021",
+            "0cea4dl000000023",
+            "0cea4dl000000024",
+            "0cea4dl000000026",
+            "0cea4dl000000028",
+            "0cea4dl000000029",
+            "0cea4dl00000002a"
+        ],
+        "x": 60,
+        "y": 35,
+        "w": 1160,
+        "h": 470
+    },
+    {
+        "id": "0cea4dg000000008",
+        "type": "group",
+        "z": "0cea4d00000000a1",
+        "name": "🎨 Style & événements",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "047186d9f32f58e8",
+            "f6ff3751a2bc4546",
+            "85be2b112426a537",
+            "0cea4dl00000001a"
+        ],
+        "x": 60,
+        "y": 565,
+        "w": 880,
+        "h": 230
+    },
+    {
+        "id": "0cea4dg000000009",
+        "type": "group",
+        "z": "2ef387781c27c113",
+        "name": "🌤 Collecte Open-Meteo (10 min)",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "069e272477a36cc8",
+            "68d13d64a8badd2c",
+            "d715f55252d940b6",
+            "f9d353e2a391e8ce",
+            "a89b961b95d399cb",
+            "8555c816997e2d48",
+            "784c450160774bc7",
+            "0cea4dl000000020"
+        ],
+        "x": 60,
+        "y": 35,
+        "w": 2000,
+        "h": 230
+    },
+    {
+        "id": "0cea4dg00000000a",
+        "type": "group",
+        "z": "ca2ef5c6111a3b41",
+        "name": "🔋 Lecture EcoFlow (5 min)",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "4c3b03609b2d2440",
+            "a64da3b915c1def9",
+            "ef0d2e96fb37e46c",
+            "5dc3c534d009ac17",
+            "2976dcddb6d0c62b",
+            "0cea4dl000000022"
+        ],
+        "x": 60,
+        "y": 35,
+        "w": 1160,
+        "h": 310
+    },
+    {
+        "id": "0cea4dg00000000b",
+        "type": "group",
+        "z": "ca2ef5c6111a3b41",
+        "name": "🐶 Watchdog & erreurs API",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "81f7f98fe4bb8585",
+            "166b8f172f7586f3",
+            "c4e68cf9e8540b81",
+            "cf04471c0c36f322"
+        ],
+        "x": 60,
+        "y": 405,
+        "w": 600,
+        "h": 230
+    },
+    {
+        "id": "0cea4dg00000000c",
+        "type": "group",
+        "z": "ca2ef5c6111a3b41",
+        "name": "📢 Alertes dashboard",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "6cb351b2672a6326",
+            "a3aad5674c805a20",
+            "514274823503e1bc"
+        ],
+        "x": 60,
+        "y": 695,
+        "w": 600,
+        "h": 230
+    },
+    {
+        "id": "0cea4dg00000000d",
+        "type": "group",
+        "z": "ca2ef5c6111a3b41",
+        "name": "🧪 Test sécurité ouverture",
+        "style": {
+            "label": true,
+            "stroke": "#4e7a74",
+            "fill": "none",
+            "label-position": "nw",
+            "color": "#8ba7a6"
+        },
+        "nodes": [
+            "e5c02f7944c3f6e7",
+            "62b456107dd9658a",
+            "fb5609b1104d2a63",
+            "630c4e9eb6a8cbf7"
+        ],
+        "x": 60,
+        "y": 985,
+        "w": 880,
+        "h": 230
     }
 ]

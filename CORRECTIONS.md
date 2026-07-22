@@ -128,3 +128,15 @@ modales), branché sur les vraies données du système.
 | O6 | **Page Réglages** | Profil de culture en puces façon segmented control (tous les profils réels), 6 tuiles de seuils du profil actif, cartes 🔩 Matériel et 🌍 Système avec modales (fréquence de réveil de la vanne câblée en réel), carte 🔧 Mode maintenance avec interrupteur |
 | O7 | **Commandes** | Les envois restent identiques : `valve 01/02/80`, `set_auto`, `config 02/1E`, `set_plant_profile`, `set_maintenance`, `clear-log`. Le switch « Routage UI vanne » gagne une règle `config` ; un switch « Routage UI réglages » distribue les ordres de la page Réglages |
 | O8 | **Style global** | Palette océan en variables CSS + classes `oc-*` partagées, Lora (Google Fonts) pour les titres, chrome Dashboard 2.0 masqué (app bar / tiroir) au profit de l'entête et de la navigation du design, `prefers-reduced-motion` respecté |
+
+## 🗂 Réorganisation de l'éditeur (5ᵉ passe)
+
+L'onglet « Arrosage jardin » était devenu illisible (55 nœuds enchevêtrés).
+Réorganisation sans aucun changement de logique — mêmes nœuds, mêmes messages :
+
+| # | Changement | Détail |
+|---|------------|--------|
+| R1 | **4 onglets thématiques** | 🌱 Arrosage jardin (logique + LoRaWAN), 🌊 Dashboard Ocean (les 5 pages UI + style + routeur réglages), 🌤 Météo, ⚡ EcoFlow. Les pages UI n'utilisent pas le contexte `flow.*`, elles pouvaient donc changer d'onglet ; toute la logique reste sur « Arrosage jardin » (contexte de flux partagé) |
+| R2 | **Sections groupées** | Chaque onglet est rangé en bandes étiquetées : ⚙️ Config & supervision, 📡 Uplink LoRaWAN, 🎛 Vanne — état & AUTO, 📤 Downlink LoRaWAN, 🤖 Pilotage IA, 🛟 Sécurité & reset — et l'équivalent sur Météo/EcoFlow. Disposition en couches gauche → droite (sources → traitements → sorties) |
+| R3 | **Nœuds link à la place des câbles longue distance** | Les deux gros points de convergence (« Logger Central », « 🧭 État système ») et tous les échanges inter-onglets passent par des paires link in/out nommées (« Capteur (Dragino) → », « → Page Jardin (Ocean) »…). 29 link out + 14 link in créés ; plus aucun câble ne traverse l'écran ni les onglets |
+| R4 | **Vérifié dans l'éditeur** | Import chargé dans un Node-RED réel et inspecté onglet par onglet (captures) : aucune référence cassée, aucun câble inter-onglets, aucune collision de position |
