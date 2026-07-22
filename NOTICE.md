@@ -155,6 +155,7 @@ apprend combien chaque minute d'eau fait monter l'humidité.
 | Sécurité | Comportement |
 |---|---|
 | **Coupure énergie** | Batterie EcoFlow ≤ **10 %** → arrêt : AUTO coupé, vanne fermée, arrosage interdit. Reprise seulement à **25 %** (l'écart évite les oscillations). L'état AUTO est réactivé automatiquement à la reprise s'il était actif |
+| **⚠️ Interrupteur de la sécurité EcoFlow** | Les deux sécurités énergie ci-dessus (coupure et absence de données) sont **désactivées par défaut** et réactivables via **Réglages → 🛡 Sécurité énergie EcoFlow**. Désactivées, l'arrosage continue même batterie vide ou hors ligne — un bandeau d'avertissement s'affiche sur la page Jardin |
 | **EcoFlow silencieuse** | Aucune donnée depuis > 15 min → toute *ouverture* de vanne est bloquée (les fermetures restent permises). Un watchdog (2 min) détecte la déconnexion complète et les erreurs d'API |
 | **Timeout de commande** | Ordre non confirmé par la vanne après **10 min** → erreur consignée, automatisme remis au repos (les commandes manuelles restent possibles) |
 | **Anti-blocage** | Un état d'automatisme figé > 2 h est remis au repos d'office |

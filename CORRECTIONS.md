@@ -140,3 +140,18 @@ Réorganisation sans aucun changement de logique — mêmes nœuds, mêmes messa
 | R2 | **Sections groupées** | Chaque onglet est rangé en bandes étiquetées : ⚙️ Config & supervision, 📡 Uplink LoRaWAN, 🎛 Vanne — état & AUTO, 📤 Downlink LoRaWAN, 🤖 Pilotage IA, 🛟 Sécurité & reset — et l'équivalent sur Météo/EcoFlow. Disposition en couches gauche → droite (sources → traitements → sorties) |
 | R3 | **Nœuds link à la place des câbles longue distance** | Les deux gros points de convergence (« Logger Central », « 🧭 État système ») et tous les échanges inter-onglets passent par des paires link in/out nommées (« Capteur (Dragino) → », « → Page Jardin (Ocean) »…). 29 link out + 14 link in créés ; plus aucun câble ne traverse l'écran ni les onglets |
 | R4 | **Vérifié dans l'éditeur** | Import chargé dans un Node-RED réel et inspecté onglet par onglet (captures) : aucune référence cassée, aucun câble inter-onglets, aucune collision de position |
+
+## 🛡 Sécurité énergie EcoFlow désactivable (6ᵉ passe)
+
+À la demande de l'utilisateur : l'arrosage ne doit plus se bloquer quand
+l'EcoFlow est hors ligne. Les verrous énergie (coupure ≤ 10 %, données
+absentes/périmées > 15 min) passent derrière un drapeau global
+`ecoflow_guard`, **désactivé par défaut**, réactivable par l'interrupteur
+**🛡 Sécurité énergie EcoFlow** de la page Réglages.
+
+| # | Changement | Détail |
+|---|------------|--------|
+| G1 | **Verrous conditionnés** | `choix vanne`, `Config fréquence vanne`, `Sauver AUTO`, `Pré-check`, `Parse & Decide` : les conditions `ecoCutoff`/`ecoStale` ne s'appliquent que si `ecoflow_guard === true`. `🛑 Coupure énergie EcoFlow` ignore les événements de coupure quand la sécurité est OFF (les reprises restent traitées) ; la branche de test « Sécurité énergie avant ouverture » suit le même drapeau |
+| G2 | **Interrupteur UI** | Nouvelle carte sur la page Réglages (topic `set_ecoflow_guard`, handler « 🛡 Sécurité EcoFlow ON/OFF », état resservi à l'ouverture de page). L'agrégateur État système expose `ecoflow_guard` |
+| G3 | **Visibilité** | Page Jardin : le bandeau rouge « Coupure énergie » n'apparaît que si la sécurité est active ; sécurité OFF → bandeau orange permanent « Sécurité énergie EcoFlow désactivée » |
+| G4 | **Ce qui ne change pas** | La surveillance EcoFlow continue (lecture 5 min, watchdog, alertes, page EcoFlow) — seul le blocage de l'arrosage est débrayé. Vérifié en rendu réel + syntaxe JS de toutes les fonctions contrôlée |
