@@ -189,10 +189,13 @@ profil actif se change sur la **page IA** du dashboard.
 
 ---
 
-## 6. Le dashboard (4 pages)
+## 6. Le dashboard (5 pages)
 
-La barre de navigation en haut de chaque page permet de circuler ; la page
-active est surlignée en vert.
+Le dashboard suit le design « Dashboard Ocean » : fond bleu-vert profond,
+cartes arrondies, accent **sauge** pour les capteurs et états normaux, accent
+**terracotta** pour les actionneurs et l'arrosage. La barre de navigation en
+« pilule » en haut de chaque page permet de circuler ; l'onglet actif est
+rempli en sauge.
 
 ### 🌱 Jardin (page principale)
 - **État système** (en haut) : vanne, mode, batterie EcoFlow, eau restante,
@@ -210,8 +213,6 @@ les 10 min) : conditions actuelles, 24 h heure par heure, 8 jours, qualité de
 l'air, UV, vent, lever/coucher du soleil.
 
 ### 🤖 IA
-- **Profil plante** : choix de la culture, seuils appliqués.
-- **Mode maintenance** : interrupteur ON/OFF.
 - **Conseil IA** : dernière analyse détaillée (raison, confiance, âges des
   données, quota).
 - **Historique des décisions** : les 200 dernières décisions avec motifs.
@@ -221,6 +222,11 @@ l'air, UV, vent, lever/coucher du soleil.
 Alertes (déconnexion, coupure, reprise) affichées en notification sur toutes
 les pages.
 
+### ⚙️ Réglages
+- **Profil de culture** : choix de la culture, seuils appliqués par l'IA.
+- **Mode maintenance** : interrupteur ON/OFF (suspend les décisions
+  automatiques, la vanne reste pilotable à la main).
+
 ---
 
 ## 7. Utilisation au quotidien
@@ -229,8 +235,8 @@ les pages.
 |---|---|
 | **Arroser tout de suite** | Page Jardin → bouton **OUVRIR**. La vanne s'ouvrira à son prochain réveil (jusqu'à 30 min en mode éco — le système passe automatiquement en mode rapide ensuite). Ne pas oublier **FERMER** ! |
 | **Activer l'arrosage automatique** | Page Jardin → interrupteur **AUTO**. L'IA analysera toutes les heures |
-| **Changer de culture** | Page IA → Profil plante |
-| **Bricoler sans que l'IA s'en mêle** | Page IA → **Maintenance ON** (les boutons manuels restent actifs) |
+| **Changer de culture** | Page Réglages → Profil de culture |
+| **Bricoler sans que l'IA s'en mêle** | Page Réglages → **Maintenance ON** (les boutons manuels restent actifs) |
 | **Comprendre pourquoi ça n'arrose pas** | Page IA → Historique : chaque veille indique son motif exact (« pluie probable 70 % », « quota atteint », etc.) |
 | **Vérifier la consommation d'eau** | Page Jardin → carte État système ou Réservoir |
 | **Débloquer un état bizarre** | Éditeur Node-RED → onglet Arrosage → bouton de l'inject « 🔴 Reset d'urgence » |

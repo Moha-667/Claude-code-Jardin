@@ -107,3 +107,17 @@ ouverture ».
 | U7 | **Carte « État système »** (page Jardin, sous la navigation) | Synthèse en un coup d'œil : vanne (état + batterie + commande en attente), mode (AUTO/MANUEL/MAINTENANCE + état de l'automatisme), batterie EcoFlow (SOC + fraîcheur), eau restante du jour, dernière décision IA (avec raison). **Bandeau d'alerte persistant** (rouge pulsé pour coupure énergie, orange pour maintenance ou données EcoFlow absentes) — l'alerte critique ne repose plus sur un toast de 8 s. Alimentée par un agrégateur (« 🧭 État système ») déclenché toutes les 30 s, à l'ouverture de la page et sur chaque événement clé |
 | U8 | **Nouveau visuel de vanne « robinet rotatif »** | Remplace le grand robinet SVG rouge. Cadran avec l'état écrit à l'intérieur (**OUVERT** vert / **FERMÉ** corail / **OUVERTURE-FERMETURE…** ambre pendant l'attente de confirmation LoRaWAN), poignée qui pivote, anneau qui change de couleur. **Un tap = ouvrir/fermer** (envoie 01/02), verrouillé et cadenassé en mode AUTO/maintenance. Colonne raccourcie (hauteur 9→6). Un switch « Routage UI vanne » sépare les messages `valve` (→ commande) et `set_auto` (→ bascule AUTO) |
 | U9 | **Boutons Ouvrir/Fermer du bas retirés** | Le robinet rotatif gère désormais l'ouverture/fermeture ; l'ancien widget « Commandes Principales » est réduit au seul bouton « Actualiser l'état de la vanne » (ping/demande de statut), restylé et centré (hauteur 2→1) |
+
+## 🌊 Design « Dashboard Ocean » (4ᵉ passe)
+
+Application du design claude.ai « Dashboard Ocean » (`Dashboard Ocean.dc.html`)
+sur `flows_84_corrige.json`. Restylage pur : aucune logique Vue ni aucun
+câblage Node-RED des widgets existants n'est modifié.
+
+| # | Changement | Détail |
+|---|------------|--------|
+| O1 | **Palette océan** | Fond `#0f1e20`, cartes `#17292c`, bordures `#2c4448`, accent sauge `#5fc4a8` (capteurs / états OK), accent terracotta `#f0a35e` (actionneurs / arrosage / avertissements), texte `#e9f3f2`, texte secondaire `#8ba7a6`. L'ancien style « verre gris + vert néon #22ec70 » est remplacé dans les 2 thèmes Dashboard 2.0 et les 23 templates (les rendus « matériel » — tube du thermomètre, odomètre — restent volontairement sombres) |
+| O2 | **Typographie** | Titres de groupes et de cartes en **Lora** (serif, Google Fonts), corps en Avenir Next / Segoe UI. Ajout du respect de `prefers-reduced-motion` |
+| O3 | **Navigation « pilule »** | La barre devient un segmented control arrondi (`border-radius:999px`) sur fond carte : onglet actif rempli en sauge avec texte encre, onglets inactifs en texte discret — conforme au design Ocean. 5 onglets : Jardin / Météo / IA / EcoFlow / **Réglages** |
+| O4 | **Nouvelle page ⚙️ Réglages** (`/reglages`) | Reprend l'onglet Réglages du design : elle accueille « Profil de culture » (déplacé depuis la page IA) et « Mode maintenance » (déplacé du groupe Analyse IA vers un groupe « Système »). La page IA se recentre sur l'analyse et le journal des décisions, comme dans le design |
+| O5 | **Géométrie** | Coins des cartes 16 → 22 px, tuiles internes 12 → 16 px, groupes du thème sans chrome (fond = fond de page) : chaque widget dessine sa propre carte océan, padding de page 16 px |
