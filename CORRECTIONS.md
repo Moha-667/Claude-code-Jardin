@@ -110,14 +110,21 @@ ouverture ».
 
 ## 🌊 Design « Dashboard Ocean » (4ᵉ passe)
 
-Application du design claude.ai « Dashboard Ocean » (`Dashboard Ocean.dc.html`)
-sur `flows_84_corrige.json`. Restylage pur : aucune logique Vue ni aucun
-câblage Node-RED des widgets existants n'est modifié.
+Implémentation fidèle du design claude.ai « Dashboard Ocean »
+(`Dashboard Ocean.dc.html`) : les écrans du design sont reconstruits tels
+quels — chaque page du dashboard est désormais **un seul template plein
+écran** reprenant le markup du design (entête « 🌿 Mon jardin », navigation
+pilule à emojis, cartes CAPTEUR / ACTIONNEUR, jauge circulaire, bouton-vanne
+organique, tuiles, hero météo, anneau de batterie conique, page Réglages avec
+modales), branché sur les vraies données du système.
 
 | # | Changement | Détail |
 |---|------------|--------|
-| O1 | **Palette océan** | Fond `#0f1e20`, cartes `#17292c`, bordures `#2c4448`, accent sauge `#5fc4a8` (capteurs / états OK), accent terracotta `#f0a35e` (actionneurs / arrosage / avertissements), texte `#e9f3f2`, texte secondaire `#8ba7a6`. L'ancien style « verre gris + vert néon #22ec70 » est remplacé dans les 2 thèmes Dashboard 2.0 et les 23 templates (les rendus « matériel » — tube du thermomètre, odomètre — restent volontairement sombres) |
-| O2 | **Typographie** | Titres de groupes et de cartes en **Lora** (serif, Google Fonts), corps en Avenir Next / Segoe UI. Ajout du respect de `prefers-reduced-motion` |
-| O3 | **Navigation « pilule »** | La barre devient un segmented control arrondi (`border-radius:999px`) sur fond carte : onglet actif rempli en sauge avec texte encre, onglets inactifs en texte discret — conforme au design Ocean. 5 onglets : Jardin / Météo / IA / EcoFlow / **Réglages** |
-| O4 | **Nouvelle page ⚙️ Réglages** (`/reglages`) | Reprend l'onglet Réglages du design : elle accueille « Profil de culture » (déplacé depuis la page IA) et « Mode maintenance » (déplacé du groupe Analyse IA vers un groupe « Système »). La page IA se recentre sur l'analyse et le journal des décisions, comme dans le design |
-| O5 | **Géométrie** | Coins des cartes 16 → 22 px, tuiles internes 12 → 16 px, groupes du thème sans chrome (fond = fond de page) : chaque widget dessine sa propre carte océan, padding de page 16 px |
+| O1 | **1 page = 1 template Ocean** | Les 20 anciens widgets (verre gris) et leurs groupes sont remplacés par 5 templates : 🌊 Page Jardin / Météo / IA / EcoFlow / Réglages. Les nœuds de données (Capteur, Litres du jour, agrégateur État système, Formatage météo, energie_ok, Logger Central, 📊 Logger, Set Profil, Set Maintenance…) sont recâblés vers ces nouvelles pages |
+| O2 | **Page Jardin** | Bandeaux d'alerte (coupure énergie, arrosage en cours, maintenance), carte 📡 CAPTEUR (jauge circulaire d'humidité, température, litres du jour, barre de quota en dégradé sauge→terracotta, batteries capteur/vanne), carte 🔧 ACTIONNEUR (bouton-vanne organique OUVRIR/FERMER avec états en attente LoRaWAN, interrupteur AUTO, sélecteur ⚡ rapide / 🐌 lent, bouton ↻ actualiser), tuiles EcoFlow / Eau restante / Décision IA, journal d'événements |
+| O3 | **Page Météo** | Hero en dégradé océan (ville, température 64 px, ressenti, min/max, pluie attendue), bandeau 24 h défilant, prévision 8 jours avec barres min→max, tuiles qualité de l'air / vent / UV / soleil — alimentés par le payload Open-Meteo existant |
+| O4 | **Page IA** | Badge de décision (ARROSAGE terracotta / VEILLE sauge / PAUSE), raison en Lora 21 px, confiance, profil actif + bouton « Modifier ⚙️ », 6 tuiles de stats (humidité, seuil, écart, quota restant, arrosages du jour, âge capteur), journal des décisions en table Heure / Décision / Raison / Volume |
+| O5 | **Page EcoFlow** | Anneau conique de charge (`conic-gradient`, couleur selon coupure/reprise), tuiles ☀️ entrée solaire / 🔌 sortie / ⏳ temps restant / connexion, carte Alertes avec seuils de coupure et statut détaillé |
+| O6 | **Page Réglages** | Profil de culture en puces façon segmented control (tous les profils réels), 6 tuiles de seuils du profil actif, cartes 🔩 Matériel et 🌍 Système avec modales (fréquence de réveil de la vanne câblée en réel), carte 🔧 Mode maintenance avec interrupteur |
+| O7 | **Commandes** | Les envois restent identiques : `valve 01/02/80`, `set_auto`, `config 02/1E`, `set_plant_profile`, `set_maintenance`, `clear-log`. Le switch « Routage UI vanne » gagne une règle `config` ; un switch « Routage UI réglages » distribue les ordres de la page Réglages |
+| O8 | **Style global** | Palette océan en variables CSS + classes `oc-*` partagées, Lora (Google Fonts) pour les titres, chrome Dashboard 2.0 masqué (app bar / tiroir) au profit de l'entête et de la navigation du design, `prefers-reduced-motion` respecté |
