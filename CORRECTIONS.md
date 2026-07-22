@@ -155,3 +155,12 @@ absentes/périmées > 15 min) passent derrière un drapeau global
 | G2 | **Interrupteur UI** | Nouvelle carte sur la page Réglages (topic `set_ecoflow_guard`, handler « 🛡 Sécurité EcoFlow ON/OFF », état resservi à l'ouverture de page). L'agrégateur État système expose `ecoflow_guard` |
 | G3 | **Visibilité** | Page Jardin : le bandeau rouge « Coupure énergie » n'apparaît que si la sécurité est active ; sécurité OFF → bandeau orange permanent « Sécurité énergie EcoFlow désactivée » |
 | G4 | **Ce qui ne change pas** | La surveillance EcoFlow continue (lecture 5 min, watchdog, alertes, page EcoFlow) — seul le blocage de l'arrosage est débrayé. Vérifié en rendu réel + syntaxe JS de toutes les fonctions contrôlée |
+
+## 💾 Persistance & rechargement des journaux (7ᵉ passe)
+
+Constat utilisateur : « le journal ne retient pas l'historique ». Deux causes :
+
+| # | Cause | Correction |
+|---|-------|------------|
+| P1 | **Contexte en mémoire vive** : sans `contextStorage: { default: { module: "localfilesystem" } }` dans `settings.js`, journal, historique IA, quota, calibration et états sont perdus à chaque redémarrage de Node-RED | Réglage côté serveur documenté pas à pas dans NOTICE.md §12 (aucun changement de flow possible pour ça — c'est la config du serveur) |
+| P2 | **Rien n'était rejoué à l'ouverture d'une page** : le dashboard ne conserve que le *dernier* message reçu par page — l'état système (30 s) écrasait le journal et la mesure capteur, qui restaient vides jusqu'au prochain événement | À chaque ouverture de page (`$pageview`) : le Logger Central renvoie l'historique complet, et l'agrégateur État système embarque désormais la dernière mesure capteur (humidité, température, batterie) et le mode de réveil vanne — les pages Jardin et IA se remplissent immédiatement |

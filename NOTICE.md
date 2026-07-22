@@ -314,3 +314,27 @@ ils restent dans le fichier credentials chiffré local, préservé par le
 déploiement API. Alternative intégrée : la fonctionnalité **Projects** de
 Node-RED (`editorTheme.projects.enabled = true` dans `settings.js`) relie
 l'éditeur au dépôt git, avec un bouton *pull* manuel dans le menu.
+
+---
+
+## 12. ⚠️ Activer la persistance (obligatoire pour garder l'historique)
+
+Par défaut, Node-RED garde le contexte **en mémoire vive** : journal
+d'événements, historique des décisions IA, quota d'eau du jour, calibration,
+état de la vanne, profil actif et sécurité EcoFlow sont **perdus à chaque
+redémarrage** de Node-RED ou du PC. Pour les conserver sur disque :
+
+1. Ouvrir `C:\Users\<votre_nom>\.node-red\settings.js`
+2. Chercher `contextStorage` (souvent en commentaire) et mettre :
+
+```javascript
+contextStorage: {
+    default: { module: "localfilesystem" }
+},
+```
+
+3. Redémarrer Node-RED. Un dossier `context/` apparaît dans `.node-red` :
+   tout le contexte y est sauvegardé automatiquement (écriture différée ~30 s).
+
+Sans ce réglage, seul l'affichage en cours de session est correct — c'est la
+cause n°1 d'un « journal qui oublie tout ».
