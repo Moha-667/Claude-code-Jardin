@@ -293,3 +293,23 @@ Principaux réglages : `dailyWaterQuotaL` (200 L), `minHour`/`maxHour`
 
 *Document généré à partir de l'analyse complète du flow — voir CORRECTIONS.md
 pour l'historique des correctifs et optimisations.*
+
+---
+
+## 11. Synchronisation GitHub → Node-RED
+
+Le fichier `sync_dashboard.ps1` (à la racine du dépôt cloné sur le serveur
+Windows) tire la branche GitHub et déploie automatiquement les flows dans
+Node-RED via son API d'administration — sans passer par Import/Export :
+
+1. Cloner le dépôt sur le serveur : `git clone https://github.com/Moha-667/Claude-code-Jardin.git`
+2. Lancer la surveillance : `powershell -ExecutionPolicy Bypass -File sync_dashboard.ps1 -Watch`
+   (ou en tâche planifiée au démarrage). Toute modification poussée sur la
+   branche est déployée dans la minute.
+3. Si l'éditeur est protégé par mot de passe : ajouter `-User … -Password …`.
+
+Les identifiants (TTN, OpenAI, EcoFlow) ne transitent jamais par GitHub :
+ils restent dans le fichier credentials chiffré local, préservé par le
+déploiement API. Alternative intégrée : la fonctionnalité **Projects** de
+Node-RED (`editorTheme.projects.enabled = true` dans `settings.js`) relie
+l'éditeur au dépôt git, avec un bouton *pull* manuel dans le menu.
