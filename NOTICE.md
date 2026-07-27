@@ -84,6 +84,11 @@ elle-même confirmé à son réveil suivant.
 Les envois vers TTN passent par une **file d'attente (1 message / 4 s)** pour
 respecter les limites du réseau, et par une connexion **MQTT chiffrée (TLS)**.
 
+**La dernière commande remplace la précédente** dans la file TTN
+(`down/replace`) : si vous appuyez OUVRIR puis FERMER pendant que la vanne
+dort, seul FERMER sera exécuté à son réveil. Les anciens ordres ne
+s'accumulent plus et ne peuvent plus se rejouer en retard.
+
 ---
 
 ## 3. Le cycle d'arrosage automatique
@@ -156,7 +161,7 @@ apprend combien chaque minute d'eau fait monter l'humidité.
 |---|---|
 | **Coupure énergie** | Batterie EcoFlow ≤ **10 %** → arrêt : AUTO coupé, vanne fermée, arrosage interdit. Reprise seulement à **25 %** (l'écart évite les oscillations). L'état AUTO est réactivé automatiquement à la reprise s'il était actif |
 | **EcoFlow silencieuse** | Aucune donnée depuis > 15 min → toute *ouverture* de vanne est bloquée (les fermetures restent permises). Un watchdog (2 min) détecte la déconnexion complète et les erreurs d'API |
-| **Timeout de commande** | Ordre non confirmé par la vanne après **10 min** → erreur consignée, automatisme remis au repos (les commandes manuelles restent possibles) |
+| **Timeout de commande** | Ordre non confirmé par la vanne après **10 min en mode rapide** (35 min en mode éco, le temps d'un réveil complet) → erreur consignée, automatisme remis au repos, **file de downlinks TTN vidée** (l'ordre expiré ne peut plus s'exécuter en retard). Les commandes manuelles restent possibles |
 | **Anti-blocage** | Un état d'automatisme figé > 2 h est remis au repos d'office |
 | **Quota d'eau** | **200 L/jour** mesurés par le débitmètre → au-delà, l'AUTO est bloqué jusqu'au lendemain (le manuel reste possible) |
 | **Anti-rafale** | 10 s minimum entre deux ordres ; file d'attente TTN 1 msg/4 s |

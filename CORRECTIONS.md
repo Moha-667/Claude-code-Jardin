@@ -107,3 +107,52 @@ ouverture ».
 | U7 | **Carte « État système »** (page Jardin, sous la navigation) | Synthèse en un coup d'œil : vanne (état + batterie + commande en attente), mode (AUTO/MANUEL/MAINTENANCE + état de l'automatisme), batterie EcoFlow (SOC + fraîcheur), eau restante du jour, dernière décision IA (avec raison). **Bandeau d'alerte persistant** (rouge pulsé pour coupure énergie, orange pour maintenance ou données EcoFlow absentes) — l'alerte critique ne repose plus sur un toast de 8 s. Alimentée par un agrégateur (« 🧭 État système ») déclenché toutes les 30 s, à l'ouverture de la page et sur chaque événement clé |
 | U8 | **Nouveau visuel de vanne « robinet rotatif »** | Remplace le grand robinet SVG rouge. Cadran avec l'état écrit à l'intérieur (**OUVERT** vert / **FERMÉ** corail / **OUVERTURE-FERMETURE…** ambre pendant l'attente de confirmation LoRaWAN), poignée qui pivote, anneau qui change de couleur. **Un tap = ouvrir/fermer** (envoie 01/02), verrouillé et cadenassé en mode AUTO/maintenance. Colonne raccourcie (hauteur 9→6). Un switch « Routage UI vanne » sépare les messages `valve` (→ commande) et `set_auto` (→ bascule AUTO) |
 | U9 | **Boutons Ouvrir/Fermer du bas retirés** | Le robinet rotatif gère désormais l'ouverture/fermeture ; l'ancien widget « Commandes Principales » est réduit au seul bouton « Actualiser l'état de la vanne » (ping/demande de statut), restylé et centré (hauteur 2→1) |
+
+## 🚿 Correctifs vanne & durée d'arrosage (4ᵉ passe) — `flows_85.json` → `flows_85_corrige.json`
+
+Analyse du 27/07/2026 suite à deux constats utilisateur : « ça n'arrose que
+5 min » et « la vanne ne s'ouvre que quelques secondes ». 5 nœuds modifiés,
+tout le reste inchangé.
+
+### 🔴 Le bug « la vanne ne s'ouvre que quelques secondes »
+
+Cause racine : la gestion de la **file de downlinks TTN** en LoRaWAN classe A.
+
+- La vanne ne reçoit qu'**un seul downlink par réveil** (2 ou 30 min).
+- Toutes les commandes partaient en `down/push` = **ajout** en file, jamais
+  remplacement.
+- Le Chef d'Orchestre **relance** l'ordre non confirmé à chaque réveil
+  (cooldown 10 s ≪ réveil 2 min) → doublons empilés côté TTN.
+- **Rien ne vidait jamais la file** : ni le watchdog timeout, ni le Reset
+  d'urgence, ni la coupure EcoFlow.
+
+Les ordres périmés s'accumulaient donc chez TTN et se **rejouaient un par
+réveil**, parfois longtemps après. Dès qu'un FERMER périmé se trouvait dans la
+file derrière un OUVRIR (appui OUVRIR puis FERMER pendant que la vanne dort,
+relances de fermeture du cycle précédent, fermeture de sécurité EcoFlow…), la
+vanne ouvrait, envoyait son uplink de confirmation, et recevait le FERMER dans
+la foulée → **ouverte quelques secondes, puis refermée**.
+
+| # | Problème | Correction |
+|---|----------|------------|
+| V1 | Commandes vanne empilées en `down/push`, rejeu d'ordres périmés | « choix vanne » passe en **`down/replace`** : la dernière commande remplace toute la file TTN. Appuyer OUVRIR puis FERMER pendant le sommeil = seul FERMER s'exécute |
+| V2 | La config « mode rapide » (port 11) pouvait se perdre → cycle d'arrosage cadencé à 30 min | L'ouverture AUTO embarque la config mode rapide **dans le même `down/replace`** (trame port 11 puis trame port 10) : la vanne repasse en réveil 2 min avant d'ouvrir, quoi qu'il arrive |
+| V3 | Watchdog à 10 min fixes : toute commande envoyée en mode ÉCO (réveil 30 min) partait en erreur avant même que la vanne ne se réveille | **Timeout adaptatif** au mode de réveil courant : 10 min en mode rapide, réveil + 5 min (35 min) en mode éco |
+| V4 | Au timeout, la commande expirée **restait en file TTN** et s'exécutait des heures plus tard — ouverture fantôme sans personne pour chronométrer la fermeture (risque d'inondation) | Le watchdog **purge la file TTN** (`down/replace` vide) en plus de remettre l'automatisme au repos |
+| V5 | Le Reset d'urgence remettait les états à zéro mais laissait les ordres en attente chez TTN | Le Reset **purge aussi la file TTN** |
+
+### 🟠 La durée d'arrosage plafonnée à 5 min
+
+| # | Problème | Correction |
+|---|----------|------------|
+| V6 | Le curseur « Durée max d'arrosage » (page Réglages, 1–15 min) était **silencieusement écrasé** par le plafond du profil plante (5 min codé en dur dans chaque profil) : quoi qu'on règle, l'IA restait limitée à 5 min | Le curseur **prime désormais sur le profil** dès qu'on y touche (la valeur UI est marquée `maxIrrigationMinSource: "ui"` et le Pré-check lui donne la priorité). Sans réglage manuel, le plafond du profil reste la valeur par défaut |
+
+**5 min, est-ce assez ?** Ordres de grandeur : 5 min ≈ 30 L (débit théorique
+6 L/min) ; 2 arrosages/jour max = **60 L/jour sur 24 m² = 2,5 mm/jour**. En
+plein été (évapotranspiration 5–6 mm/jour), c'est léger, même en goutte-à-goutte
+souterrain paillé. Recommandation : **10 à 15 min par arrosage en été**
+(120–180 L/jour = 5–7,5 mm) via le curseur Réglages — les garde-fous restent
+tous actifs (capteur d'humidité, pluie, quota 200 L, écart 6 h, 2/jour max).
+L'écart de 6 h entre arrosages est sain ; c'était le volume par arrosage qui
+limitait. À recouper avec le débit **réel** mesuré par le débitmètre (« Litres
+du jour ») plutôt que les 6 L/min théoriques.
