@@ -156,3 +156,30 @@ tous actifs (capteur d'humidité, pluie, quota 200 L, écart 6 h, 2/jour max).
 L'écart de 6 h entre arrosages est sain ; c'était le volume par arrosage qui
 limitait. À recouper avec le débit **réel** mesuré par le débitmètre (« Litres
 du jour ») plutôt que les 6 L/min théoriques.
+
+## ⏱ Logs de durée d'ouverture de la vanne (5ᵉ passe) — `flows_87.json` → `flows_87_corrige.json`
+
+Demande : voir **combien de temps la vanne reste réellement ouverte**.
+`flows_87.json` contenait déjà tous les correctifs de la 4ᵉ passe (seuls les
+identifiants de nœuds ont changé au ré-import) ; cette passe ajoute uniquement
+le chronomètre. 2 nœuds modifiés (« Vanne » et « Logger Central »).
+
+| Événement | Journal (page Jardin) | Debug Node-RED |
+|---|---|---|
+| Confirmation d'ouverture | ⏱ « Vanne OUVERTE — chrono démarré » | `[VANNE ⏱] OUVERTURE confirmée à 09:04:59 — chrono démarré` |
+| Chaque réveil, vanne ouverte | ✅ « Vanne toujours ouverte — depuis 2 min 00 s » | `[VANNE ⏱] Toujours ouverte depuis 2 min 00 s` |
+| Confirmation de fermeture | ⏱ « Vanne FERMÉE — restée ouverte 5 min 42 s » | `[VANNE ⏱] FERMETURE confirmée à 09:10:41 — restée ouverte 5 min 42 s (ouverte à 09:04:59)` |
+
+Détails :
+
+- Le chrono est basé sur les **confirmations LoRaWAN** (état réellement
+  rapporté par la vanne), pas sur les ordres envoyés. La mesure est donc
+  précise à ± un réveil : 2 min en mode rapide, 30 min en mode éco.
+- Chaque fermeture est archivée dans le contexte de flow
+  **`historique_ouvertures`** (30 dernières : date, heure d'ouverture, heure
+  de fermeture, durée, état de l'automatisme). Consultable dans l'éditeur
+  Node-RED : menu ☰ → *Context data* → onglet *Flow* de « Arrosage jardin »,
+  ou via un nœud debug branché sur `flow.historique_ouvertures`.
+- La dernière durée est aussi disponible dans `flow.vanne_derniere_duree_s`.
+- Vérification faite par simulation d'un cycle complet
+  (ouverture → 2 réveils → fermeture à 5 min 42 s : durée exacte retrouvée).
