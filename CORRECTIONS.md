@@ -183,3 +183,39 @@ Détails :
 - La dernière durée est aussi disponible dans `flow.vanne_derniere_duree_s`.
 - Vérification faite par simulation d'un cycle complet
   (ouverture → 2 réveils → fermeture à 5 min 42 s : durée exacte retrouvée).
+
+## 🎯 Cause racine « vanne refermée en 12 s » trouvée et corrigée (6ᵉ passe) — mise à jour de `flows_87_corrige.json`
+
+Incident du 05/08 à 10:33 : l'IA valide un arrosage de 3 min, la vanne s'ouvre
+à 10:33 et se referme 12 s plus tard (mesuré par les logs ⏱ de la 5ᵉ passe).
+
+**Cause racine, reproduite en simulation** : le garde-fou « reset si état
+bloqué > 2 h sans commande » du Chef d'Orchestre comparait
+`now - orchestre_last_cmd_ts`. Or au premier réveil d'un **nouveau** cycle, la
+dernière commande date forcément de ≥ 6 h (espacement minimum entre
+arrosages) → le reset se déclenchait **à chaque cycle AUTO** : il remettait
+`arrosage_duree_ms` à 0 **sans interrompre la fonction**, l'ouverture partait
+quand même, et au réveil suivant « restant ≤ 0 » → FERMER envoyé → vanne
+refermée en quelques secondes. Ce garde-fou tuait donc chaque arrosage
+automatique depuis sa création — c'était déjà lui derrière la plainte
+initiale « la vanne ne s'ouvre que quelques secondes ». (C'est aussi ce
+FERMER prématuré qui posait `arrosage_fin_ts`, d'où le « Dernier arrosage il
+y a 0h » affiché à 10:43.)
+
+| # | Correction |
+|---|------------|
+| R1 | **Garde-fou réécrit** : il se base sur l'âge du cycle en cours (`arrosage_cycle_ts`, posé par Parse & Decide au lancement) et non plus sur la dernière commande, et il **interrompt la fonction** après reset au lieu de continuer avec un état incohérent |
+| R2 | **Plus de relance d'ordre à chaque réveil** (défense en profondeur) : avec `down/replace`, l'ordre reste en file TTN tant qu'il n'est pas délivré ; relancer trop tôt crée un doublon délivré **après** l'exécution du premier — la vanne répond à chaque downlink par un uplink en ~5 s, ce qui enchaîne les livraisons (visible dans le journal : rafale Fermé/Fermé/Ouvert à 10:33). Relance seulement après l'équivalent de 3 réveils sans confirmation |
+| R3 | **Purge de la file TTN à chaque fermeture confirmée** : un doublon résiduel délivré après la fermeture pourrait rouvrir la vanne sans surveillance |
+| R4 | **Fermeture inattendue pendant un arrosage** : purge de la file + retour en mode éco programmé (avant, la vanne restait en réveil 2 min → drain batterie) + log explicite « Fermeture INATTENDUE » |
+| R5 | Anomalie « état ARROSAGE avec durée 0 ms » désormais signalée dans les logs (aurait révélé ce bug immédiatement) |
+| R6 | Le Reset d'urgence efface aussi `attente_mesure_post` : il débloque complètement le compteur « dernier arrosage » |
+
+Vérification : rejeu simulé de l'incident dans les conditions réelles
+(dernière commande 7 h avant, décision IA 26 min avant le réveil) — durée
+conservée à 180 000 ms, un seul OUVRIR envoyé pendant la rafale d'acks,
+arrosage complet, FERMER envoyé au premier réveil après 3 min, purge de la
+file à la fermeture confirmée, retour mode éco au réveil suivant.
+
+**Après import : faire un 🔴 Reset d'urgence** pour effacer le faux
+« dernier arrosage » posé par l'incident, sinon l'AUTO restera bloqué 6 h.
