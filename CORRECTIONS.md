@@ -107,3 +107,20 @@ ouverture ».
 | U7 | **Carte « État système »** (page Jardin, sous la navigation) | Synthèse en un coup d'œil : vanne (état + batterie + commande en attente), mode (AUTO/MANUEL/MAINTENANCE + état de l'automatisme), batterie EcoFlow (SOC + fraîcheur), eau restante du jour, dernière décision IA (avec raison). **Bandeau d'alerte persistant** (rouge pulsé pour coupure énergie, orange pour maintenance ou données EcoFlow absentes) — l'alerte critique ne repose plus sur un toast de 8 s. Alimentée par un agrégateur (« 🧭 État système ») déclenché toutes les 30 s, à l'ouverture de la page et sur chaque événement clé |
 | U8 | **Nouveau visuel de vanne « robinet rotatif »** | Remplace le grand robinet SVG rouge. Cadran avec l'état écrit à l'intérieur (**OUVERT** vert / **FERMÉ** corail / **OUVERTURE-FERMETURE…** ambre pendant l'attente de confirmation LoRaWAN), poignée qui pivote, anneau qui change de couleur. **Un tap = ouvrir/fermer** (envoie 01/02), verrouillé et cadenassé en mode AUTO/maintenance. Colonne raccourcie (hauteur 9→6). Un switch « Routage UI vanne » sépare les messages `valve` (→ commande) et `set_auto` (→ bascule AUTO) |
 | U9 | **Boutons Ouvrir/Fermer du bas retirés** | Le robinet rotatif gère désormais l'ouverture/fermeture ; l'ancien widget « Commandes Principales » est réduit au seul bouton « Actualiser l'état de la vanne » (ping/demande de statut), restylé et centré (hauteur 2→1) |
+
+## 🔋 Ajustement énergie — `flows_88.json` → `flows_88_corrige.json` (11/08/2026)
+
+Problème constaté : l'EcoFlow n'avait pas le temps de se recharger. Après une
+coupure énergie (batterie ≤ 10 %), l'arrosage reprenait dès **25 %** de charge
+(seuil codé en dur : `max(coupure + 10, 25)`) et revidait aussitôt la batterie.
+
+| # | Changement | Détail |
+|---|------------|--------|
+| E1 | **Seuil de reprise relevé : 25 % → 60 % par défaut** | Après une coupure, l'arrosage ne redevient possible qu'une fois la batterie rechargée à 60 % (au lieu de 25 %). La coupure reste à 10 % : rien ne change tant que la batterie ne tombe pas en zone critique |
+| E2 | **Nouveau réglage « Recharge avant reprise »** (page Réglages, section Matériel) | Ajustable de 20 à 95 % par pas de 5 %, mémorisé dans `global.ecoflow_resume_soc`. Garde-fou conservé : jamais moins que coupure + 10 points (anti-oscillation) — la valeur affichée est la valeur réellement appliquée |
+| E3 | Affichages mis à jour | Résumé Matériel de la page Réglages (« batt min X % · reprise Y % »), valeur d'initialisation de la page EcoFlow (le live l'écrase de toute façon), NOTICE |
+
+Astuce complémentaire : si la batterie s'épuise sans jamais passer sous 10 %
+(donc sans déclencher de coupure), monter aussi « Seuil batterie EcoFlow »
+(coupure, réglable 5–50 %) — la coupure arrivera plus tôt et la recharge
+jusqu'au seuil de reprise s'imposera plus souvent.

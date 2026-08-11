@@ -154,7 +154,7 @@ apprend combien chaque minute d'eau fait monter l'humidité.
 
 | Sécurité | Comportement |
 |---|---|
-| **Coupure énergie** | Batterie EcoFlow ≤ **10 %** → arrêt : AUTO coupé, vanne fermée, arrosage interdit. Reprise seulement à **25 %** (l'écart évite les oscillations). L'état AUTO est réactivé automatiquement à la reprise s'il était actif |
+| **Coupure énergie** | Batterie EcoFlow ≤ **10 %** (réglable) → arrêt : AUTO coupé, vanne fermée, arrosage interdit. Reprise seulement une fois la batterie rechargée au **seuil de reprise** (réglable, **60 %** par défaut) : l'écart laisse à l'EcoFlow le temps de se recharger vraiment avant réutilisation et évite les oscillations (plancher automatique à coupure + 10). L'état AUTO est réactivé automatiquement à la reprise s'il était actif |
 | **EcoFlow silencieuse** | Aucune donnée depuis > 15 min → toute *ouverture* de vanne est bloquée (les fermetures restent permises). Un watchdog (2 min) détecte la déconnexion complète et les erreurs d'API |
 | **Timeout de commande** | Ordre non confirmé par la vanne après **10 min** → erreur consignée, automatisme remis au repos (les commandes manuelles restent possibles) |
 | **Anti-blocage** | Un état d'automatisme figé > 2 h est remis au repos d'office |
@@ -245,7 +245,7 @@ normal. Le statut « en attente » sur la carte État système suit la commande.
 
 | Symptôme | Cause probable | Solution |
 |---|---|---|
-| Bandeau rouge « Coupure énergie » | Batterie EcoFlow ≤ 10 % ou hors ligne | Recharger / rallumer l'EcoFlow ; tout se réarme seul à 25 % |
+| Bandeau rouge « Coupure énergie » | Batterie EcoFlow ≤ 10 % ou hors ligne | Recharger / rallumer l'EcoFlow ; tout se réarme seul au seuil de reprise (60 % par défaut, réglable) |
 | Bandeau orange « EcoFlow sans données » | EcoFlow éteinte, Wi-Fi coupé, ou API en panne | Vérifier l'appareil et sa connexion ; les ouvertures sont bloquées par sécurité en attendant |
 | « Timeout LoRaWAN : commande non confirmée » | Vanne hors de portée, batterie vide, ou réseau TTN | Vérifier la batterie de la vanne et la couverture ; renvoyer l'ordre manuellement |
 | L'IA ne fait jamais rien | Mode MANUEL, maintenance active, hors plage 7 h-20 h, ou un blocage récurrent | Lire le motif exact dans l'historique IA |
